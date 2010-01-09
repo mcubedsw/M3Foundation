@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'M3Foundation' target in the 'M3Foundation' project.
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
