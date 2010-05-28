@@ -4,7 +4,7 @@ M3Extensions
 
 Created by Martin Pilkington on 10/09/2006.
 
-Copyright (c) 2006-2009 M Cubed Software
+Copyright (c) 2006-2010 M Cubed Software
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
@@ -33,7 +33,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 /**
  @category NSArray(M3Extensions)
- @discussion This category adds some useful class methods for generating arrays
+ @discussion This category adds some useful class methods for generating and accessing arrays
  */
 @interface NSArray (M3Extensions)
 
@@ -51,5 +51,13 @@ OTHER DEALINGS IN THE SOFTWARE.
  @result An array containing NSNumbers for the supplied values, or nil on error.
  */
 + (NSArray *)m3_arrayWithNumbersTo:(NSInteger)maxValue from:(NSInteger)minValue;
+
+/**
+ @abstract A safer version of objectAtIndex: which returns nil for an out of bounds index
+ @param aIndex The index of the object to retrieve 
+ @result The object at the supplied index, or nil if the index is out of bounds
+ */
+- (id)m3_safeObjectAtIndex:(NSUInteger)aIndex;
+
 
 @end

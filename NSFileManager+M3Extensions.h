@@ -4,7 +4,7 @@ M3Extensions
 
 Created by Martin Pilkington on 11/09/2006.
 
-Copyright (c) 2006-2009 M Cubed Software
+Copyright (c) 2006-2010 M Cubed Software
 Except trashPath:showAlerts: method which is adapted from DanSaul at http://www.cocoadev.com/index.pl?MoveToTrash
 
 Permission is hereby granted, free of charge, to any person
@@ -31,6 +31,10 @@ OTHER DEALINGS IN THE SOFTWARE.
 *****************************************************************/
 
 #import <Cocoa/Cocoa.h>
+
+extern NSString *M3ActualFileSize;
+extern NSString *M3FileSizeOnDisk;
+extern NSString *M3ReadableFileSize;
 
 /**
  @category NSFileManager(M3Extensions)

@@ -1,8 +1,8 @@
 /*****************************************************************
- M3FileSizeValueTransformer.m
+ NSMutableArray+M3Extensions.m
  M3Extensions
  
- Created by Martin Pilkington on 16/08/2009.
+ Created by Martin Pilkington on 21/05/2010.
  
  Copyright (c) 2006-2010 M Cubed Software
  
@@ -29,37 +29,18 @@
  
  *****************************************************************/
 
-#import "M3FileSizeValueTransformer.h"
+#import "NSMutableArray+M3Extensions.h"
 
 
-@implementation M3FileSizeValueTransformer
+@implementation NSMutableArray (M3Extensions)
 
-+ (Class)transformedValueClass {
-    return [NSString class];
+- (void)m3_moveObject:(id)aObject toIndex:(NSUInteger)aIndex {
+	id movingObject = aObject;
+	[self removeObject:aObject];
+	if (aIndex < [self count])
+		[self insertObject:movingObject atIndex:aIndex];
+	else 
+		[self addObject:movingObject];
 }
-
-+ (BOOL)allowsReverseTransformation {
-    return NO;
-}
-
-/**
- Transforms value to the appropriate units
- */
-- (id)transformedValue:(id)value {
-	if ([value isKindOfClass:[NSNumber class]]) {
-		double fileSize = [value doubleValue];
-		NSArray *units = [NSArray arrayWithObjects:@"bytes", @"KB", @"MB", @"GB", @"TB", @"PB", @"EB", @"ZB", @"YB", nil];
-		NSInteger currentIndex = 0;
-		while (fileSize > 1000) {
-			currentIndex++;
-			fileSize /= 1000;
-		}
-		if (currentIndex == 0) {
-			return [NSString stringWithFormat:@"%.0f %@", fileSize, [units objectAtIndex:currentIndex]];
-		}
-		return [NSString stringWithFormat:@"%.2f %@", fileSize, [units objectAtIndex:currentIndex]];
-	}
-	return nil;
-}
-
+	 
 @end

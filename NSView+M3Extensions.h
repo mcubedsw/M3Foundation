@@ -1,8 +1,8 @@
 /*****************************************************************
-M3TagListValueTransformer.h
+NSView+M3Extensions.h
 M3Extensions
 
-Created by Martin Pilkington on 02/08/2009.
+Created by Martin Pilkington on 24/07/2009.
 
 Copyright (c) 2006-2010 M Cubed Software
 
@@ -31,9 +31,10 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 #import <Cocoa/Cocoa.h>
 
+@interface NSView (M3Extensions)
 
-@interface M3CSVValueTransformer : NSValueTransformer {
-
-}
+- (BOOL)m3_containsView:(NSView *)view;
+- (NSString *)m3_viewName;
+- (void)removeAllSubviews;
 
 @end

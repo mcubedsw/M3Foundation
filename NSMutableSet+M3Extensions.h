@@ -1,8 +1,8 @@
 /*****************************************************************
-M3TagListValueTransformer.h
+NSSet+M3Extensions.h
 M3Extensions
 
-Created by Martin Pilkington on 02/08/2009.
+Created by Martin Pilkington on 10/02/2010.
 
 Copyright (c) 2006-2010 M Cubed Software
 
@@ -32,8 +32,8 @@ OTHER DEALINGS IN THE SOFTWARE.
 #import <Cocoa/Cocoa.h>
 
 
-@interface M3CSVValueTransformer : NSValueTransformer {
+@interface NSMutableSet (M3Extensions)
 
-}
+- (void)m3_differenceSet:(NSSet *)set;
 
 @end

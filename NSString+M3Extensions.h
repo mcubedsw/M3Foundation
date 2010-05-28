@@ -4,7 +4,7 @@ M3Extensions
 
 Created by Martin Pilkington on 09/09/2006.
 
-Copyright (c) 2006-2009 M Cubed Software
+Copyright (c) 2006-2010 M Cubed Software
 And createUUID which is supplied by by Luis de la Rosa
 
 Permission is hereby granted, free of charge, to any person

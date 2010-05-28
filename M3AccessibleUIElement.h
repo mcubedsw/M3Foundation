@@ -1,8 +1,8 @@
 /*****************************************************************
- M3FileSizeValueTransformer.m
+ M3AccessibleUIElement.h
  M3Extensions
  
- Created by Martin Pilkington on 16/08/2009.
+ Created by Martin Pilkington on 03/11/2009.
  
  Copyright (c) 2006-2010 M Cubed Software
  
@@ -29,37 +29,27 @@
  
  *****************************************************************/
 
-#import "M3FileSizeValueTransformer.h"
+#import <Cocoa/Cocoa.h>
 
 
-@implementation M3FileSizeValueTransformer
-
-+ (Class)transformedValueClass {
-    return [NSString class];
+@interface M3AccessibleUIElement : NSObject <NSCopying> {
+	AXUIElementRef element;
 }
 
-+ (BOOL)allowsReverseTransformation {
-    return NO;
-}
+@property (readonly) AXUIElementRef element;
 
-/**
- Transforms value to the appropriate units
- */
-- (id)transformedValue:(id)value {
-	if ([value isKindOfClass:[NSNumber class]]) {
-		double fileSize = [value doubleValue];
-		NSArray *units = [NSArray arrayWithObjects:@"bytes", @"KB", @"MB", @"GB", @"TB", @"PB", @"EB", @"ZB", @"YB", nil];
-		NSInteger currentIndex = 0;
-		while (fileSize > 1000) {
-			currentIndex++;
-			fileSize /= 1000;
-		}
-		if (currentIndex == 0) {
-			return [NSString stringWithFormat:@"%.0f %@", fileSize, [units objectAtIndex:currentIndex]];
-		}
-		return [NSString stringWithFormat:@"%.2f %@", fileSize, [units objectAtIndex:currentIndex]];
-	}
-	return nil;
-}
+- (id)initWithElement:(AXUIElementRef)newElement;
+
+- (NSString *)desecriptionForAction:(NSString *)action error:(NSError **)error;
+- (NSArray *)actionNamesAndError:(NSError **)error;
+- (NSArray *)attributeNamesAndError:(NSError **)error;
+- (id)valueForAttribute:(NSString *)attribute error:(NSError **)error;
+- (id)valuesForAttribute:(NSString *)attribute inRange:(NSRange)range error:(NSError **)error;
+- (BOOL)isAttributeSettable:(NSString *)str error:(NSError **)error;
+- (void)performAction:(NSString *)action error:(NSError **)error;
+- (void)postKeyboardEventWithKeyCharacter:(CGCharCode)keyChar virtualKey:(CGKeyCode)virtualKey keyDown:(BOOL)keyDown error:(NSError **)error;
+- (void)setValue:(id)value forAttribute:(NSString *)attribute error:(NSError **)error;
+- (NSString *)path;
+- (pid_t)processIDAndError:(NSError **)error;
 
 @end

@@ -1,8 +1,8 @@
 /*****************************************************************
-M3TagListValueTransformer.h
+NSMutableArray+M3Extensions.h
 M3Extensions
 
-Created by Martin Pilkington on 02/08/2009.
+Created by Martin Pilkington on 21/05/2010.
 
 Copyright (c) 2006-2010 M Cubed Software
 
@@ -29,11 +29,20 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 *****************************************************************/
 
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
 
+/**
+ @category NSMutableArray(M3Extensions)
+ @discussion This category adds more ways of re-arranging objects in a mutable array
+ */
+@interface NSMutableArray (M3Extensions)
 
-@interface M3CSVValueTransformer : NSValueTransformer {
-
-}
+/**
+ @abstract Moves the supplied object to the new index
+ @param aObject The object to move
+ @param aIndex The index to move it to
+ @discussion If the object doesn't exist in the array, this acts just like addObject: or insertObject:atIndex: depending on whether the index is outside the bounds of the array
+ */
+- (void)m3_moveObject:(id)aObject toIndex:(NSUInteger)aIndex;
 
 @end

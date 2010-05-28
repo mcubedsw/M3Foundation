@@ -4,8 +4,7 @@ M3Extensions
 
 Created by Martin Pilkington on 11/09/2006.
 
-Copyright (c) 2006-2009 M Cubed Software
-Except trashPath:showAlerts: method which is adapted from DanSaul at http://www.cocoadev.com/index.pl?MoveToTrash
+Copyright (c) 2006-2010 M Cubed Software
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
@@ -34,7 +33,11 @@ OTHER DEALINGS IN THE SOFTWARE.
 #import "NSString+M3Extensions.h"
 #import "M3FileSizeValueTransformer.h"
 
-//static AuthorizationRef authorizationRef = NULL;
+
+NSString *M3ActualFileSize = @"M3ActualFileSize";
+NSString *M3FileSizeOnDisk = @"M3FileSizeOnDisk";
+NSString *M3ReadableFileSize = @"M3ReadableFileSize";
+
 
 @interface NSFileManager ()
 
@@ -68,7 +71,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 	BOOL isDirectory;
 	
 	// Determine Paths to Add
-	if ([fm fileExistsAtPath:filePath] && ([[fm fileAttributesAtPath:filePath traverseLink:NO] objectForKey:NSFileType] == NSFileTypeDirectory)) {
+	if ([fm fileExistsAtPath:filePath] && ([[fm attributesOfItemAtPath:filePath error:nil] objectForKey:NSFileType] == NSFileTypeDirectory)) {
 		contents = [fm subpathsAtPath:filePath];
 		isDirectory = TRUE;
 	} else {
@@ -84,17 +87,17 @@ OTHER DEALINGS IN THE SOFTWARE.
 		path = objectAtIndexIMP(contents, objectAtIndexSEL, index);
 		NSDictionary *fileAttributes;
 		if (isDirectory == TRUE)
-			fileAttributes = [fm fileAttributesAtPath:[filePath stringByAppendingPathComponent: path] traverseLink:NO];
+			fileAttributes = [fm attributesOfItemAtPath:[filePath stringByAppendingPathComponent: path] error:nil];
 		else
-			fileAttributes = [fm fileAttributesAtPath:path traverseLink:NO];
+			fileAttributes = [fm attributesOfItemAtPath:path error:nil];
 		//Sort into 4KB chunks to give physical space taken up
 		size += [[fileAttributes objectForKey:NSFileSize] unsignedLongLongValue];
 		sizeOnDisk += ([[fileAttributes objectForKey:NSFileSize] unsignedLongLongValue] / 4096 + (([[fileAttributes objectForKey:NSFileSize] unsignedLongLongValue] % 4096) ? 1 : 0 )) *4;
 	}
 	// Create file size dictionary
 	M3FileSizeValueTransformer *transformer = [[M3FileSizeValueTransformer alloc] init];
-	NSDictionary *fileSizes = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithUnsignedLongLong:size], @"M3ActualFileSize", [NSNumber numberWithUnsignedLongLong:sizeOnDisk], @"M3FileSizeOnDisk",
-		[transformer transformedValue:[NSNumber numberWithUnsignedLongLong:size]], @"M3ReadableFileSize", nil];
+	NSDictionary *fileSizes = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithUnsignedLongLong:size], M3ActualFileSize, [NSNumber numberWithUnsignedLongLong:sizeOnDisk], M3FileSizeOnDisk,
+		[transformer transformedValue:[NSNumber numberWithUnsignedLongLong:size]], M3ReadableFileSize, nil];
 	[transformer release];
 	// Call setSize method of the handler object
 	[self performSelectorOnMainThread:@selector(m3_returnObjectsToHandler:) 

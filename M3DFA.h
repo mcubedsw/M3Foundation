@@ -1,8 +1,8 @@
 /*****************************************************************
-M3TagListValueTransformer.h
+M3DFA.h
 M3Extensions
 
-Created by Martin Pilkington on 02/08/2009.
+Created by Martin Pilkington on 17/12/2009.
 
 Copyright (c) 2006-2010 M Cubed Software
 
@@ -31,9 +31,20 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 #import <Cocoa/Cocoa.h>
 
+#if NS_BLOCKS_AVAILABLE
 
-@interface M3CSVValueTransformer : NSValueTransformer {
-
+@interface M3DFA : NSObject {
+	NSDictionary *automata;
+	NSMutableArray *endStates;
+	NSInteger initialState;
 }
 
+- (id)initWithAutomata:(NSString *)aut error:(NSError **)error;
+- (BOOL)isValid;
+
+- (BOOL)parseString:(NSString *)str outputBlock:(void (^)(NSString *output, NSInteger state))block;
+
+
 @end
+
+#endif

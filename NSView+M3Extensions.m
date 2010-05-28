@@ -1,8 +1,8 @@
 /*****************************************************************
- M3FileSizeValueTransformer.m
+ NSView+M3Extensions.m
  M3Extensions
  
- Created by Martin Pilkington on 16/08/2009.
+ Created by Martin Pilkington on 24/07/2009.
  
  Copyright (c) 2006-2010 M Cubed Software
  
@@ -29,37 +29,37 @@
  
  *****************************************************************/
 
-#import "M3FileSizeValueTransformer.h"
+#import "NSView+M3Extensions.h"
 
 
-@implementation M3FileSizeValueTransformer
+@implementation NSView (M3Extensions)
 
-+ (Class)transformedValueClass {
-    return [NSString class];
-}
-
-+ (BOOL)allowsReverseTransformation {
-    return NO;
-}
-
-/**
- Transforms value to the appropriate units
- */
-- (id)transformedValue:(id)value {
-	if ([value isKindOfClass:[NSNumber class]]) {
-		double fileSize = [value doubleValue];
-		NSArray *units = [NSArray arrayWithObjects:@"bytes", @"KB", @"MB", @"GB", @"TB", @"PB", @"EB", @"ZB", @"YB", nil];
-		NSInteger currentIndex = 0;
-		while (fileSize > 1000) {
-			currentIndex++;
-			fileSize /= 1000;
-		}
-		if (currentIndex == 0) {
-			return [NSString stringWithFormat:@"%.0f %@", fileSize, [units objectAtIndex:currentIndex]];
-		}
-		return [NSString stringWithFormat:@"%.2f %@", fileSize, [units objectAtIndex:currentIndex]];
+- (BOOL)m3_containsView:(NSView *)view {
+	if (view == self) {
+		return YES;
 	}
-	return nil;
+	for (NSView *subview in [self subviews]) {
+		if ([subview m3_containsView:view]) {
+			return YES;
+		}
+	}
+	return NO;
 }
 
+- (NSString *)m3_viewName {
+	NSString *value = @"";
+	if ([self respondsToSelector:@selector(stringValue)])
+		value = [NSString stringWithFormat:@"(%@)", [self performSelector:@selector(stringValue)]];
+	if ([self respondsToSelector:@selector(title)])
+		value = [NSString stringWithFormat:@"(%@)", [self performSelector:@selector(title)]];
+	
+	return [NSString stringWithFormat:@"%@ %@", [self className], value];
+}
+
+- (void)removeAllSubviews {
+	NSArray *subviews = [[self subviews] copy];
+	for (NSView *subview in subviews) {
+		[subview removeFromSuperview];
+	}
+}
 @end

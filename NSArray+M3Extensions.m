@@ -4,7 +4,7 @@ M3Extensions
 
 Created by Martin Pilkington on 10/09/2006.
 
-Copyright (c) 2006-2009 M Cubed Software
+Copyright (c) 2006-2010 M Cubed Software
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
@@ -57,6 +57,13 @@ OTHER DEALINGS IN THE SOFTWARE.
 		}
 	}
 	return [returnArray copy];
+}
+
+- (id)m3_safeObjectAtIndex:(NSUInteger)aIndex {
+	if (aIndex < [self count]) {
+		return [self objectAtIndex:aIndex];
+	}
+	return nil;
 }
 
 @end

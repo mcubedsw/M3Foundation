@@ -1,8 +1,8 @@
 /*****************************************************************
-M3TagListValueTransformer.h
+M3AccessibilityController.h
 M3Extensions
 
-Created by Martin Pilkington on 02/08/2009.
+Created by Martin Pilkington on 03/11/2009.
 
 Copyright (c) 2006-2010 M Cubed Software
 
@@ -31,9 +31,25 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 #import <Cocoa/Cocoa.h>
 
+@class M3AccessibleUIElement, M3DFA;
+@interface M3AccessibilityController : NSObject {
+	M3AccessibleUIElement *systemWideElement;
 
-@interface M3CSVValueTransformer : NSValueTransformer {
-
+#if NS_BLOCKS_AVAILABLE
+	M3DFA *automata;
+#endif
 }
+
++ (M3AccessibilityController *)defaultController;
+- (BOOL)isAccessibilityEnabled;
+- (M3AccessibleUIElement *)elementForActiveApplication;
+- (M3AccessibleUIElement *)systemWideElement;
+- (M3AccessibleUIElement *)elementAtPosition:(NSPoint)point error:(NSError **)error;
+
+#if NS_BLOCKS_AVAILABLE
+- (M3AccessibleUIElement *)elementForPath:(NSString *)path;
+#endif
+
++ (NSError *)errorForCode:(NSInteger)code;
 
 @end

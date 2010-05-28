@@ -4,7 +4,7 @@
  
  Created by Martin Pilkington on 10/05/2008.
  
- Copyright (c) 2006-2009 M Cubed Software
+ Copyright (c) 2006-2010 M Cubed Software
  
  Permission is hereby granted, free of charge, to any person
  obtaining a copy of this software and associated documentation

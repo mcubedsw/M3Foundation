@@ -1,8 +1,8 @@
 /*****************************************************************
- M3FileSizeValueTransformer.m
+ NSSet+M3Extensions.m
  M3Extensions
  
- Created by Martin Pilkington on 16/08/2009.
+ Created by Martin Pilkington on 10/02/2010.
  
  Copyright (c) 2006-2010 M Cubed Software
  
@@ -29,37 +29,17 @@
  
  *****************************************************************/
 
-#import "M3FileSizeValueTransformer.h"
+#import "NSMutableSet+M3Extensions.h"
 
 
-@implementation M3FileSizeValueTransformer
+@implementation NSMutableSet (M3Extensions)
 
-+ (Class)transformedValueClass {
-    return [NSString class];
+- (void)m3_differenceSet:(NSSet *)set {
+	NSMutableSet *setB = [self mutableCopy];
+	[self unionSet:set];
+	[setB intersectSet:set];
+	[self minusSet:setB];
+	[setB release];
 }
-
-+ (BOOL)allowsReverseTransformation {
-    return NO;
-}
-
-/**
- Transforms value to the appropriate units
- */
-- (id)transformedValue:(id)value {
-	if ([value isKindOfClass:[NSNumber class]]) {
-		double fileSize = [value doubleValue];
-		NSArray *units = [NSArray arrayWithObjects:@"bytes", @"KB", @"MB", @"GB", @"TB", @"PB", @"EB", @"ZB", @"YB", nil];
-		NSInteger currentIndex = 0;
-		while (fileSize > 1000) {
-			currentIndex++;
-			fileSize /= 1000;
-		}
-		if (currentIndex == 0) {
-			return [NSString stringWithFormat:@"%.0f %@", fileSize, [units objectAtIndex:currentIndex]];
-		}
-		return [NSString stringWithFormat:@"%.2f %@", fileSize, [units objectAtIndex:currentIndex]];
-	}
-	return nil;
-}
-
+	 
 @end
