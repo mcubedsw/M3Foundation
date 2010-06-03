@@ -31,7 +31,11 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 #import <Cocoa/Cocoa.h>
 
-
+/**
+ @class M3CSVValueTransformer
+ Converts a list of comma separated variables into an array and back
+ @since Available in M3Foundation 1.0 and later
+ */
 @interface M3CSVValueTransformer : NSValueTransformer {
 
 }

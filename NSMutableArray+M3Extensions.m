@@ -32,7 +32,7 @@
 #import "NSMutableArray+M3Extensions.h"
 
 
-@implementation NSMutableArray (M3Extensions)
+@implementation NSMutableArray(M3Extensions)
 
 - (void)m3_moveObject:(id)aObject toIndex:(NSUInteger)aIndex {
 	id movingObject = aObject;

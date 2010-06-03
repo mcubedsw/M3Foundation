@@ -32,7 +32,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 #import "NSArray+M3Extensions.h"
 
 
-@implementation NSArray (M3Extensions)
+@implementation NSArray(M3Extensions)
 
 + (NSArray *)m3_alphaNumericArray {
 	return [NSArray arrayWithObjects:@"0", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", 

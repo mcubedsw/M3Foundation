@@ -32,7 +32,7 @@
 #import "NSView+M3Extensions.h"
 
 
-@implementation NSView (M3Extensions)
+@implementation NSView(M3Extensions)
 
 - (BOOL)m3_containsView:(NSView *)view {
 	if (view == self) {

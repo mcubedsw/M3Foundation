@@ -38,13 +38,16 @@ extern NSString *M3ReadableFileSize;
 
 /**
  @category NSFileManager(M3Extensions)
- @discussion This category adds various useful methods for deleting and finding the size of files
+ This category adds various useful methods for deleting and finding the size of files
+ @since Available in M3Foundation 1.0 and later
  */
-@interface NSFileManager (M3Extensions)
+@interface NSFileManager(M3Extensions)
 
 /**
- @abstract Calculates the size of the supplied path in a separate thread
- @discussion This method calculates the size of a file or directory in a separate thread, calling 
+ Calculates the size of the supplied path in a separate thread
+ 
+ <b>Discussion</b>
+ This method calculates the size of a file or directory in a separate thread, calling 
  
  -(void)fileSizes:(NSDictionary *)filesizes ofFileAtPath:(NSString *)path
  
@@ -56,6 +59,7 @@ extern NSString *M3ReadableFileSize;
  
  @param filePath The path of the file to calculate
  @param handler The object which will receive the size when calculation has finished
+ @since Available in M3Foundation 1.0 and later
  */
 - (void)m3_calculateSizeOfFileAtPath:(NSString *)filePath handler:(id)handler;
 

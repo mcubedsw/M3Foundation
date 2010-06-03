@@ -31,7 +31,16 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 #import <Cocoa/Cocoa.h>
 
+
+extern NSString *M3AccessibilityErrorDomain;
+
 @class M3AccessibleUIElement, M3DFA;
+
+/**
+ @class M3AccessibilityController
+ A central controller for the accessibility APIs
+ @since Available in M3Foundation 1.0 and later
+ */
 @interface M3AccessibilityController : NSObject {
 	M3AccessibleUIElement *systemWideElement;
 
@@ -40,16 +49,65 @@ OTHER DEALINGS IN THE SOFTWARE.
 #endif
 }
 
+
+
+/**
+ Returns the default controller instance, creating it if necessary.
+ @result Returns the default controller instance
+ @since Available in M3Foundation 1.0 and later
+ */
 + (M3AccessibilityController *)defaultController;
+
+/**
+ Checks if the accessibility APIs are enabled.
+ @result Returns YES if accessibility is enabled, otherwise NO
+ @since Available in M3Foundation 1.0 and later
+ */
 - (BOOL)isAccessibilityEnabled;
+
+/**
+ Returns an accessibility element representing the current frontmost application.
+ @result Returns an accessibility element for the active application
+ @since Available in M3Foundation 1.0 and later
+ */
 - (M3AccessibleUIElement *)elementForActiveApplication;
+
+/**
+ Returns the system wide element, which represents no single application.
+ @result Returns the system wide element
+ @since Available in M3Foundation 1.0 and later
+ */
 - (M3AccessibleUIElement *)systemWideElement;
+
+/**
+ Finds the element at the supplied point.
+ @param point The point at which to look for the UI element in screen co-ordinates
+ @param error A pointer to an NSError
+ @result The UI element at the supplied point, if one exists
+ @since Available in M3Foundation 1.0 and later
+ */
 - (M3AccessibleUIElement *)elementAtPosition:(NSPoint)point error:(NSError **)error;
 
 #if NS_BLOCKS_AVAILABLE
+
+/**
+ Tries to find an element matching the supplied path.
+ <b>Discussion</b>
+ There isn't a guarantee that an element will be found, or that it will be the exact element that was expected. This method
+ tries to match as many attributes as possible and return at least something.
+ @param path The path to use to find an element
+ @result Return the UI element that best matches the path, if one exists
+ @since Available in M3Foundation 1.0 and later
+ */
 - (M3AccessibleUIElement *)elementForPath:(NSString *)path;
 #endif
 
-+ (NSError *)errorForCode:(NSInteger)code;
 
+/**
+ Returns the NSError object for the supplied error code
+ @param code The error code to create the error for
+ @result The NSError object for the supplied code
+ @since Available in M3Foundation 1.0 and later
+ */
++ (NSError *)errorForCode:(NSInteger)code;
 @end

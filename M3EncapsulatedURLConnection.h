@@ -33,12 +33,14 @@
 
 /**
  @class M3EncapsulatedURLConnection
- @discussion This class wraps around NSURLConnection providing extra functionality that greatly improves
+ This class wraps around NSURLConnection providing extra functionality that greatly improves
  it's usability in situations where lots of queries are sent. As well as providing the ability to uniquely
  identify each connection, store a context info dictionary and retreive extra information such as the 
  NSURLRequest used, M3EncapsulatedURLConnection only gives you the request data and response once all data 
  has been received, meaning that packets for a certain request are kept neatly within one class, making the
  task of sending multiple requests at a time much easier.
+ 
+ @since Available in M3Foundation 1.0 and later
  */
 @interface M3EncapsulatedURLConnection : NSObject {
 	NSURLConnection *connection;
@@ -51,30 +53,34 @@
 }
 
 /**
- @abstract Creates and initialises a new M3EncapsulatedURLConnection object
+ Creates and initialises a new M3EncapsulatedURLConnection object
  @param request The NSURLRequest for the connection
  @param del The delegate for the connection
  @param ident An object that you can use to identify the connection, may be nil
  @param dict A dictionary of additional info, may be nil
  @result A newly initialised M3EncapsulatedURLConnection object
+ @since Available in M3Foundation 1.0 and later
  */
 - (id)initWithRequest:(NSURLRequest *)request delegate:(id)del andIdentifier:(id)ident contextInfo:(NSDictionary *)dict;
 
 /**
- @abstract Returns the NSURLRequest object for the connection
+ Returns the NSURLRequest object for the connection
  @result The connection's NSURLRequest object
+ @since Available in M3Foundation 1.0 and later
  */
 - (NSURLRequest *)connectionRequest;
 
 /**
- @abstract Returns the connection's identifier
+ Returns the connection's identifier
  @result The connection's identifier
+ @since Available in M3Foundation 1.0 and later
  */
 - (id)identifier;
 
 /**
- @abstract Returns the context info dictionary for the connection
+ Returns the context info dictionary for the connection
  @result The connection's context info dictionary
+ @since Available in M3Foundation 1.0 and later
  */
 - (NSDictionary *)contextInfo;
 
@@ -82,36 +88,42 @@
 
 /**
  @category M3EncapsulatedURLConnection(DelegateMethods)
- @discussion Delegate methods for M3EncapsulatedURLConnection
+ <b>Discussion</b>
+ Delegate methods for M3EncapsulatedURLConnection
+ @since Available in M3Foundation 1.0 and later
  */
 @interface M3EncapsulatedURLConnection (DelegateMethods)
 /**
- @abstract Sent when a connection has finished loading all data
+ Sent when a connection has finished loading all data
  @param connection The connection sending the message
  @param response The response of the request
  @param data The data returned from the request
+ @since Available in M3Foundation 1.0 and later
  */
 - (void)connection:(M3EncapsulatedURLConnection *)connection returnedWithResponse:(NSInteger)response andData:(NSData *)data;
 
 /**
- @abstract Sent when a connection has received an authentication challenge
+ Sent when a connection has received an authentication challenge
  @param connection The connection sending the message
  @param challenge The challenge that connection must authenticate in order to download its request
  @result The credential that should be used by the connection
+ @since Available in M3Foundation 1.0 and later
  */
 - (NSURLCredential *)connection:(M3EncapsulatedURLConnection *)connection didRequestAuthenticationCredentialForChallenge:(NSURLAuthenticationChallenge *)challenge;
 
 /**
- @abstract Sent when an authentication challenge cancelled
+ Sent when an authentication challenge cancelled
  @param connection The connection sending the message
  @param response The challenge that was cancelled
+ @since Available in M3Foundation 1.0 and later
  */
 - (void)connection:(M3EncapsulatedURLConnection *)connection canceledAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
 
 /**
- @abstract Creates an initialises a new M3EncapsulatedURLConnection object
+ Creates an initialises a new M3EncapsulatedURLConnection object
  @param connection The connection sending the message
  @param response An error object containing details of why the connection failed to load the request successfully
+ @since Available in M3Foundation 1.0 and later
  */
 - (void)connection:(M3EncapsulatedURLConnection *)connection returnedWithError:(NSError *)error;
 

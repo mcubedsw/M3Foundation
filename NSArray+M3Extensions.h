@@ -33,29 +33,33 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 /**
  @category NSArray(M3Extensions)
- @discussion This category adds some useful class methods for generating and accessing arrays
+ This category adds some useful class methods for generating and accessing arrays.
+ @since Available in M3Foundation 1.0 and later
  */
-@interface NSArray (M3Extensions)
+@interface NSArray(M3Extensions)
 
 /**
- @abstract Creates and returns an array with strings for 0-9 a-z.
+ Creates and returns an array with strings for 0-9 a-z.
  @result An array containing strings for 0-9, a-z.
+ @since Available in M3Foundation 1.0 and later
  */
 + (NSArray *)m3_alphaNumericArray;
 
 /**
- @abstract Creates and returns an array or NSNumber objects increasing from minValue to maxValue in integer increments
- @discussion If minValue is greater than maxValue then nil will be returned
+ Creates and returns an array or NSNumber objects increasing from minValue to maxValue in integer increments.
+ If minValue is greater than maxValue then nil will be returned.
  @param maxValue The maximum value in the array
  @param minValue The minimum value in the array
  @result An array containing NSNumbers for the supplied values, or nil on error.
+@since Available in M3Foundation 1.0 and later
  */
 + (NSArray *)m3_arrayWithNumbersTo:(NSInteger)maxValue from:(NSInteger)minValue;
 
 /**
- @abstract A safer version of objectAtIndex: which returns nil for an out of bounds index
+ A safer version of objectAtIndex: which returns nil for an out of bounds index.
  @param aIndex The index of the object to retrieve 
  @result The object at the supplied index, or nil if the index is out of bounds
+ @since Available in M3Foundation 1.0 and later
  */
 - (id)m3_safeObjectAtIndex:(NSUInteger)aIndex;
 

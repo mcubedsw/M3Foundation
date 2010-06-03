@@ -33,15 +33,19 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 /**
  @category NSMutableArray(M3Extensions)
- @discussion This category adds more ways of re-arranging objects in a mutable array
+ This category adds more ways of re-arranging objects in a mutable array
+ @since Available in M3Foundation 1.0 and later
  */
-@interface NSMutableArray (M3Extensions)
+@interface NSMutableArray(M3Extensions)
 
 /**
- @abstract Moves the supplied object to the new index
+ Moves the supplied object to the new index
+ <b>Discussion</b>
+ If the object doesn't exist in the array, this acts just like addObject: or insertObject:atIndex: depending on whether the index is outside the bounds of the array
  @param aObject The object to move
  @param aIndex The index to move it to
- @discussion If the object doesn't exist in the array, this acts just like addObject: or insertObject:atIndex: depending on whether the index is outside the bounds of the array
+
+ @since Available in M3Foundation 1.0 and later
  */
 - (void)m3_moveObject:(id)aObject toIndex:(NSUInteger)aIndex;
 

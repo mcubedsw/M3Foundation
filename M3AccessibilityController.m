@@ -33,7 +33,12 @@
 #import "M3AccessibleUIElement.h"
 #import "M3DFA.h"
 
+
+NSString *M3AccessibilityErrorDomain = @"com.mcubedsw.M3Foundation.accessibility";
+
 static M3AccessibilityController *defaultController;
+
+
 @implementation M3AccessibilityController
 
 /**
@@ -51,7 +56,7 @@ static M3AccessibilityController *defaultController;
 		NSString *dfa = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"AXPathDFA" ofType:@"txt"] encoding:NSUTF8StringEncoding error:NULL];
 		
 #if NS_BLOCKS_AVAILABLE
-		automata = [[M3DFA alloc] initWithAutomata:dfa error:NULL];
+		automata = [[M3DFA alloc] initWithAutomaton:dfa error:NULL];
 #endif
 	}
 	return self;
@@ -193,40 +198,46 @@ static M3AccessibilityController *defaultController;
  Generate an NSError for the supplied code
  */
 + (NSError *)errorForCode:(NSInteger)code {
-	if (code == kAXErrorSuccess) {
-		return nil;
-	} else if (code == kAXErrorFailure) {
-		return nil;
+	NSString *localisedDescription = @"";
+	if (code == kAXErrorFailure) {
+		localisedDescription = NSLocalizedString(@"A system error occured.", @"");
 	} else if (code == kAXErrorIllegalArgument) {
-		return nil;
+		localisedDescription = NSLocalizedString(@"An illegal argument was passed to the function.", @"");
 	} else if (code == kAXErrorInvalidUIElement) {
-		return nil;
+		localisedDescription = NSLocalizedString(@"The UI element passed to the function was invalid.", @"");
 	} else if (code == kAXErrorInvalidUIElementObserver) {
-		return nil;
+		localisedDescription = NSLocalizedString(@"The observer passed to the function was invalid", @"");
 	} else if (code == kAXErrorCannotComplete) {
-		return nil;
+		localisedDescription = NSLocalizedString(@"Could not complete the operation. The application being communicated with may be busy or unresponsive.", @"");
 	} else if (code == kAXErrorAttributeUnsupported) {
-		return nil;
+		localisedDescription = NSLocalizedString(@"The supplied attribute is not supported by this UI element.", @"");
 	} else if (code == kAXErrorActionUnsupported) {
-		return nil;
+		localisedDescription = NSLocalizedString(@"The supplied action is not supported by this UI element.", @"");
 	} else if (code == kAXErrorNotificationUnsupported) {
-		return nil;
+		localisedDescription = NSLocalizedString(@"The supplied notification is not supported by this UI element", @"");
 	} else if (code == kAXErrorNotImplemented) {
-		return nil;
+		localisedDescription = NSLocalizedString(@"The targeted application does not implement the correct accessibility API methods", @"");
 	} else if (code == kAXErrorNotificationAlreadyRegistered) {
-		return nil;
+		localisedDescription = NSLocalizedString(@"The supplied notification has already been registered", @"");
 	} else if (code == kAXErrorNotificationNotRegistered) {
-		return nil;
+		localisedDescription = NSLocalizedString(@"The notification is not yet registered", @"");
 	} else if (code == kAXErrorAPIDisabled) {
-		return nil;
+		localisedDescription = NSLocalizedString(@"The accessibility API is not enabled", @"");
 	} else if (code == kAXErrorNoValue) {
-		return nil;
+		localisedDescription = NSLocalizedString(@"The requested value does not exist", @"");
 	} else if (code == kAXErrorParameterizedAttributeUnsupported) {
-		return nil;
+		localisedDescription = NSLocalizedString(@"The supplied parameterised attribute is not supported by this UI element", @"");
 	} else if (code == kAXErrorNotEnoughPrecision) {
+		localisedDescription = NSLocalizedString(@"Undocumented Error: Not Enough Precision", @"");
+	} else {
 		return nil;
 	}
-	return nil;
+	
+	NSError *error = [NSError errorWithDomain:M3AccessibilityErrorDomain 
+										 code:code 
+									 userInfo:[NSDictionary dictionaryWithObject:localisedDescription forKey:NSLocalizedDescriptionKey]];
+	
+	return error;
 }
 
 

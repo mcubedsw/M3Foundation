@@ -45,7 +45,7 @@
 
 
 
-- (id)initWithAutomata:(NSString *)aut error:(NSError **)error {
+- (id)initWithAutomaton:(NSString *)aut error:(NSError **)error {
 	if (self = [super init]) {
 		initialState = NSNotFound;
 		endStates = [[NSMutableArray alloc] init];
@@ -145,7 +145,7 @@
 			[characterSet formUnionWithCharacterSet:[NSCharacterSet uppercaseLetterCharacterSet]];
 			[str deleteCharactersInRange:upperCase];
 		}
-		NSRange whitespace = [str rangeOfString:@"whitespace"];
+		NSRange whitespace = [str rangeOfString:@"\w"];
 		if (whitespace.location != NSNotFound) {
 			[characterSet formUnionWithCharacterSet:[NSCharacterSet whitespaceCharacterSet]];
 			[str deleteCharactersInRange:whitespace];
@@ -169,11 +169,6 @@
 
 	return rule;
 }
-
-- (BOOL)isValid {
-	return NO;
-}
-
 
 
 - (BOOL)parseString:(NSString *)str outputBlock:(void (^)(NSString *output, NSInteger state))block {

@@ -34,21 +34,24 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 /**
  @category NSString(M3Extensions)
- @discussion This category adds some convienience methods to NSString
+ This category adds some convienience methods to NSString
+ @since Available in M3Foundation 1.0 and later
  */
-@interface NSString (M3Extensions) 
+@interface NSString(M3Extensions) 
 
 /**
- @abstract Returns a string with the specified number of characters removed from the end
+ Returns a string with the specified number of characters removed from the end
  @param number The number of characters to be removed from the end of the string
  @result Returns an NSString object with with the specified number of characters are removed
+ @since Available in M3Foundation 1.0 and later
  */
 - (NSString *)m3_stringByRemovingCharactersFromEnd:(NSUInteger)number;
 
 /**
- @abstract Finds whether the string contains the supplied substring
+ Finds whether the string contains the supplied substring
  @param subString The string to test for
  @result Returns true if the string contains subString
+ @since Available in M3Foundation 1.0 and later
  */
 - (BOOL)m3_containsString:(NSString *)subString;
 

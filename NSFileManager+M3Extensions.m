@@ -39,14 +39,14 @@ NSString *M3FileSizeOnDisk = @"M3FileSizeOnDisk";
 NSString *M3ReadableFileSize = @"M3ReadableFileSize";
 
 
-@interface NSFileManager ()
+@interface NSFileManager()
 
 - (void)m3_calcSizeInNewThread:(NSDictionary *)attributes;
 
 @end
 
 
-@implementation NSFileManager (M3Extensions)
+@implementation NSFileManager(M3Extensions)
 
 //detatches our size calculation to another thread
 - (void)m3_calculateSizeOfFileAtPath:(NSString *)filePath handler:(id)handler {

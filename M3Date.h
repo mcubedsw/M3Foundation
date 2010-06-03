@@ -34,7 +34,7 @@
 
 /**
  @class M3Date
- @discussion An NSCalendarDate subclass that improves on the natural language processing and provides some useful extras. 
+ An NSCalendarDate subclass that improves on the natural language processing and provides some useful extras. 
  
  Some examples of the new capabilites for natural language dates include:
  
@@ -45,6 +45,8 @@
  - 7 hours before tomorrow at noon
  
  These are called through the standard + (id)dateWithNaturalLanguageString:(NSString *)string method from NSDate.
+ 
+ @since Available in M3Foundation 1.0 and later
  */
 @interface M3Date : NSCalendarDate {
 
@@ -52,24 +54,27 @@
 
 
 /**
- @abstract Returns an M3Date a set number of days after the supplied date
+ Returns an M3Date a set number of days after the supplied date
  @param days The number of days to add
  @param start The date to start from
  @result A newly initialised NSCalendarDate object set to the specified number of days after the start date
+ @since Available in M3Foundation 1.0 and later
  */
 + (id)dateByAddingDays:(NSInteger)days toDate:(NSDate *)start;
 
 /**
- @abstract Works out if the supplied year is a leap year
+ Works out if the supplied year is a leap year
  @param year The year to test
  @result True if the supplied year is a leap year
+ @since Available in M3Foundation 1.0 and later
  */
 + (BOOL)isLeapYear:(NSInteger)year;
 
 /**
- @abstract Returns an range of dates between which the supplied natural language string refers to
+ Returns an range of dates between which the supplied natural language string refers to
  @param string The natural language string
  @result And NSDictionary with two keys. M3StartDate is the M3Date object marking the start of the range, M3EndDate is the M3Date object marking the end of the range
+ @since Available in M3Foundation 1.0 and later
  */
 + (NSDictionary *)dateRangeWithNaturalLanguageString:(NSString *)string;
 

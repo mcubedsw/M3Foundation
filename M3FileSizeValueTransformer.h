@@ -33,7 +33,8 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 /**
  @class M3FileSizeValueTransformer
- @discussion Takes a value in bytes and converts it into the most appropriate unit eg 2048 bytes would return "2 KB"
+ Takes a value in bytes and converts it into the most appropriate unit eg 2048 bytes would return "2 KB"
+ @since Available in M3Foundation 1.0 and later
  */
 @interface M3FileSizeValueTransformer : NSValueTransformer {
 

@@ -32,12 +32,12 @@
 #import "NSMutableSet+M3Extensions.h"
 
 
-@implementation NSMutableSet (M3Extensions)
+@implementation NSMutableSet(M3Extensions)
 
-- (void)m3_differenceSet:(NSSet *)set {
+- (void)m3_differenceSet:(NSSet *)aSet {
 	NSMutableSet *setB = [self mutableCopy];
-	[self unionSet:set];
-	[setB intersectSet:set];
+	[self unionSet:aSet];
+	[setB intersectSet:aSet];
 	[self minusSet:setB];
 	[setB release];
 }

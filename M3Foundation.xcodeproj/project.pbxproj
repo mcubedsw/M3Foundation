@@ -154,7 +154,7 @@
 				99600CBE10F8CD630070D588 /* M3Foundation.h */,
 				99225A4A11386E58008970B7 /* Categories */,
 				08FB77AEFE84172EC02AAC07 /* Classes */,
-				99600D2010F8D02E0070D588 /* Unit Tests */,
+				99600D2010F8D02E0070D588 /* Tests */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				089C1665FE841158C02AAC07 /* Resources */,
 				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
@@ -253,7 +253,7 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
-		99600D2010F8D02E0070D588 /* Unit Tests */ = {
+		99600D2010F8D02E0070D588 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				99600D2110F8D0500070D588 /* NSArray+M3ExtensionsTests.h */,
@@ -265,7 +265,7 @@
 				99600D9D10F8D5150070D588 /* NSString+M3ExtensionsTest.h */,
 				99600D9E10F8D5150070D588 /* NSString+M3ExtensionsTest.m */,
 			);
-			name = "Unit Tests";
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -484,7 +484,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_GC = supported;
+				GCC_ENABLE_OBJC_GC = required;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -501,8 +501,8 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_GC = supported;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_ENABLE_OBJC_GC = required;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;

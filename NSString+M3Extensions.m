@@ -34,7 +34,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 #import "NSString+M3Extensions.h"
 
 
-@implementation NSString (M3Extensions) 
+@implementation NSString(M3Extensions) 
 
 - (NSString *)m3_stringByRemovingCharactersFromEnd:(NSUInteger)number {
 	if ((NSInteger)number < 0) {

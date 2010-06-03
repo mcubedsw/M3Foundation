@@ -32,7 +32,7 @@
 #import "NSXMLElement+M3Extensions.h"
 
 
-@implementation NSXMLElement (M3Extensions)
+@implementation NSXMLElement(M3Extensions)
 
 - (NSXMLElement *)m3_elementForName:(NSString *)str {
 	NSArray *elements = [self elementsForName:str];
