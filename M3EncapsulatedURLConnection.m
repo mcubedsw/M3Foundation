@@ -74,14 +74,17 @@
 	responseNo = [(NSHTTPURLResponse *)response statusCode];
 }
 
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+	[returnData appendData:data];
+}
+
+#pragma mark -
+#pragma mark Call block/delegate
+
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
 	if ([delegate respondsToSelector:@selector(connection:returnedWithResponse:andData:)]) {
 		[delegate connection:self returnedWithResponse:responseNo andData:returnData];
 	}
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-	[returnData appendData:data];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
@@ -89,6 +92,10 @@
 		[delegate connection:self returnedWithError:error];
 	}
 }
+
+
+#pragma mark -
+#pragma mark Authentication
 
 - (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
 	//If it hasn't failed before and the delegate responds to the selector then use it and return

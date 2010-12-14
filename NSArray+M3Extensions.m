@@ -56,7 +56,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 			[returnArray addObject:[NSNumber numberWithInteger:i]];
 		}
 	}
-	return [returnArray copy];
+	return [[returnArray copy] autorelease];
 }
 
 - (id)m3_safeObjectAtIndex:(NSUInteger)aIndex {

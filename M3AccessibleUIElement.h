@@ -63,7 +63,7 @@
  @result The action description
  @since Available in M3Foundation 1.0 and later
  */
-- (NSString *)desecriptionForAction:(NSString *)action error:(NSError **)error;
+- (NSString *)descriptionForAction:(NSString *)action error:(NSError **)error;
 
 /**
  Returns the names of the actions on the item
@@ -115,7 +115,7 @@
  @param error A pointer to an NSError object
  @since Available in M3Foundation 1.0 and later
  */
-- (void)performAction:(NSString *)action error:(NSError **)error;
+- (BOOL)performAction:(NSString *)action error:(NSError **)error;
 
 /**
  Posts a keyboard character
@@ -125,7 +125,7 @@
  @param error A pointer to an NSError object
  @since Available in M3Foundation 1.0 and later
  */
-- (void)postKeyboardEventWithKeyCharacter:(CGCharCode)keyChar virtualKey:(CGKeyCode)virtualKey keyDown:(BOOL)keyDown error:(NSError **)error;
+- (BOOL)postKeyboardEventWithKeyCharacter:(CGCharCode)keyChar virtualKey:(CGKeyCode)virtualKey keyDown:(BOOL)keyDown error:(NSError **)error;
 
 /**
  Sets the value of the supplied attribute
@@ -134,7 +134,7 @@
  @param error A pointer to an NSError object
  @since Available in M3Foundation 1.0 and later
  */
-- (void)setValue:(id)value forAttribute:(NSString *)attribute error:(NSError **)error;
+- (BOOL)setValue:(id)value forAttribute:(NSString *)attribute error:(NSError **)error;
 
 /**
  Returns the path for the element, to allow referencing between launches

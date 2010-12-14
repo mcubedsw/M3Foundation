@@ -53,9 +53,8 @@ static M3AccessibilityController *defaultController;
 
 - (id)init {
 	if (self = [super init]) {
-		NSString *dfa = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"AXPathDFA" ofType:@"txt"] encoding:NSUTF8StringEncoding error:NULL];
-		
 #if NS_BLOCKS_AVAILABLE
+		NSString *dfa = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"AXPathDFA" ofType:@"txt"] encoding:NSUTF8StringEncoding error:NULL];
 		automata = [[M3DFA alloc] initWithAutomaton:dfa error:NULL];
 #endif
 	}
@@ -64,6 +63,9 @@ static M3AccessibilityController *defaultController;
 
 - (void)dealloc {
 	[systemWideElement release];
+#if NS_BLOCKS_AVAILABLE
+	[automata release];
+#endif
 	[super dealloc];
 }
 
@@ -102,7 +104,7 @@ static M3AccessibilityController *defaultController;
 	__block CGFloat x = 0;
 	[automata parseString:path outputBlock:^(NSString *output, NSInteger state) {
 		if (state == 3) { //Role
-			[components addObject:[NSMutableDictionary dictionaryWithObject:[output copy] forKey:kAXRoleAttribute]];
+			[components addObject:[NSMutableDictionary dictionaryWithObject:[output copy] forKey:(NSString *)kAXRoleAttribute]];
 		} else if (state == 5) { //Key
 			while ([output hasPrefix:@" "]) {
 				output = [output substringFromIndex:1];
@@ -130,13 +132,13 @@ static M3AccessibilityController *defaultController;
 	
 	M3AccessibleUIElement *currentElement = nil;
 	for (NSDictionary *dict in components) {
-		if ([[dict objectForKey:kAXRoleAttribute] isEqualToString:kAXApplicationRole]) {
+		if ([[dict objectForKey:(NSString *)kAXRoleAttribute] isEqualToString:(NSString *)kAXApplicationRole]) {
 			pid_t processid = [[[NSRunningApplication runningApplicationsWithBundleIdentifier:[dict objectForKey:@"bundle"]] objectAtIndex:0] processIdentifier];
 			currentElement = [self elementForApplicationWithPid:processid];
 		} else {
-			NSMutableArray *candidates = [NSMutableArray arrayWithArray:[currentElement valueForAttribute:kAXChildrenAttribute error:NULL]];
+			NSMutableArray *candidates = [NSMutableArray arrayWithArray:[currentElement valueForAttribute:(NSString *)kAXChildrenAttribute error:NULL]];
 			
-			NSArray *keys = [NSArray arrayWithObjects:kAXRoleAttribute, kAXSubroleAttribute, kAXTitleAttribute, @"childCount", @"index", kAXPositionAttribute, nil];
+			NSArray *keys = [NSArray arrayWithObjects:(NSString *)kAXRoleAttribute, kAXSubroleAttribute, kAXTitleAttribute, @"childCount", @"index", kAXPositionAttribute, nil];
 			
 			for (NSString *key in keys) {
 				NSArray *candidateCopy = [candidates copy];
@@ -144,17 +146,17 @@ static M3AccessibilityController *defaultController;
 					id object = [dict objectForKey:key];
 					if (object != nil) {
 						if ([key isEqualToString:@"childCount"]) {
-							if ([object integerValue] != [[element valueForAttribute:kAXChildrenAttribute error:NULL] count]) {
+							if ([object integerValue] != [[element valueForAttribute:(NSString *)kAXChildrenAttribute error:NULL] count]) {
 								[candidates removeObject:element];
 							}
 						} else if ([key isEqualToString:@"index"]) {
-							M3AccessibleUIElement *parent = [element valueForAttribute:kAXParentAttribute error:NULL];
-							if ([object integerValue] != [[parent valueForAttribute:kAXChildrenAttribute error:NULL] indexOfObject:element]) {
+							M3AccessibleUIElement *parent = [element valueForAttribute:(NSString *)kAXParentAttribute error:NULL];
+							if ([object integerValue] != [[parent valueForAttribute:(NSString *)kAXChildrenAttribute error:NULL] indexOfObject:element]) {
 								[candidates removeObject:element];
 							}
-						} else if ([key isEqualToString:kAXTitleAttribute]) {
+						} else if ([key isEqualToString:(NSString *)kAXTitleAttribute]) {
 							if (![[element valueForAttribute:key error:NULL] isEqual:object]) {
-								if (![[[[element valueForAttribute:kAXTitleUIElementAttribute error:NULL] valueForAttribute:kAXValueAttribute error:NULL] description] isEqual:object]) {
+								if (![[[[element valueForAttribute:(NSString *)kAXTitleUIElementAttribute error:NULL] valueForAttribute:(NSString *)kAXValueAttribute error:NULL] description] isEqual:object]) {
 									[candidates removeObject:element];
 								}
 							}
@@ -187,8 +189,10 @@ static M3AccessibilityController *defaultController;
 	AXUIElementRef element = NULL;
 	AXError errorCode = AXUIElementCopyElementAtPosition([[self systemWideElement] element], point.x, point.y, &element);
 	
-	*error = [M3AccessibilityController errorForCode:errorCode];
-	return [[M3AccessibleUIElement alloc] initWithElement:element];
+	if (error != NULL && errorCode != 0) {
+		*error = [M3AccessibilityController errorForCode:errorCode];
+	}
+	return [[[M3AccessibleUIElement alloc] initWithElement:element] autorelease];
 }
 
 

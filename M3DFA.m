@@ -145,7 +145,7 @@
 			[characterSet formUnionWithCharacterSet:[NSCharacterSet uppercaseLetterCharacterSet]];
 			[str deleteCharactersInRange:upperCase];
 		}
-		NSRange whitespace = [str rangeOfString:@"\w"];
+		NSRange whitespace = [str rangeOfString:@"\\w"];
 		if (whitespace.location != NSNotFound) {
 			[characterSet formUnionWithCharacterSet:[NSCharacterSet whitespaceCharacterSet]];
 			[str deleteCharactersInRange:whitespace];

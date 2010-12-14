@@ -63,6 +63,7 @@
  */
 - (id)initWithRequest:(NSURLRequest *)request delegate:(id)del andIdentifier:(id)ident contextInfo:(NSDictionary *)dict;
 
+
 /**
  Returns the NSURLRequest object for the connection
  @result The connection's NSURLRequest object

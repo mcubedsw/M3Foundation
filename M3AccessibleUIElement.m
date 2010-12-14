@@ -61,16 +61,17 @@
 
 - (void)finalize {
 	CFRelease(element);
+	[super finalize];
 }
 
 /**
  Returns the description for a supplied action
  */
-- (NSString *)desecriptionForAction:(NSString *)action error:(NSError **)error {
+- (NSString *)descriptionForAction:(NSString *)action error:(NSError **)error {
 	CFStringRef description = nil;
 	AXError errorCode = AXUIElementCopyActionDescription (element, (CFStringRef)action, &description);
 	NSError *returnError = [M3AccessibilityController errorForCode:(NSInteger)errorCode];
-	if (returnError)
+	if (error != NULL && returnError)
 		*error = returnError;
 	return returnError != nil ? (NSString *)description : nil;
 }
@@ -82,7 +83,7 @@
 	CFArrayRef names = nil;
 	AXError errorCode = AXUIElementCopyActionNames(element, &names);
 	NSError *returnError = [M3AccessibilityController errorForCode:(NSInteger)errorCode];
-	if (returnError)
+	if (error != NULL && returnError)
 		*error = returnError;
 	return (NSArray *)names;
 }
@@ -94,7 +95,7 @@
 	CFArrayRef names = nil;
 	AXError errorCode = AXUIElementCopyAttributeNames(element, &names);
 	NSError *returnError = [M3AccessibilityController errorForCode:(NSInteger)errorCode];
-	if (returnError)
+	if (error != NULL && returnError)
 		*error = returnError;
 	return (NSArray *)names;
 }
@@ -107,7 +108,7 @@
 	if ([[self attributeNamesAndError:NULL] containsObject:attribute]) {
 		AXError errorCode = AXUIElementCopyAttributeValue(element, (CFStringRef)attribute, &value);
 		NSError *returnError = [M3AccessibilityController errorForCode:(NSInteger)errorCode];
-		if (returnError)
+		if (error != NULL && returnError)
 			*error = returnError;
 	}
 	
@@ -118,7 +119,7 @@
 	CFArrayRef values = nil;
 	AXError errorCode = AXUIElementCopyAttributeValues(element, (CFStringRef)attribute, range.location, range.length, &values);
 	NSError *returnError = [M3AccessibilityController errorForCode:(NSInteger)errorCode];
-	if (returnError)
+	if (error != NULL && returnError)
 		*error = returnError;
 	return [self sanitiseValue:(id)values];
 }
@@ -130,7 +131,7 @@
 	Boolean settable;
 	AXError errorCode = AXUIElementIsAttributeSettable(element, (CFStringRef)attribute, &settable);
 	NSError *returnError = [M3AccessibilityController errorForCode:(NSInteger)errorCode];
-	if (returnError)
+	if (error != NULL && returnError)
 		*error = returnError;
 	return (BOOL)settable;
 }
@@ -138,31 +139,40 @@
 /**
  Performs the supplied action
  */
-- (void)performAction:(NSString *)action error:(NSError **)error {
+- (BOOL)performAction:(NSString *)action error:(NSError **)error {
 	AXError errorCode = AXUIElementPerformAction(element, (CFStringRef)action);
 	NSError *returnError = [M3AccessibilityController errorForCode:(NSInteger)errorCode];
-	if (returnError)
+	if (error != NULL && returnError) {
 		*error = returnError;
+		return NO;
+	}
+	return YES;
 }
 
 /**
  Posts a keyboard event
  */
-- (void)postKeyboardEventWithKeyCharacter:(CGCharCode)keyChar virtualKey:(CGKeyCode)virtualKey keyDown:(BOOL)keyDown error:(NSError **)error {
+- (BOOL)postKeyboardEventWithKeyCharacter:(CGCharCode)keyChar virtualKey:(CGKeyCode)virtualKey keyDown:(BOOL)keyDown error:(NSError **)error {
 	AXError errorCode = AXUIElementPostKeyboardEvent(element, keyChar, virtualKey, (Boolean)keyDown);
 	NSError *returnError = [M3AccessibilityController errorForCode:(NSInteger)errorCode];
-	if (returnError)
+	if (error != NULL && returnError) {
 		*error = returnError;
+		return NO;
+	}
+	return YES;
 }
 
 /**
  Sets the value of the supplied attribute
  */
-- (void)setValue:(id)value forAttribute:(NSString *)attribute error:(NSError **)error {
+- (BOOL)setValue:(id)value forAttribute:(NSString *)attribute error:(NSError **)error {
 	AXError errorCode = AXUIElementSetAttributeValue(element, (CFStringRef)attribute, (CFTypeRef)value);
 	NSError *returnError = [M3AccessibilityController errorForCode:(NSInteger)errorCode];
-	if (returnError)
+	if (error != NULL && returnError) {
 		*error = returnError;
+		return NO;
+	}
+	return YES;
 }
 
 
@@ -239,27 +249,27 @@
 	//Loop through elements and build up path
 	M3AccessibleUIElement *parent = nil;
 	for (M3AccessibleUIElement *pathElement in [pathElements reverseObjectEnumerator]) {
-		NSString *role = [pathElement valueForAttribute:kAXRoleAttribute error:NULL];
-		NSString *subrole = [pathElement valueForAttribute:kAXSubroleAttribute error:NULL];
-		NSString *title = [pathElement valueForAttribute:kAXTitleAttribute error:NULL];
+		NSString *role = [pathElement valueForAttribute:(NSString *)kAXRoleAttribute error:NULL];
+		NSString *subrole = [pathElement valueForAttribute:(NSString *)kAXSubroleAttribute error:NULL];
+		NSString *title = [pathElement valueForAttribute:(NSString *)kAXTitleAttribute error:NULL];
 		if (!title) {
-			title = [[[pathElement valueForAttribute:kAXTitleUIElementAttribute error:NULL] valueForAttribute:kAXValueAttribute error:NULL] description];
+			title = [[[pathElement valueForAttribute:(NSString *)kAXTitleUIElementAttribute error:NULL] valueForAttribute:(NSString *)kAXValueAttribute error:NULL] description];
 		}
-		NSString *value = [pathElement valueForAttribute:kAXValueAttribute error:NULL];
-		NSPoint position = [[pathElement valueForAttribute:kAXPositionAttribute error:NULL] pointValue];
+		NSString *value = [pathElement valueForAttribute:(NSString *)kAXValueAttribute error:NULL];
+		NSPoint position = [[pathElement valueForAttribute:(NSString *)kAXPositionAttribute error:NULL] pointValue];
 		
-		NSArray *parentChildren = [parent valueForAttribute:kAXChildrenAttribute error:NULL];
+		NSArray *parentChildren = [parent valueForAttribute:(NSString *)kAXChildrenAttribute error:NULL];
 		NSUInteger index = NSNotFound;
 		if ([parentChildren count]) {
 			index = [parentChildren indexOfObject:pathElement];
 		}
 		
-		NSUInteger childCount = [[pathElement valueForAttribute:kAXChildrenAttribute error:NULL] count];
+		NSUInteger childCount = [[pathElement valueForAttribute:(NSString *)kAXChildrenAttribute error:NULL] count];
 		
 		//Create attributes array
 		NSMutableArray *attributes = [NSMutableArray array];
 		//Apps only need the app bundle
-		if ([role isEqualToString:kAXApplicationRole]) {
+		if ([role isEqualToString:(NSString *)kAXApplicationRole]) {
 			NSString *bundle = [[NSRunningApplication runningApplicationWithProcessIdentifier:[self processIDAndError:NULL]] bundleIdentifier];
 			[attributes addObject:[NSString stringWithFormat:@"bundle='%@'", bundle]];
 		} else {
@@ -279,10 +289,10 @@
 			[attributes addObject:[NSString stringWithFormat:@"childCount=%d", childCount]];
 			
 			//Menu specific items
-			if ([role isEqualToString:kAXMenuItemRole]) {
-				NSString *cmdChar = [pathElement valueForAttribute:kAXMenuItemCmdCharAttribute error:NULL];
-				NSString *cmdModifiers = [pathElement valueForAttribute:kAXMenuItemCmdModifiersAttribute error:NULL];
-				NSString *cmdVirtualKey = [pathElement valueForAttribute:kAXMenuItemCmdVirtualKeyAttribute error:NULL];
+			if ([role isEqualToString:(NSString *)kAXMenuItemRole]) {
+				NSString *cmdChar = [pathElement valueForAttribute:(NSString *)kAXMenuItemCmdCharAttribute error:NULL];
+				NSString *cmdModifiers = [pathElement valueForAttribute:(NSString *)kAXMenuItemCmdModifiersAttribute error:NULL];
+				NSString *cmdVirtualKey = [pathElement valueForAttribute:(NSString *)kAXMenuItemCmdVirtualKeyAttribute error:NULL];
 				if (cmdChar) 
 					[attributes addObject:[NSString stringWithFormat:@"%@=%@", kAXMenuItemCmdCharAttribute, cmdChar]];
 				if (cmdModifiers)
@@ -292,16 +302,16 @@
 			}
 			
 			//Table/Outline specific items
-			if ([role isEqualToString:kAXTableRole] || [role isEqualToString:kAXOutlineRole]) {
-				NSUInteger columnCount = [[pathElement valueForAttribute:kAXColumnsAttribute error:NULL] count];
-				NSUInteger rowCount = [[pathElement valueForAttribute:kAXRowsAttribute error:NULL] count];
+			if ([role isEqualToString:(NSString *)kAXTableRole] || [role isEqualToString:(NSString *)kAXOutlineRole]) {
+				NSUInteger columnCount = [[pathElement valueForAttribute:(NSString *)kAXColumnsAttribute error:NULL] count];
+				NSUInteger rowCount = [[pathElement valueForAttribute:(NSString *)kAXRowsAttribute error:NULL] count];
 				[attributes addObject:[NSString stringWithFormat:@"columnCount=%d", columnCount]];
 				[attributes addObject:[NSString stringWithFormat:@"rowCount=%d", rowCount]];
 			}
 		}
 		
 		
-		[returnPath addObject:[NSString stringWithFormat:@"%@:(%@)", [pathElement valueForAttribute:kAXRoleAttribute error:NULL], [attributes componentsJoinedByString:@", "]]];
+		[returnPath addObject:[NSString stringWithFormat:@"%@:(%@)", [pathElement valueForAttribute:(NSString *)kAXRoleAttribute error:NULL], [attributes componentsJoinedByString:@", "]]];
 		parent = pathElement;
 	}
 	return [returnPath componentsJoinedByString:@"/"];
@@ -315,7 +325,7 @@
 	pid_t pid = 0;
 	AXError errorCode = AXUIElementGetPid(element, &pid);
 	NSError *returnError = [M3AccessibilityController errorForCode:(NSInteger)errorCode];
-	if (returnError)
+	if (error != NULL && returnError)
 		*error = returnError;
 	
 	return pid;
@@ -325,28 +335,28 @@
  Test equality
  */
 - (BOOL)isEqual:(id)object {
-	if (![[self valueForAttribute:kAXRoleAttribute error:NULL] isEqualToString:[object valueForAttribute:kAXRoleAttribute error:NULL]]) {
+	if (![[self valueForAttribute:(NSString *)kAXRoleAttribute error:NULL] isEqualToString:[object valueForAttribute:(NSString *)kAXRoleAttribute error:NULL]]) {
 		return NO;
 	}
-	NSString *subroleSelf = [self valueForAttribute:kAXSubroleAttribute error:NULL];
-	NSString *subroleObject = [object valueForAttribute:kAXSubroleAttribute error:NULL];
+	NSString *subroleSelf = [self valueForAttribute:(NSString *)kAXSubroleAttribute error:NULL];
+	NSString *subroleObject = [object valueForAttribute:(NSString *)kAXSubroleAttribute error:NULL];
 	if (![subroleSelf isEqualToString:subroleObject] && subroleSelf && subroleObject) {
 		return NO;
 	}
 	
-	NSString *titleSelf = [self valueForAttribute:kAXTitleAttribute error:NULL];
-	NSString *titleObject = [object valueForAttribute:kAXTitleAttribute error:NULL];
+	NSString *titleSelf = [self valueForAttribute:(NSString *)kAXTitleAttribute error:NULL];
+	NSString *titleObject = [object valueForAttribute:(NSString *)kAXTitleAttribute error:NULL];
 	if (![titleSelf isEqualToString:titleObject] && titleSelf && titleObject) {
 		return NO;
 	}
 	
-	id valueSelf = [self valueForAttribute:kAXValueAttribute error:NULL];
-	id valueObject = [object valueForAttribute:kAXValueAttribute error:NULL];
+	id valueSelf = [self valueForAttribute:(NSString *)kAXValueAttribute error:NULL];
+	id valueObject = [object valueForAttribute:(NSString *)kAXValueAttribute error:NULL];
 	if (![valueSelf isEqual:valueObject] && valueSelf && valueObject) {
 		return NO;
 	}
 
-	if (!NSEqualPoints([[self valueForAttribute:kAXPositionAttribute error:NULL] pointValue], [[object valueForAttribute:kAXPositionAttribute error:NULL] pointValue])) {
+	if (!NSEqualPoints([[self valueForAttribute:(NSString *)kAXPositionAttribute error:NULL] pointValue], [[object valueForAttribute:(NSString *)kAXPositionAttribute error:NULL] pointValue])) {
 		return NO;
 	}
 	return YES;

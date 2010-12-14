@@ -21,5 +21,5 @@
 #import "NSMutableArray+M3Extensions.h"
 #import "NSMutableSet+M3Extensions.h"
 #import "NSString+M3Extensions.h"
-#import "NSView+M3Extensions.h"
 #import "NSXMLElement+M3Extensions.h"
+#import "NSXMLNode+M3Extensions.h"
