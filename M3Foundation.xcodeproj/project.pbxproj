@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
+		992E8096131EAD2B00D45ED3 /* M3KeyValueObserving.h in Headers */ = {isa = PBXBuildFile; fileRef = 992E8094131EAD2B00D45ED3 /* M3KeyValueObserving.h */; };
+		992E8097131EAD2B00D45ED3 /* M3KeyValueObserving.m in Sources */ = {isa = PBXBuildFile; fileRef = 992E8095131EAD2B00D45ED3 /* M3KeyValueObserving.m */; };
 		996007DE10F8C9510070D588 /* M3EncapsulatedURLConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 996007DA10F8C9510070D588 /* M3EncapsulatedURLConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		996007DF10F8C9510070D588 /* M3EncapsulatedURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 996007DB10F8C9510070D588 /* M3EncapsulatedURLConnection.m */; };
 		996007EA10F8C9640070D588 /* NSArray+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 996007E210F8C9640070D588 /* NSArray+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -81,6 +83,8 @@
 		32DBCF5E0370ADEE00C91783 /* M3Foundation_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3Foundation_Prefix.pch; sourceTree = "<group>"; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* M3Foundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = M3Foundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		992E8094131EAD2B00D45ED3 /* M3KeyValueObserving.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3KeyValueObserving.h; sourceTree = "<group>"; };
+		992E8095131EAD2B00D45ED3 /* M3KeyValueObserving.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3KeyValueObserving.m; sourceTree = "<group>"; };
 		996007DA10F8C9510070D588 /* M3EncapsulatedURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3EncapsulatedURLConnection.h; sourceTree = "<group>"; };
 		996007DB10F8C9510070D588 /* M3EncapsulatedURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3EncapsulatedURLConnection.m; sourceTree = "<group>"; };
 		996007E210F8C9640070D588 /* NSArray+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+M3Extensions.h"; sourceTree = "<group>"; };
@@ -256,6 +260,8 @@
 				996007E910F8C9640070D588 /* NSXMLElement+M3Extensions.m */,
 				99A7D91311D397270011B922 /* NSXMLNode+M3Extensions.h */,
 				99A7D91411D397270011B922 /* NSXMLNode+M3Extensions.m */,
+				992E8094131EAD2B00D45ED3 /* M3KeyValueObserving.h */,
+				992E8095131EAD2B00D45ED3 /* M3KeyValueObserving.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -298,6 +304,7 @@
 				996007EE10F8C9640070D588 /* NSString+M3Extensions.h in Headers */,
 				996007F010F8C9640070D588 /* NSXMLElement+M3Extensions.h in Headers */,
 				99A7D91511D397270011B922 /* NSXMLNode+M3Extensions.h in Headers */,
+				992E8096131EAD2B00D45ED3 /* M3KeyValueObserving.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,7 +357,14 @@
 			isa = PBXProject;
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "M3Foundation" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
 			mainGroup = 0867D691FE84028FC02AAC07 /* M3Foundation */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
 			projectDirPath = "";
@@ -417,6 +431,7 @@
 				998859A211B81976007D2911 /* M3DFA.m in Sources */,
 				998859A311B81976007D2911 /* NSMutableSet+M3Extensions.m in Sources */,
 				99A7D91611D397270011B922 /* NSXMLNode+M3Extensions.m in Sources */,
+				992E8097131EAD2B00D45ED3 /* M3KeyValueObserving.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

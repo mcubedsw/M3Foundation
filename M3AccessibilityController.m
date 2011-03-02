@@ -52,7 +52,7 @@ static M3AccessibilityController *defaultController;
 }
 
 - (id)init {
-	if (self = [super init]) {
+	if ((self = [super init])) {
 #if NS_BLOCKS_AVAILABLE
 		NSString *dfa = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"AXPathDFA" ofType:@"txt"] encoding:NSUTF8StringEncoding error:NULL];
 		automata = [[M3DFA alloc] initWithAutomaton:dfa error:NULL];
@@ -104,7 +104,7 @@ static M3AccessibilityController *defaultController;
 	__block CGFloat x = 0;
 	[automata parseString:path outputBlock:^(NSString *output, NSInteger state) {
 		if (state == 3) { //Role
-			[components addObject:[NSMutableDictionary dictionaryWithObject:[output copy] forKey:(NSString *)kAXRoleAttribute]];
+			[components addObject:[NSMutableDictionary dictionaryWithObject:[[output copy] autorelease] forKey:(NSString *)kAXRoleAttribute]];
 		} else if (state == 5) { //Key
 			while ([output hasPrefix:@" "]) {
 				output = [output substringFromIndex:1];
@@ -118,12 +118,12 @@ static M3AccessibilityController *defaultController;
 			[[components lastObject] setObject:[NSNumber numberWithInteger:[output integerValue]] forKey:latestKey];
 		} else if (state == 7) { //String
 			if (latestKey)
-				[[components lastObject] setObject:[output copy] forKey:latestKey];
+				[[components lastObject] setObject:[[output copy] autorelease] forKey:latestKey];
 		} else if (state == 12) { //String or Number
 			NSInteger value = [output integerValue];
 			if (value == 0 && ![output isEqualToString:@"0"]) {
 				if (latestKey)
-					[[components lastObject] setObject:[output copy] forKey:latestKey];
+					[[components lastObject] setObject:[[output copy] autorelease] forKey:latestKey];
 			} else {
 				[[components lastObject] setObject:[NSNumber numberWithInteger:[output integerValue]] forKey:latestKey];
 			}
@@ -141,7 +141,7 @@ static M3AccessibilityController *defaultController;
 			NSArray *keys = [NSArray arrayWithObjects:(NSString *)kAXRoleAttribute, kAXSubroleAttribute, kAXTitleAttribute, @"childCount", @"index", kAXPositionAttribute, nil];
 			
 			for (NSString *key in keys) {
-				NSArray *candidateCopy = [candidates copy];
+				NSArray *candidateCopy = [[candidates copy] autorelease];
 				for (M3AccessibleUIElement *element in candidateCopy) {
 					id object = [dict objectForKey:key];
 					if (object != nil) {

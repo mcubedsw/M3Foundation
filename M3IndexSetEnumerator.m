@@ -43,7 +43,7 @@
 }
 
 - (id)initWithIndexSet:(NSIndexSet *)anIndexSet ascending:(BOOL)asc{
-	if (self = [super init]) {
+	if ((self = [super init])) {
 		indexSet = [anIndexSet copy];
 		isAscending = asc;
 		[self reset];

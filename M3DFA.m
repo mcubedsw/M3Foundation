@@ -46,7 +46,7 @@
 
 
 - (id)initWithAutomaton:(NSString *)aut error:(NSError **)error {
-	if (self = [super init]) {
+	if ((self = [super init])) {
 		initialState = NSNotFound;
 		endStates = [[NSMutableArray alloc] init];
 		automata = [[self parseAutomata:aut error:&*error] retain];
@@ -161,7 +161,7 @@
 		
 		
 		[characterSet addCharactersInString:str];
-		return characterSet;
+		return [characterSet autorelease];
 		
 	} else if ([rule isEqualToString:@"."]) {
 		return @"";

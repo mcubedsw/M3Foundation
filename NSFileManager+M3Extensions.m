@@ -81,9 +81,8 @@ NSString *M3ReadableFileSize = @"M3ReadableFileSize";
 	// Add Size Of All Paths
 	SEL objectAtIndexSEL	= @selector(objectAtIndex:);
 	IMP objectAtIndexIMP	= [contents methodForSelector: objectAtIndexSEL]; //caches the selector, increases speed
-	NSInteger index = 0;
 	NSInteger count = [contents count];
-	for (index; index < count; index++) {
+	for (NSInteger index = 0; index < count; index++) {
 		path = objectAtIndexIMP(contents, objectAtIndexSEL, index);
 		NSDictionary *fileAttributes;
 		if (isDirectory == TRUE)

@@ -48,7 +48,7 @@
 }
 
 - (id)initWithElement:(AXUIElementRef)newElement {
-	if (self = [super init]) {
+	if ((self = [super init])) {
 		element = CFRetain(newElement);
 	}
 	return self;
@@ -209,6 +209,7 @@
 				AXValueGetValue((AXValueRef)value, kAXValueCFRangeType, &rawValue);
 				return [NSValue valueWithRange:rawValue];
 			}
+			default: {}
 		}
 	}
 	if ([value isKindOfClass:[NSArray class]]) {

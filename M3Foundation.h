@@ -23,3 +23,4 @@
 #import "NSString+M3Extensions.h"
 #import "NSXMLElement+M3Extensions.h"
 #import "NSXMLNode+M3Extensions.h"
+#import "M3KeyValueObserving.h"

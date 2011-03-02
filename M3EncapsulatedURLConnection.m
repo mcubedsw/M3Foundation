@@ -35,7 +35,7 @@
 @implementation M3EncapsulatedURLConnection
 
 - (id)initWithRequest:(NSURLRequest *)request delegate:(id)del andIdentifier:(id)ident contextInfo:(NSDictionary *)dict{
-	if (self = [super init]) {
+	if ((self = [super init])) {
 		connectionRequest = [request retain];
 		delegate = del;
 		connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
