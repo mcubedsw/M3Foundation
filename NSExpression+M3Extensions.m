@@ -11,64 +11,89 @@
 
 @implementation NSExpression (M3Extensions)
 
-- (id)_m3_contentObject {
-	NSExpressionType type = [self expressionType];
-	if (type == NSConstantValueExpressionType) {
-		return [[self constantValue] description];
-	} else if (type == NSEvaluatedObjectExpressionType) {
-	} else if (type == NSVariableExpressionType) {
-		return [self variable];
-	} else if (type == NSKeyPathExpressionType) {
-		return [self keyPath];
-	} else if (type == NSFunctionExpressionType) {
-	} else if (type == NSAggregateExpressionType) {
-		return [[self collection] valueForKey:@"m3_xmlRepresentation"];
-	} else if (type == NSSubqueryExpressionType) {
-	} else if (type == NSUnionSetExpressionType) {
-	} else if (type == NSIntersectSetExpressionType) {
-	} else if (type == NSMinusSetExpressionType) {
-	} else if (type == NSBlockExpressionType) {
++ (NSExpression *)m3_expressionFromXMLElement:(NSXMLElement *)aElement {
+	NSString *type = [[aElement attributeForName:@"type"] stringValue];
+	if ([type isEqualToString:@"constant"]) {
+		NSString *valueType = [[aElement attributeForName:@"valueType"] stringValue];
+		id constantValue = nil;
+		if ([valueType isEqualToString:@"string"]) {
+			constantValue = [aElement stringValue];
+		} else if ([valueType isEqualToString:@"double"]) {
+			constantValue = [NSNumber numberWithDouble:[[aElement stringValue] doubleValue]];
+		} else if ([valueType isEqualToString:@"integer"]) {
+			constantValue = [NSNumber numberWithInteger:[[aElement stringValue] integerValue]];
+		}
+		return [NSExpression expressionForConstantValue:constantValue];
+	} else if ([type isEqualToString:@"variable"]) {
+		return [NSExpression expressionForVariable:[aElement stringValue]];
+	} else if ([type isEqualToString:@"keyPath"]) {
+		return [NSExpression expressionForKeyPath:[aElement stringValue]];
+	} else if ([type isEqualToString:@"aggregate"]) {
+		NSMutableArray *aggregate = [NSMutableArray array];
+		for (NSXMLElement *element in [aElement children]) {
+			[aggregate addObject:[NSExpression m3_expressionFromXMLElement:element]];
+		}
+		return [NSExpression expressionForAggregate:aggregate];
+	} else if ([type isEqualToString:@"evaluatedObject"]) {
+		return [NSExpression expressionForEvaluatedObject];
 	}
 	return nil;
 }
 
+- (void)_m3_addContentToElement:(NSXMLElement *)aElement {
+	NSExpressionType type = [self expressionType];
+	//Set the constant value and value type
+	if (type == NSConstantValueExpressionType) {
+		[aElement addAttribute:[NSXMLNode attributeWithName:@"type" stringValue:@"constant"]];
+		
+		NSString *valueType = @"string";
+		if ([[self constantValue] isKindOfClass:[NSNumber class]]) {
+			if (strcmp([[self constantValue] objCType], @encode(int)) == 0) {
+				valueType = @"integer";
+			} else if (strcmp([[self constantValue] objCType], @encode(double)) == 0) {
+				valueType = @"double";
+			}
+			
+		}
+		
+		[aElement addAttribute:[NSXMLNode attributeWithName:@"valueType" stringValue:valueType]];
+		
+		[aElement setStringValue:[[self constantValue] description]];
+	//Set the variable value
+	} else if (type == NSVariableExpressionType) {
+		[aElement addAttribute:[NSXMLNode attributeWithName:@"type" stringValue:@"variable"]];
+		[aElement setStringValue:[self variable]];
+	//Set the key path value
+	} else if (type == NSKeyPathExpressionType) {
+		[aElement addAttribute:[NSXMLNode attributeWithName:@"type" stringValue:@"keyPath"]];
+		[aElement setStringValue:[self keyPath]];
+	//Set the aggregate value
+	} else if (type == NSAggregateExpressionType) {
+		[aElement addAttribute:[NSXMLNode attributeWithName:@"type" stringValue:@"aggregate"]];
+		for (NSExpression *expression in [self collection]) {
+			[aElement addChild:[expression m3_xmlRepresentation]];
+		}
+	//Other types
+	} else if (type == NSEvaluatedObjectExpressionType) {
+		[aElement addAttribute:[NSXMLNode attributeWithName:@"type" stringValue:@"evaluatedObject"]];
+	} else if (type == NSFunctionExpressionType) {
+		[aElement addAttribute:[NSXMLNode attributeWithName:@"type" stringValue:@"function"]];
+	} else if (type == NSSubqueryExpressionType) {
+		[aElement addAttribute:[NSXMLNode attributeWithName:@"type" stringValue:@"subquery"]];
+	} else if (type == NSUnionSetExpressionType) {
+		[aElement addAttribute:[NSXMLNode attributeWithName:@"type" stringValue:@"unionSet"]];
+	} else if (type == NSIntersectSetExpressionType) {
+		[aElement addAttribute:[NSXMLNode attributeWithName:@"type" stringValue:@"intersectSet"]];
+	} else if (type == NSMinusSetExpressionType) {
+		[aElement addAttribute:[NSXMLNode attributeWithName:@"type" stringValue:@"minusSet"]];
+	} else if (type == NSBlockExpressionType) {
+		[aElement addAttribute:[NSXMLNode attributeWithName:@"type" stringValue:@"block"]];
+	}
+}
+
 - (NSXMLElement *)m3_xmlRepresentation {
 	NSXMLElement *expressionElement = [NSXMLElement elementWithName:@"expression"];
-	NSString *typeString = nil;
-	NSExpressionType type = [self expressionType];
-	if (type == NSConstantValueExpressionType) {
-		typeString = @"constantValue";
-	} else if (type == NSEvaluatedObjectExpressionType) {
-		typeString = @"evaluatedObject";
-	} else if (type == NSVariableExpressionType) {
-		typeString = @"variable";
-	} else if (type == NSKeyPathExpressionType) {
-		typeString = @"keypath";
-	} else if (type == NSFunctionExpressionType) {
-		typeString = @"function";
-	} else if (type == NSAggregateExpressionType) {
-		typeString = @"aggregate";
-	} else if (type == NSSubqueryExpressionType) {
-		typeString = @"subquery";
-	} else if (type == NSUnionSetExpressionType) {
-		typeString = @"unionSet";
-	} else if (type == NSIntersectSetExpressionType) {
-		typeString = @"intersectSet";
-	} else if (type == NSMinusSetExpressionType) {
-		typeString = @"minusSet";
-	} else if (type == NSBlockExpressionType) {
-		typeString = @"block";
-	}
-	[expressionElement addAttribute:[NSXMLNode attributeWithName:@"type" stringValue:typeString]];
-	
-	id contentObject = [self _m3_contentObject];
-	if ([contentObject isKindOfClass:[NSString class]]) {
-		[expressionElement setStringValue:contentObject];
-	} else if ([contentObject isKindOfClass:[NSArray class]]) {
-		for (NSXMLNode *node in contentObject) {
-			[expressionElement addChild:node];
-		}
-	}
+	[self _m3_addContentToElement:expressionElement];
 	return expressionElement;
 }
 

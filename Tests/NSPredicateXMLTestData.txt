@@ -1,0 +1,278 @@
+TruePredicate
+====
+<truePredicate/>
+====
+FalsePredicate
+====
+<falsePredicate/>
+====
+EqualTo
+====
+<predicate operatorType="equalTo">
+    <leftExpression type="keyPath">name</leftExpression>
+    <rightExpression type="constant" valueType="string">Bob</rightExpression>
+</predicate>
+====
+LessThan
+====
+<predicate operatorType="lessThan">
+    <leftExpression type="keyPath">children.age</leftExpression>
+    <rightExpression type="constant" valueType="integer">15</rightExpression>
+</predicate>
+====
+LessThanOrEqualTo
+====
+<predicate operatorType="lessThanOrEqualTo">
+    <leftExpression type="keyPath">children.age</leftExpression>
+    <rightExpression type="constant" valueType="integer">15</rightExpression>
+</predicate>
+====
+GreaterThan
+====
+<predicate operatorType="greaterThan">
+    <leftExpression type="keyPath">children.age</leftExpression>
+    <rightExpression type="constant" valueType="integer">15</rightExpression>
+</predicate>
+====
+GreaterThanOrEqualTo
+====
+<predicate operatorType="greaterThanOrEqualTo">
+    <leftExpression type="keyPath">children.age</leftExpression>
+    <rightExpression type="constant" valueType="integer">15</rightExpression>
+</predicate>
+====
+Between
+====
+<predicate operatorType="between">
+    <leftExpression type="keyPath">children.age</leftExpression>
+    <rightExpression type="aggregate">
+        <expression type="constant" valueType="integer">10</expression>
+        <expression type="constant" valueType="integer">21</expression>
+    </rightExpression>
+</predicate>
+====
+Matches
+====
+<predicate operatorType="matches">
+    <leftExpression type="keyPath">children.name</leftExpression>
+    <rightExpression type="constant" valueType="string">F.{1,3}k</rightExpression>
+</predicate>
+====
+Like
+====
+<predicate operatorType="like">
+    <leftExpression type="keyPath">children.name</leftExpression>
+    <rightExpression type="constant" valueType="string">S????</rightExpression>
+</predicate>
+====
+BeginsWith
+====
+<predicate operatorType="beginsWith">
+    <leftExpression type="keyPath">children.name</leftExpression>
+    <rightExpression type="constant" valueType="string">A</rightExpression>
+</predicate>
+====
+EndsWith
+====
+<predicate operatorType="endsWith">
+    <leftExpression type="keyPath">children.name</leftExpression>
+    <rightExpression type="constant" valueType="string">E</rightExpression>
+</predicate>
+====
+Contains
+====
+<predicate operatorType="contains">
+    <leftExpression type="keyPath">children.name</leftExpression>
+    <rightExpression type="constant" valueType="string">l</rightExpression>
+</predicate>
+====
+In
+====
+<predicate operatorType="in">
+    <leftExpression type="keyPath">children.name</leftExpression>
+    <rightExpression type="aggregate">
+        <expression type="constant" valueType="string">Frank</expression>
+        <expression type="constant" valueType="string">Sally</expression>
+        <expression type="constant" valueType="string">Steve</expression>
+        <expression type="constant" valueType="string">Alice</expression>
+    </rightExpression>
+</predicate>
+====
+NoOptions
+====
+<predicate operatorType="equalTo">
+    <leftExpression type="keyPath">name</leftExpression>
+    <rightExpression type="constant" valueType="string">Bob</rightExpression>
+</predicate>
+====
+CaseInsensitive
+====
+<predicate operatorType="equalTo" caseInsensitive="true">
+    <leftExpression type="keyPath">name</leftExpression>
+    <rightExpression type="constant" valueType="string">Bob</rightExpression>
+</predicate>
+====
+DiacriticInsensitive
+====
+<predicate operatorType="equalTo" diacriticInsensitive="true">
+    <leftExpression type="keyPath">name</leftExpression>
+    <rightExpression type="constant" valueType="string">Bob</rightExpression>
+</predicate>
+====
+CaseAndDiacriticInsensitive
+====
+<predicate operatorType="equalTo" caseInsensitive="true" diacriticInsensitive="true">
+    <leftExpression type="keyPath">name</leftExpression>
+    <rightExpression type="constant" valueType="string">Bob</rightExpression>
+</predicate>
+====
+NoModifier
+====
+<predicate operatorType="equalTo">
+    <leftExpression type="keyPath">age</leftExpression>
+    <rightExpression type="constant" valueType="integer">18</rightExpression>
+</predicate>
+====
+AnyModifier
+====
+<predicate operatorType="lessThan" modifier="any">
+    <leftExpression type="keyPath">children.age</leftExpression>
+    <rightExpression type="constant" valueType="integer">18</rightExpression>
+</predicate>
+====
+AllModifier
+====
+<predicate operatorType="lessThan" modifier="all">
+    <leftExpression type="keyPath">children.age</leftExpression>
+    <rightExpression type="constant" valueType="integer">18</rightExpression>
+</predicate>
+====
+NoneModifier
+====
+<predicates type="not">
+    <predicate operatorType="lessThan" modifier="any">
+        <leftExpression type="keyPath">children.age</leftExpression>
+        <rightExpression type="constant" valueType="integer">18</rightExpression>
+    </predicate>
+</predicates>
+====
+StringConstant
+====
+<predicate operatorType="equalTo">
+    <leftExpression type="keyPath">name</leftExpression>
+    <rightExpression type="constant" valueType="string">Bob</rightExpression>
+</predicate>
+====
+IntegerConstant
+====
+<predicate operatorType="equalTo">
+    <leftExpression type="keyPath">name</leftExpression>
+    <rightExpression type="constant" valueType="integer">42</rightExpression>
+</predicate>
+====
+DoubleConstant
+====
+<predicate operatorType="equalTo">
+    <leftExpression type="keyPath">name</leftExpression>
+    <rightExpression type="constant" valueType="double">3.14</rightExpression>
+</predicate>
+====
+Variable
+====
+<predicate operatorType="equalTo">
+    <leftExpression type="keyPath">name</leftExpression>
+    <rightExpression type="variable">VARIABLE</rightExpression>
+</predicate>
+====
+KeyPath
+====
+<predicate operatorType="equalTo">
+    <leftExpression type="keyPath">name</leftExpression>
+    <rightExpression type="keyPath">children.parent.name</rightExpression>
+</predicate>
+====
+Aggregate
+====
+<predicate operatorType="equalTo">
+    <leftExpression type="keyPath">name</leftExpression>
+    <rightExpression type="aggregate">
+        <expression type="constant" valueType="string">X</expression>
+        <expression type="constant" valueType="string">Y</expression>
+        <expression type="constant" valueType="string">Z</expression>
+    </rightExpression>
+</predicate>
+====
+AndCompoundType
+====
+<predicates type="and">
+    <predicate operatorType="equalTo">
+        <leftExpression type="keyPath">name</leftExpression>
+        <rightExpression type="constant" valueType="string">Bob</rightExpression>
+    </predicate>
+    <predicate operatorType="equalTo">
+        <leftExpression type="keyPath">age</leftExpression>
+        <rightExpression type="constant" valueType="integer">18</rightExpression>
+    </predicate>
+</predicates>
+====
+OrCompoundType
+====
+<predicates type="or">
+    <predicate operatorType="equalTo">
+        <leftExpression type="keyPath">name</leftExpression>
+        <rightExpression type="constant" valueType="string">Bob</rightExpression>
+    </predicate>
+    <predicate operatorType="equalTo">
+        <leftExpression type="keyPath">age</leftExpression>
+        <rightExpression type="constant" valueType="integer">18</rightExpression>
+    </predicate>
+</predicates>
+====
+NotCompoundType
+====
+<predicates type="not">
+    <predicate operatorType="equalTo">
+        <leftExpression type="keyPath">name</leftExpression>
+        <rightExpression type="constant" valueType="string">Bob</rightExpression>
+    </predicate>
+</predicates>
+====
+OrAndNestedCompoundType
+====
+<predicates type="or">
+    <predicates type="and">
+        <predicate operatorType="equalTo">
+            <leftExpression type="keyPath">name</leftExpression>
+            <rightExpression type="constant" valueType="string">Bob</rightExpression>
+        </predicate>
+        <predicate operatorType="equalTo">
+            <leftExpression type="keyPath">age</leftExpression>
+            <rightExpression type="constant" valueType="integer">18</rightExpression>
+        </predicate>
+    </predicates>
+    <predicates type="and">
+        <predicate operatorType="equalTo">
+            <leftExpression type="keyPath">name</leftExpression>
+            <rightExpression type="constant" valueType="string">Steve</rightExpression>
+        </predicate>
+        <predicate operatorType="equalTo">
+            <leftExpression type="keyPath">age</leftExpression>
+            <rightExpression type="constant" valueType="integer">21</rightExpression>
+        </predicate>
+    </predicates>
+</predicates>
+====
+NotAndNestedCompoundType
+====
+<predicates type="not">
+    <predicates type="and">
+        <predicate operatorType="equalTo">
+            <leftExpression type="keyPath">name</leftExpression>
+            <rightExpression type="constant" valueType="string">Bob</rightExpression>
+        </predicate>
+        <predicate operatorType="equalTo">
+            <leftExpression type="keyPath">age</leftExpression>
+            <rightExpression type="constant" valueType="integer">18</rightExpression>
+        </predicate>
+    </predicates>
+</predicates>

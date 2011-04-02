@@ -11,6 +11,7 @@
 
 @interface NSExpression (M3Extensions)
 
++ (NSExpression *)m3_expressionFromXMLElement:(NSXMLElement *)aElement;
 - (NSXMLElement *)m3_xmlRepresentation;
 
 @end

@@ -45,6 +45,8 @@
 		9961D6BD1344BE0000103BE6 /* NSPredicate+M3ExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9961D6BA1344BCFC00103BE6 /* NSPredicate+M3ExtensionsTests.m */; };
 		9961D6C01344E64400103BE6 /* NSPredicate+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9961D6BE1344E64400103BE6 /* NSPredicate+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9961D6C11344E64400103BE6 /* NSPredicate+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9961D6BF1344E64400103BE6 /* NSPredicate+M3Extensions.m */; };
+		996EF59B1347507600345D64 /* NSPredicateXMLTestData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 996EF5991347507200345D64 /* NSPredicateXMLTestData.txt */; };
+		996EF59C134751FF00345D64 /* AXPathDFA.txt in Resources */ = {isa = PBXBuildFile; fileRef = 998F76EB11AF135400580AB2 /* AXPathDFA.txt */; };
 		9988599D11B81976007D2911 /* NSMutableArray+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 998F717211AF10F900580AB2 /* NSMutableArray+M3Extensions.m */; };
 		9988599F11B81976007D2911 /* M3IndexSetEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 998F718811AF114400580AB2 /* M3IndexSetEnumerator.m */; };
 		998859A011B81976007D2911 /* M3AccessibilityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 998F76ED11AF135400580AB2 /* M3AccessibilityController.m */; };
@@ -57,7 +59,6 @@
 		998859AD11B819DC007D2911 /* M3AccessibilityController.h in Headers */ = {isa = PBXBuildFile; fileRef = 998F76EC11AF135400580AB2 /* M3AccessibilityController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		998859AE11B819DC007D2911 /* M3AccessibleUIElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 998F76EE11AF135400580AB2 /* M3AccessibleUIElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		998859AF11B819DC007D2911 /* M3DFA.h in Headers */ = {isa = PBXBuildFile; fileRef = 998F76F011AF135400580AB2 /* M3DFA.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		998F76F211AF135400580AB2 /* AXPathDFA.txt in Resources */ = {isa = PBXBuildFile; fileRef = 998F76EB11AF135400580AB2 /* AXPathDFA.txt */; };
 		99A7D91511D397270011B922 /* NSXMLNode+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 99A7D91311D397270011B922 /* NSXMLNode+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99A7D91611D397270011B922 /* NSXMLNode+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A7D91411D397270011B922 /* NSXMLNode+M3Extensions.m */; };
 /* End PBXBuildFile section */
@@ -135,6 +136,7 @@
 		9961D6BA1344BCFC00103BE6 /* NSPredicate+M3ExtensionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPredicate+M3ExtensionsTests.m"; sourceTree = "<group>"; };
 		9961D6BE1344E64400103BE6 /* NSPredicate+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPredicate+M3Extensions.h"; sourceTree = "<group>"; };
 		9961D6BF1344E64400103BE6 /* NSPredicate+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPredicate+M3Extensions.m"; sourceTree = "<group>"; };
+		996EF5991347507200345D64 /* NSPredicateXMLTestData.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NSPredicateXMLTestData.txt; sourceTree = "<group>"; };
 		998F717111AF10F900580AB2 /* NSMutableArray+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+M3Extensions.h"; sourceTree = "<group>"; };
 		998F717211AF10F900580AB2 /* NSMutableArray+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+M3Extensions.m"; sourceTree = "<group>"; };
 		998F718711AF114400580AB2 /* M3IndexSetEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3IndexSetEnumerator.h; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 				99600D9E10F8D5150070D588 /* NSString+M3ExtensionsTest.m */,
 				9961D6B91344BCFC00103BE6 /* NSPredicate+M3ExtensionsTests.h */,
 				9961D6BA1344BCFC00103BE6 /* NSPredicate+M3ExtensionsTests.m */,
+				996EF5991347507200345D64 /* NSPredicateXMLTestData.txt */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */,
+				996EF59C134751FF00345D64 /* AXPathDFA.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,7 +433,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				998F76F211AF135400580AB2 /* AXPathDFA.txt in Resources */,
+				996EF59B1347507600345D64 /* NSPredicateXMLTestData.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
