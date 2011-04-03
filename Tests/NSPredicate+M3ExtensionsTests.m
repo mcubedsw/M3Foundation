@@ -299,51 +299,106 @@ static NSDictionary *testData;
 }
 
 - (void)testInputNoneModifier {
+	NSCompoundPredicate *predicate = [self _predicateForMethod:_cmd];
+	STAssertTrue([predicate isKindOfClass:[NSCompoundPredicate class]], @"Parsed predicate isn't a compound predicate");
+	STAssertTrue([[predicate subpredicates] count] == 1, @"Parsed predicate doesn't have 1 sub predicate");
+	STAssertTrue([predicate compoundPredicateType] == NSNotPredicateType, @"Parsed predicate isn't a not predicate");
 	
+	STAssertTrue([[[predicate subpredicates] objectAtIndex:0] comparisonPredicateModifier] == NSAnyPredicateModifier, @"Parsed predicate doesn't have an any modifier");
 }
 
 - (void)testInputStringConstant {
-	
+	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
+	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
+	STAssertTrue([[predicate rightExpression] expressionType] == NSConstantValueExpressionType, @"Parsed predicate doesn't have a constant string expression");
+	STAssertEqualObjects([[predicate rightExpression] constantValue], @"Bob", @"Parsed predicate doesn't have a constant string expression");
 }
 
 - (void)testInputIntegerConstant {
-	
+	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
+	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
+	STAssertTrue([[predicate rightExpression] expressionType] == NSConstantValueExpressionType, @"Parsed predicate doesn't have a constant string expression");
+	STAssertEqualObjects([[predicate rightExpression] constantValue], [NSNumber numberWithInteger:42], @"Parsed predicate doesn't have a constant integer expression");
 }
 
 - (void)testInputDoubleConstant {
-	
+	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
+	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
+	STAssertTrue([[predicate rightExpression] expressionType] == NSConstantValueExpressionType, @"Parsed predicate doesn't have a constant string expression");
+	STAssertEqualObjects([[predicate rightExpression] constantValue], [NSNumber numberWithDouble:3.14], @"Parsed predicate doesn't have a constant double expression");
 }
 
 - (void)testInputVariable {
-	
+	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
+	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
+	STAssertTrue([[predicate rightExpression] expressionType] == NSVariableExpressionType, @"Parsed predicate doesn't have a constant string expression");
+	STAssertEqualObjects([[predicate rightExpression] variable], @"VARIABLE", @"Parsed predicate doesn't have a variable expression");
 }
 
 - (void)testInputKeyPath {
-	
+	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
+	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
+	STAssertTrue([[predicate rightExpression] expressionType] == NSKeyPathExpressionType, @"Parsed predicate doesn't have a constant string expression");
+	STAssertEqualObjects([[predicate rightExpression] keyPath], @"children.parent.name", @"Parsed predicate doesn't have a keyPath expression");
 }
 
 - (void)testInputAggregate {
+	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
+	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
+	STAssertTrue([[predicate rightExpression] expressionType] == NSAggregateExpressionType, @"Parsed predicate doesn't have a constant string expression");
+	NSArray *collection = [[predicate rightExpression] collection];
+	STAssertTrue([collection count] == 3, @"Expression collection doesn't have 3 items");
 	
+	STAssertEqualObjects([[collection objectAtIndex:0] constantValue], @"X", @"1st Expression collection object isn't X");
+	STAssertEqualObjects([[collection objectAtIndex:1] constantValue], @"Y", @"2nd Expression collection object isn't Y");
+	STAssertEqualObjects([[collection objectAtIndex:2] constantValue], @"Z", @"3rd Expression collection object isn't Z");
 }
 
 - (void)testInputAndCompoundType {
-	
+	NSCompoundPredicate *predicate = [self _predicateForMethod:_cmd];
+	STAssertTrue([predicate isKindOfClass:[NSCompoundPredicate class]], @"Parsed predicate isn't a compound predicate");
+	STAssertTrue([[predicate subpredicates] count] == 2, @"Parsed predicate doesn't have 2 sub predicates");
+	STAssertTrue([predicate compoundPredicateType] == NSAndPredicateType, @"Parsed predicate isn't an and predicate");
 }
 
 - (void)testInputOrCompoundType {
-	
+	NSCompoundPredicate *predicate = [self _predicateForMethod:_cmd];
+	STAssertTrue([predicate isKindOfClass:[NSCompoundPredicate class]], @"Parsed predicate isn't a compound predicate");
+	STAssertTrue([[predicate subpredicates] count] == 2, @"Parsed predicate doesn't have 2 sub predicates");
+	STAssertTrue([predicate compoundPredicateType] == NSOrPredicateType, @"Parsed predicate isn't an or predicate");
 }
 
 - (void)testInputNotCompoundType {
-	
+	NSCompoundPredicate *predicate = [self _predicateForMethod:_cmd];
+	STAssertTrue([predicate isKindOfClass:[NSCompoundPredicate class]], @"Parsed predicate isn't a compound predicate");
+	STAssertTrue([[predicate subpredicates] count] == 1, @"Parsed predicate doesn't have 1 sub predicate");
+	STAssertTrue([predicate compoundPredicateType] == NSNotPredicateType, @"Parsed predicate isn't a not predicate");
 }
 
 - (void)testInputOrAndNestedCompoundType {
+	NSCompoundPredicate *predicate = [self _predicateForMethod:_cmd];
+	STAssertTrue([predicate isKindOfClass:[NSCompoundPredicate class]], @"Parsed predicate isn't a compound predicate");
+	STAssertTrue([[predicate subpredicates] count] == 2, @"Parsed predicate doesn't have 2 sub predicates");
+	STAssertTrue([predicate compoundPredicateType] == NSOrPredicateType, @"Parsed predicate isn't an or predicate");
 	
+	for (NSCompoundPredicate *subpredicate in [predicate subpredicates]) {
+		STAssertTrue([subpredicate isKindOfClass:[NSCompoundPredicate class]], @"Parsed predicate isn't a compound predicate");
+		STAssertTrue([[subpredicate subpredicates] count] == 2, @"Parsed predicate doesn't have 2 sub predicates");
+		STAssertTrue([subpredicate compoundPredicateType] == NSAndPredicateType, @"Parsed predicate isn't an and predicate");
+	}
 }
 
 - (void)testInputNotAndNestedCompoundType {
+	NSCompoundPredicate *predicate = [self _predicateForMethod:_cmd];
+	STAssertTrue([predicate isKindOfClass:[NSCompoundPredicate class]], @"Parsed predicate isn't a compound predicate");
+	STAssertTrue([[predicate subpredicates] count] == 1, @"Parsed predicate doesn't have 1 sub predicate");
+	STAssertTrue([predicate compoundPredicateType] == NSNotPredicateType, @"Parsed predicate isn't a not predicate");
 	
+	for (NSCompoundPredicate *subpredicate in [predicate subpredicates]) {
+		STAssertTrue([subpredicate isKindOfClass:[NSCompoundPredicate class]], @"Parsed predicate isn't a compound predicate");
+		STAssertTrue([[subpredicate subpredicates] count] == 2, @"Parsed predicate doesn't have 2 sub predicates");
+		STAssertTrue([subpredicate compoundPredicateType] == NSAndPredicateType, @"Parsed predicate isn't an and predicate");
+	}
 }
 
 @end

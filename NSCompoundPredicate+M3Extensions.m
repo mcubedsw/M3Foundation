@@ -12,6 +12,26 @@
 
 @implementation NSCompoundPredicate (M3Extensions)
 
++ (NSPredicate *)m3_predicateFromXMLElement:(NSXMLElement *)aElement {
+	NSMutableArray *subpredicates = [NSMutableArray array];
+	for (NSXMLElement *subpred in [aElement elementsForName:@"predicate"]) {
+		[subpredicates addObject:[NSPredicate m3_predicateFromXMLElement:subpred]];
+	}
+	for (NSXMLElement *subpred in [aElement elementsForName:@"predicates"]) {
+		[subpredicates addObject:[NSPredicate m3_predicateFromXMLElement:subpred]];
+	}
+	
+	NSString *type = [[aElement attributeForName:@"type"] stringValue];
+	if ([type isEqualToString:@"and"]) {
+		return [NSCompoundPredicate andPredicateWithSubpredicates:subpredicates];
+	} else if ([type isEqualToString:@"or"]) {
+		return [NSCompoundPredicate orPredicateWithSubpredicates:subpredicates];
+	} else if ([type isEqualToString:@"not"] && [subpredicates count] == 1) {
+		return [NSCompoundPredicate notPredicateWithSubpredicate:[subpredicates objectAtIndex:0]];
+	}
+	return nil;
+}
+
 - (NSString *)_m3_compoundPredicateTypeString {
 	switch ([self compoundPredicateType]) {
 		case NSAndPredicateType:
