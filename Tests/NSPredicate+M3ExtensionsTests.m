@@ -227,51 +227,75 @@ static NSDictionary *testData;
 }
 
 - (void)testInputLike {
-	
+	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
+	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
+	STAssertTrue([predicate predicateOperatorType] == NSLikePredicateOperatorType, @"Parsed predicate isn't a like predicate");
 }
 
 - (void)testInputBeginsWith {
-	
+	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
+	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
+	STAssertTrue([predicate predicateOperatorType] == NSBeginsWithPredicateOperatorType, @"Parsed predicate isn't a beginsWith predicate");
 }
 
 - (void)testInputEndsWith {
-	
+	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
+	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
+	STAssertTrue([predicate predicateOperatorType] == NSEndsWithPredicateOperatorType, @"Parsed predicate isn't an ends with predicate");
 }
 
 - (void)testInputContains {
-	
+	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
+	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
+	STAssertTrue([predicate predicateOperatorType] == NSContainsPredicateOperatorType, @"Parsed predicate isn't a contains predicate");
 }
 
 - (void)testInputIn {
-	
+	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
+	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
+	STAssertTrue([predicate predicateOperatorType] == NSInPredicateOperatorType, @"Parsed predicate isn't a matches predicate");
 }
 
 - (void)testInputNoOptions {
-	
+	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
+	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
+	STAssertTrue([predicate options] == 0, @"Parsed predicate doesn't have no options");
 }
 
 - (void)testInputCaseInsensitive {
-	
+	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
+	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
+	STAssertTrue([predicate options] & NSCaseInsensitivePredicateOption, @"Parsed predicate doesn't have a case insensitive option");
 }
 
 - (void)testInputDiacriticInsensitive {
-	
+	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
+	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
+	STAssertTrue([predicate options] & NSDiacriticInsensitivePredicateOption, @"Parsed predicate doesn't have a diacritic insensitive option");
 }
 
 - (void)testInputCaseAndDiacriticInsensitive {
-	
+	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
+	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
+	STAssertTrue([predicate options] & NSDiacriticInsensitivePredicateOption && [predicate options] & NSCaseInsensitivePredicateOption, @"Parsed predicate doesn't have case and diacritic insensitive options");
 }
 
 - (void)testInputNoModifier {
-	
+	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
+	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
+	STAssertTrue([predicate comparisonPredicateModifier] == NSDirectPredicateModifier, @"Parsed predicate doesn't have a direct modifier");
 }
 
 - (void)testInputAnyModifier {
-	
+	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
+	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
+	STAssertTrue([predicate comparisonPredicateModifier] == NSAnyPredicateModifier, @"Parsed predicate doesn't have an any modifier");
 }
 
 - (void)testInputAllModifier {
-	
+	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
+	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
+	STAssertTrue([predicate comparisonPredicateModifier] == NSAllPredicateModifier, @"Parsed predicate doesn't have an all modifier");
 }
 
 - (void)testInputNoneModifier {

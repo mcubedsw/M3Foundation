@@ -40,10 +40,10 @@
 	
 	NSUInteger options = 0;
 	if ([aElement attributeForName:@"caseInsensitive"]) {
-		options &= NSCaseInsensitivePredicateOption;
+		options |= NSCaseInsensitivePredicateOption;
 	}
 	if ([aElement attributeForName:@"diacriticInsensitive"]) {
-		options &= NSDiacriticInsensitivePredicateOption;
+		options |= NSDiacriticInsensitivePredicateOption;
 	}
 	
 	return [NSComparisonPredicate predicateWithLeftExpression:leftExpression rightExpression:rightExpression modifier:modifier type:operator options:options];
