@@ -18,4 +18,8 @@
 	aBlock();
 }
 
+- (void)m3_performBlock:(void (^)(void))aBlock afterDelay:(NSTimeInterval)aInterval inModes:(NSArray *)aArray {
+	[self performSelector:@selector(_m3_performBlock:) withObject:[aBlock copy] afterDelay:aInterval inModes:aArray];
+}
+
 @end

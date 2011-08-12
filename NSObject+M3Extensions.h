@@ -11,5 +11,6 @@
 @interface NSObject (M3Extensions)
 
 - (void)m3_performBlock:(void (^)(void))aBlock afterDelay:(NSTimeInterval)aInterval;
+- (void)m3_performBlock:(void (^)(void))aBlock afterDelay:(NSTimeInterval)aInterval inModes:(NSArray *)aArray;
 
 @end

@@ -19,6 +19,7 @@
 #import "NSArray+M3Extensions.h"
 #import "NSFileManager+M3Extensions.h"
 #import "NSMutableArray+M3Extensions.h"
+#import "NSMutableDictionary+M3Extensions.h"
 #import "NSMutableSet+M3Extensions.h"
 #import "NSObject+M3Extensions.h"
 #import "NSPredicate+M3Extensions.h"

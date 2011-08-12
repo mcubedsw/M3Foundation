@@ -66,4 +66,11 @@ OTHER DEALINGS IN THE SOFTWARE.
 	return nil;
 }
 
+- (id)m3_objectPassingTest:(BOOL (^)(id aObj))aTest {
+	NSArray *objects = [self filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+		return aTest(evaluatedObject);
+	}]];
+	return [objects m3_safeObjectAtIndex:0];
+}
+
 @end

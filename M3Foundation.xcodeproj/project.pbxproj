@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -59,6 +59,8 @@
 		998859AD11B819DC007D2911 /* M3AccessibilityController.h in Headers */ = {isa = PBXBuildFile; fileRef = 998F76EC11AF135400580AB2 /* M3AccessibilityController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		998859AE11B819DC007D2911 /* M3AccessibleUIElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 998F76EE11AF135400580AB2 /* M3AccessibleUIElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		998859AF11B819DC007D2911 /* M3DFA.h in Headers */ = {isa = PBXBuildFile; fileRef = 998F76F011AF135400580AB2 /* M3DFA.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9994863F1358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9994863D1358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		999486401358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9994863E1358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.m */; };
 		99A7D91511D397270011B922 /* NSXMLNode+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 99A7D91311D397270011B922 /* NSXMLNode+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99A7D91611D397270011B922 /* NSXMLNode+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A7D91411D397270011B922 /* NSXMLNode+M3Extensions.m */; };
 /* End PBXBuildFile section */
@@ -150,6 +152,8 @@
 		998F76F111AF135400580AB2 /* M3DFA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3DFA.m; sourceTree = "<group>"; };
 		998F76F811AF138C00580AB2 /* NSMutableSet+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableSet+M3Extensions.h"; sourceTree = "<group>"; };
 		998F76F911AF138C00580AB2 /* NSMutableSet+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableSet+M3Extensions.m"; sourceTree = "<group>"; };
+		9994863D1358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+M3Extensions.h"; sourceTree = "<group>"; };
+		9994863E1358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+M3Extensions.m"; sourceTree = "<group>"; };
 		99A7D91311D397270011B922 /* NSXMLNode+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSXMLNode+M3Extensions.h"; sourceTree = "<group>"; };
 		99A7D91411D397270011B922 /* NSXMLNode+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSXMLNode+M3Extensions.m"; sourceTree = "<group>"; };
 		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
@@ -277,6 +281,8 @@
 				996007E510F8C9640070D588 /* NSFileManager+M3Extensions.m */,
 				998F717111AF10F900580AB2 /* NSMutableArray+M3Extensions.h */,
 				998F717211AF10F900580AB2 /* NSMutableArray+M3Extensions.m */,
+				9994863D1358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.h */,
+				9994863E1358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.m */,
 				998F76F811AF138C00580AB2 /* NSMutableSet+M3Extensions.h */,
 				998F76F911AF138C00580AB2 /* NSMutableSet+M3Extensions.m */,
 				990F989A13437290000E336B /* NSObject+M3Extensions.h */,
@@ -348,6 +354,7 @@
 				9960245813460BFF0029725D /* NSCompoundPredicate+M3Extensions.h in Headers */,
 				9960245C13460D800029725D /* NSComparisonPredicate+M3Extensions.h in Headers */,
 				99602460134620430029725D /* NSExpression+M3Extensions.h in Headers */,
+				9994863F1358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,8 +405,11 @@
 /* Begin PBXProject section */
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "M3Foundation" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -481,6 +491,7 @@
 				9960245913460BFF0029725D /* NSCompoundPredicate+M3Extensions.m in Sources */,
 				9960245D13460D800029725D /* NSComparisonPredicate+M3Extensions.m in Sources */,
 				99602461134620430029725D /* NSExpression+M3Extensions.m in Sources */,
+				999486401358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,7 +538,6 @@
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_ENABLE_OBJC_GC = supported;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -570,11 +580,11 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = NS_BUILD_32_LIKE_64;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				ONLY_ACTIVE_ARCH = YES;
-				PREBINDING = NO;
 				SDKROOT = macosx10.6;
 			};
 			name = Debug;
@@ -588,10 +598,10 @@
 				GCC_ENABLE_OBJC_GC = supported;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_VERSION = 4.2;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
-				PREBINDING = NO;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx10.6;
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -607,7 +617,6 @@
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_MODEL_TUNING = G5;
@@ -623,7 +632,6 @@
 					"-framework",
 					SenTestingKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = M3FoundationTests;
 				WRAPPER_EXTENSION = octest;
 			};
@@ -637,11 +645,11 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "M3FoundationTests-Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
 				OTHER_LDFLAGS = (
@@ -650,7 +658,6 @@
 					"-framework",
 					SenTestingKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = M3FoundationTests;
 				WRAPPER_EXTENSION = octest;
 				ZERO_LINK = NO;

@@ -44,7 +44,8 @@
 
 - (id)transformedValue:(id)value {
 	if ([value isKindOfClass:[NSString class]]) {
-		return [value componentsSeparatedByString:@","];
+		if ([value length])
+			return [value componentsSeparatedByString:@","];
 	}
 	return nil;
 }

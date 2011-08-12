@@ -34,7 +34,6 @@
 	NSPredicateOperatorType operator = NSEqualToPredicateOperatorType;
 	if ([aElement attributeForName:@"operatorType"]) {
 		NSNumber *value = [[[self _m3_operatorTypeMap] allKeysForObject:[[aElement attributeForName:@"operatorType"] stringValue]] m3_safeObjectAtIndex:0];
-		NSLog(@"%@", [aElement attributeForName:@"operatorType"]);
 		operator = [value integerValue];
 	}
 	

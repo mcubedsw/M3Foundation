@@ -64,4 +64,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 - (id)m3_safeObjectAtIndex:(NSUInteger)aIndex;
 
 
+- (id)m3_objectPassingTest:(BOOL (^)(id aObj))aTest;
+
+
 @end

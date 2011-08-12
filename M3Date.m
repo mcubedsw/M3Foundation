@@ -44,7 +44,7 @@
 	if (agoIndex == NSNotFound) {
 		agoIndex = [stringComponents indexOfObject:@"before"];
 	}
-	NSInteger location = 0, length = 0;
+	NSInteger location = 0, length = [stringComponents count];
 	if (agoIndex != NSNotFound) {
 		if (agoIndex < ([stringComponents count] - 1)) {
 			location = agoIndex + 1;
@@ -212,7 +212,7 @@
 		endDate = [[NSCalendar currentCalendar] dateFromComponents:endComponents];
 	}
 	if ([string hasPrefix:@"since"]) {
-		startDate = [M3Date dateWithNaturalLanguageString:string locale:nil];
+		startDate = [M3Date dateWithNaturalLanguageString:[string substringFromIndex:6] locale:nil];
 		endDate = [NSDate date];
 	}
 	if ([string hasPrefix:@"before"]) {
