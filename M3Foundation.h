@@ -14,9 +14,11 @@
 #import "M3EncapsulatedURLConnection.h"
 #import "M3FileSizeValueTransformer.h"
 #import "M3IndexSetEnumerator.h"
+#import "M3URLConnectionOperation.h"
 
 //Categories
 #import "NSArray+M3Extensions.h"
+#import "NSExpression+M3Extensions.h"
 #import "NSFileManager+M3Extensions.h"
 #import "NSMutableArray+M3Extensions.h"
 #import "NSMutableDictionary+M3Extensions.h"

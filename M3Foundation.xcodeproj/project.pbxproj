@@ -11,6 +11,8 @@
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 		990F989C13437290000E336B /* NSObject+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 990F989A13437290000E336B /* NSObject+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		990F989D13437290000E336B /* NSObject+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 990F989B13437290000E336B /* NSObject+M3Extensions.m */; };
+		9911BEB51421319200BE7671 /* M3URLConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9911BEB31421319200BE7671 /* M3URLConnectionOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9911BEB61421319200BE7671 /* M3URLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9911BEB41421319200BE7671 /* M3URLConnectionOperation.m */; };
 		992E8096131EAD2B00D45ED3 /* M3KeyValueObserving.h in Headers */ = {isa = PBXBuildFile; fileRef = 992E8094131EAD2B00D45ED3 /* M3KeyValueObserving.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		992E8097131EAD2B00D45ED3 /* M3KeyValueObserving.m in Sources */ = {isa = PBXBuildFile; fileRef = 992E8095131EAD2B00D45ED3 /* M3KeyValueObserving.m */; };
 		996007DE10F8C9510070D588 /* M3EncapsulatedURLConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 996007DA10F8C9510070D588 /* M3EncapsulatedURLConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -40,7 +42,7 @@
 		9960245913460BFF0029725D /* NSCompoundPredicate+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9960245713460BFF0029725D /* NSCompoundPredicate+M3Extensions.m */; };
 		9960245C13460D800029725D /* NSComparisonPredicate+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9960245A13460D800029725D /* NSComparisonPredicate+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9960245D13460D800029725D /* NSComparisonPredicate+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9960245B13460D800029725D /* NSComparisonPredicate+M3Extensions.m */; };
-		99602460134620430029725D /* NSExpression+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9960245E134620430029725D /* NSExpression+M3Extensions.h */; };
+		99602460134620430029725D /* NSExpression+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9960245E134620430029725D /* NSExpression+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99602461134620430029725D /* NSExpression+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9960245F134620430029725D /* NSExpression+M3Extensions.m */; };
 		9961D6BD1344BE0000103BE6 /* NSPredicate+M3ExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9961D6BA1344BCFC00103BE6 /* NSPredicate+M3ExtensionsTests.m */; };
 		9961D6C01344E64400103BE6 /* NSPredicate+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9961D6BE1344E64400103BE6 /* NSPredicate+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -99,6 +101,8 @@
 		8DC2EF5B0486A6940098B216 /* M3Foundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = M3Foundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		990F989A13437290000E336B /* NSObject+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+M3Extensions.h"; sourceTree = "<group>"; };
 		990F989B13437290000E336B /* NSObject+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+M3Extensions.m"; sourceTree = "<group>"; };
+		9911BEB31421319200BE7671 /* M3URLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3URLConnectionOperation.h; sourceTree = "<group>"; };
+		9911BEB41421319200BE7671 /* M3URLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3URLConnectionOperation.m; sourceTree = "<group>"; };
 		992E8094131EAD2B00D45ED3 /* M3KeyValueObserving.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3KeyValueObserving.h; sourceTree = "<group>"; };
 		992E8095131EAD2B00D45ED3 /* M3KeyValueObserving.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3KeyValueObserving.m; sourceTree = "<group>"; };
 		996007DA10F8C9510070D588 /* M3EncapsulatedURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3EncapsulatedURLConnection.h; sourceTree = "<group>"; };
@@ -242,6 +246,8 @@
 				9960080510F8C9980070D588 /* M3FileSizeValueTransformer.m */,
 				998F718711AF114400580AB2 /* M3IndexSetEnumerator.h */,
 				998F718811AF114400580AB2 /* M3IndexSetEnumerator.m */,
+				9911BEB31421319200BE7671 /* M3URLConnectionOperation.h */,
+				9911BEB41421319200BE7671 /* M3URLConnectionOperation.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -352,8 +358,9 @@
 				990F989C13437290000E336B /* NSObject+M3Extensions.h in Headers */,
 				9961D6C01344E64400103BE6 /* NSPredicate+M3Extensions.h in Headers */,
 				9960245813460BFF0029725D /* NSCompoundPredicate+M3Extensions.h in Headers */,
-				9960245C13460D800029725D /* NSComparisonPredicate+M3Extensions.h in Headers */,
 				99602460134620430029725D /* NSExpression+M3Extensions.h in Headers */,
+				9911BEB51421319200BE7671 /* M3URLConnectionOperation.h in Headers */,
+				9960245C13460D800029725D /* NSComparisonPredicate+M3Extensions.h in Headers */,
 				9994863F1358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -492,6 +499,7 @@
 				9960245D13460D800029725D /* NSComparisonPredicate+M3Extensions.m in Sources */,
 				99602461134620430029725D /* NSExpression+M3Extensions.m in Sources */,
 				999486401358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.m in Sources */,
+				9911BEB61421319200BE7671 /* M3URLConnectionOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
