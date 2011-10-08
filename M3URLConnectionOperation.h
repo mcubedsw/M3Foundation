@@ -17,5 +17,6 @@
 
 - (void)setDownloadCompletionBlock:(void(^)(NSInteger aResponse, NSData *aData, NSError *aError))aBlock;
 @property (readonly) NSURLRequest *request;
+@property (assign) BOOL shouldAutomaticallyRetryAfterTimeOut;
 
 @end
