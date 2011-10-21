@@ -137,14 +137,6 @@
 - (BOOL)setValue:(id)value forAttribute:(NSString *)attribute error:(NSError **)error;
 
 /**
- Returns the path for the element, to allow referencing between launches
- @discussion This cannot be parsed by M3Foundation if running on an OS prior to 10.6
- @result The path to the element
- @since Available in M3Foundation 1.0 and later
- */
-- (NSString *)path;
-
-/**
  Returns the process ID for the represented element
  @param error A pointer to an NSError object
  @result The process ID for the represented element

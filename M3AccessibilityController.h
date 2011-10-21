@@ -43,10 +43,6 @@ extern NSString *M3AccessibilityErrorDomain;
  */
 @interface M3AccessibilityController : NSObject {
 	M3AccessibleUIElement *systemWideElement;
-
-#if NS_BLOCKS_AVAILABLE
-	M3DFA *automata;
-#endif
 }
 
 
@@ -72,6 +68,8 @@ extern NSString *M3AccessibilityErrorDomain;
  */
 - (M3AccessibleUIElement *)elementForActiveApplication;
 
+- (M3AccessibleUIElement *)elementForApplicationWithPid:(pid_t)processid;
+
 /**
  Returns the system wide element, which represents no single application.
  @result Returns the system wide element
@@ -87,20 +85,6 @@ extern NSString *M3AccessibilityErrorDomain;
  @since Available in M3Foundation 1.0 and later
  */
 - (M3AccessibleUIElement *)elementAtPosition:(NSPoint)point error:(NSError **)error;
-
-#if NS_BLOCKS_AVAILABLE
-
-/**
- Tries to find an element matching the supplied path.
- <b>Discussion</b>
- There isn't a guarantee that an element will be found, or that it will be the exact element that was expected. This method
- tries to match as many attributes as possible and return at least something.
- @param path The path to use to find an element
- @result Return the UI element that best matches the path, if one exists
- @since Available in M3Foundation 1.0 and later
- */
-- (M3AccessibleUIElement *)elementForPath:(NSString *)path;
-#endif
 
 
 /**

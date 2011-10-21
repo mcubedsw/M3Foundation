@@ -53,19 +53,12 @@ static M3AccessibilityController *defaultController;
 
 - (id)init {
 	if ((self = [super init])) {
-#if NS_BLOCKS_AVAILABLE
-		NSString *dfa = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"AXPathDFA" ofType:@"txt"] encoding:NSUTF8StringEncoding error:NULL];
-		automata = [[M3DFA alloc] initWithAutomaton:dfa error:NULL];
-#endif
 	}
 	return self;
 }
 
 - (void)dealloc {
 	[systemWideElement release];
-#if NS_BLOCKS_AVAILABLE
-	[automata release];
-#endif
 	[super dealloc];
 }
 
@@ -96,94 +89,6 @@ static M3AccessibilityController *defaultController;
 	return [[systemWideElement retain] autorelease];
 }
 
-#if NS_BLOCKS_AVAILABLE
-
-- (M3AccessibleUIElement *)elementForPath:(NSString *)path {
-	NSMutableArray *components = [NSMutableArray array];
-	__block NSString *latestKey = nil;
-	__block CGFloat x = 0;
-	[automata parseString:path outputBlock:^(NSString *output, NSInteger state) {
-		if (state == 3) { //Role
-			[components addObject:[NSMutableDictionary dictionaryWithObject:[[output copy] autorelease] forKey:(NSString *)kAXRoleAttribute]];
-		} else if (state == 5) { //Key
-			while ([output hasPrefix:@" "]) {
-				output = [output substringFromIndex:1];
-			}
-			latestKey = [output copy];
-		} else if (state == 10) { //PosX
-			x = [output floatValue];
-		} else if (state == 11) { //PosY
-			[[components lastObject] setObject:[NSValue valueWithPoint:CGPointMake(x, [output floatValue])] forKey:latestKey];
-		} else if (state == 4) { //Number
-			[[components lastObject] setObject:[NSNumber numberWithInteger:[output integerValue]] forKey:latestKey];
-		} else if (state == 7) { //String
-			if (latestKey)
-				[[components lastObject] setObject:[[output copy] autorelease] forKey:latestKey];
-		} else if (state == 12) { //String or Number
-			NSInteger value = [output integerValue];
-			if (value == 0 && ![output isEqualToString:@"0"]) {
-				if (latestKey)
-					[[components lastObject] setObject:[[output copy] autorelease] forKey:latestKey];
-			} else {
-				[[components lastObject] setObject:[NSNumber numberWithInteger:[output integerValue]] forKey:latestKey];
-			}
-		}
-	}];
-	
-	M3AccessibleUIElement *currentElement = nil;
-	for (NSDictionary *dict in components) {
-		if ([[dict objectForKey:(NSString *)kAXRoleAttribute] isEqualToString:(NSString *)kAXApplicationRole]) {
-			pid_t processid = [[[NSRunningApplication runningApplicationsWithBundleIdentifier:[dict objectForKey:@"bundle"]] objectAtIndex:0] processIdentifier];
-			currentElement = [self elementForApplicationWithPid:processid];
-		} else {
-			NSMutableArray *candidates = [NSMutableArray arrayWithArray:[currentElement valueForAttribute:(NSString *)kAXChildrenAttribute error:NULL]];
-			
-			NSArray *keys = [NSArray arrayWithObjects:(NSString *)kAXRoleAttribute, kAXSubroleAttribute, kAXTitleAttribute, @"childCount", @"index", kAXPositionAttribute, nil];
-			
-			for (NSString *key in keys) {
-				NSArray *candidateCopy = [[candidates copy] autorelease];
-				for (M3AccessibleUIElement *element in candidateCopy) {
-					id object = [dict objectForKey:key];
-					if (object != nil) {
-						if ([key isEqualToString:@"childCount"]) {
-							if ([object integerValue] != [[element valueForAttribute:(NSString *)kAXChildrenAttribute error:NULL] count]) {
-								[candidates removeObject:element];
-							}
-						} else if ([key isEqualToString:@"index"]) {
-							M3AccessibleUIElement *parent = [element valueForAttribute:(NSString *)kAXParentAttribute error:NULL];
-							if ([object integerValue] != [[parent valueForAttribute:(NSString *)kAXChildrenAttribute error:NULL] indexOfObject:element]) {
-								[candidates removeObject:element];
-							}
-						} else if ([key isEqualToString:(NSString *)kAXTitleAttribute]) {
-							if (![[element valueForAttribute:key error:NULL] isEqual:object]) {
-								if (![[[[element valueForAttribute:(NSString *)kAXTitleUIElementAttribute error:NULL] valueForAttribute:(NSString *)kAXValueAttribute error:NULL] description] isEqual:object]) {
-									[candidates removeObject:element];
-								}
-							}
-						} else {
-							if (![[element valueForAttribute:key error:NULL] isEqual:object]) {
-								[candidates removeObject:element];
-							}
-						}
-					}
-				}
-				if ([candidates count] == 1)
-					break;
-				if ([candidates count] == 0) {
-					[candidates addObjectsFromArray:candidateCopy];
-				}
-			}
-			
-			if ([candidates count] == 1) {
-				currentElement = [candidates objectAtIndex:0];
-			}
-			
-		}
-	}
-	return currentElement;
-}
-
-#endif
 
 - (M3AccessibleUIElement *)elementAtPosition:(NSPoint)point error:(NSError **)error {
 	AXUIElementRef element = NULL;
