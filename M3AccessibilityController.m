@@ -1,10 +1,10 @@
 /*****************************************************************
  M3AccessibilityController.m
- M3Foundation
+ M3Extensions
  
  Created by Martin Pilkington on 03/11/2009.
  
- Copyright © 2006-2011 M Cubed Software.
+ Copyright (c) 2006-2010 M Cubed Software
  
  Permission is hereby granted, free of charge, to any person
  obtaining a copy of this software and associated documentation
@@ -26,87 +26,55 @@
  WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  OTHER DEALINGS IN THE SOFTWARE.
-  
-*****************************************************************/
+ 
+ *****************************************************************/
 
 #import "M3AccessibilityController.h"
 #import "M3AccessibleUIElement.h"
-#import "M3DFA.h"
-
 
 NSString *M3AccessibilityErrorDomain = @"com.mcubedsw.M3Foundation.accessibility";
 
-static M3AccessibilityController *defaultController;
-
-
 @implementation M3AccessibilityController
 
-/***************************
- Return the default accessibility controller
-***************************/
-+ (M3AccessibilityController *)defaultController {
-	if (!defaultController) {
-		defaultController = [[M3AccessibilityController alloc] init];
-	}
-	return defaultController;
-}
+@synthesize systemWideElement;
 
-- (id)init {
-	if ((self = [super init])) {
-	}
-	return self;
-}
-
-- (void)dealloc {
-	[systemWideElement release];
-	[super dealloc];
-}
-
-/***************************
- Returns YES if support for assistive devices is enabled in system prefs
-***************************/
+//*****//
 - (BOOL)isAccessibilityEnabled {
 	return (BOOL)AXAPIEnabled();
 }
 
-
+//*****//
 - (M3AccessibleUIElement *)elementForActiveApplication {
 	pid_t processid = (pid_t)[[[[NSWorkspace sharedWorkspace] activeApplication] objectForKey:@"NSApplicationProcessIdentifier"] integerValue];
-	return [[[M3AccessibleUIElement alloc] initWithElement:AXUIElementCreateApplication(processid)] autorelease];
+	return [[M3AccessibleUIElement alloc] initWithElement:AXUIElementCreateApplication(processid) accessibilityController:self];
 }
 
+//*****//
 - (M3AccessibleUIElement *)elementForApplicationWithPid:(pid_t)processid {
-	return [[[M3AccessibleUIElement alloc] initWithElement:AXUIElementCreateApplication(processid)] autorelease];
+	return [[M3AccessibleUIElement alloc] initWithElement:AXUIElementCreateApplication(processid) accessibilityController:self];
 }
 
-/***************************
- Return the system wide accessibility element
-***************************/
+//*****//
 - (M3AccessibleUIElement *)systemWideElement {
 	if (!systemWideElement) {
-		systemWideElement = [[M3AccessibleUIElement alloc] initWithElement:AXUIElementCreateSystemWide()];
+		systemWideElement = [[M3AccessibleUIElement alloc] initWithElement:AXUIElementCreateSystemWide() accessibilityController:self];
 	}
-	return [[systemWideElement retain] autorelease];
+	return systemWideElement;
 }
 
-
+//*****//
 - (M3AccessibleUIElement *)elementAtPosition:(NSPoint)point error:(NSError **)error {
 	AXUIElementRef element = NULL;
 	AXError errorCode = AXUIElementCopyElementAtPosition([[self systemWideElement] element], point.x, point.y, &element);
 	
 	if (error != NULL && errorCode != 0) {
-		*error = [M3AccessibilityController errorForCode:errorCode];
+		*error = [self errorForCode:errorCode];
 	}
-	return [[[M3AccessibleUIElement alloc] initWithElement:element] autorelease];
+	return [[M3AccessibleUIElement alloc] initWithElement:element accessibilityController:self];
 }
 
-
-
-
-/***************************
- Generate an NSError for the supplied code
-***************************/
-+ (NSError *)errorForCode:(NSInteger)code {
+//*****//
+- (NSError *)errorForCode:(NSInteger)code {
 	NSString *localisedDescription = @"";
 	if (code == kAXErrorFailure) {
 		localisedDescription = NSLocalizedString(@"A system error occured.", @"");

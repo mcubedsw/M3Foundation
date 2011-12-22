@@ -33,7 +33,7 @@
 
 /***************************
  Additions to NSComparisonPredicate for converting to and from XML representations
- @since PROJECT_NAME VERSION_NAME or later
+ @since M3Foundation 1.0 or later
  **************************/
 @interface NSComparisonPredicate (M3Extensions)
 

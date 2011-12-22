@@ -34,14 +34,13 @@
 #if NS_BLOCKS_AVAILABLE
 
 /***************************
- @class M3DFA
  A deterministic finite automaton class. The automaton is defined using the format described below and passed into the initialise to create an automaton.
  This can then be used to parse an input string to see if the string is valid and retreive any output from it. While this may seem a trivial and academic class, it is highly
  useful for creating more complex regular expressions, as an automaton can be much easier to visualise and debug.
  
- <i>This class requires Mac OS X 10.6 or later</i>
+ __This class requires Mac OS X 10.6 or later__
  
- <b>Defining an automaton</b>
+ **Defining an automaton**
  
  An automaton is defined as a series of states, each states being contained on a single line and given an integer value. Each state contains a series of transitions,
  consiting of an input value and the state to move to upon receiving that value. There is also a special state, END, which signifies that this is a valid end state. If
@@ -87,7 +86,7 @@ Character sets are defined by putting characters inside square brackets. For exa
  Notice how in state 4, the transition when a . character is encontered is before the wildcard transition. Transitions are checked in the order in which they are written, 
  so a wild card transition should come after any other transitions, or they won't be checked.
  
- @since Available in M3Foundation 1.0 and later
+ @since M3Foundation 1.0 and later
 ***************************/
 @interface M3DFA : NSObject {
 	NSDictionary *automata;
@@ -100,13 +99,12 @@ Character sets are defined by putting characters inside square brackets. For exa
  @param aut The automaton string
  @param error A pointer to an NSError object
  @result The created automaton, of nil if invalid
- @since Available in M3Foundation 1.0 and later
+ @since M3Foundation 1.0 and later
 ***************************/
 - (id)initWithAutomaton:(NSString *)aut error:(NSError **)error;
 
 /***************************
  Parses the supplied string, checking its validity and returning output against the automaton
- <b>Discussion</b>
  Output is collected upon first encountering an output transition up until it encounters a non-output transition. It then invokes the block passing in the 
  output and the state it is moving to. Note that output is returned while parsing is continuing, but the validity of the full string is not known until it has been parsed in
  its entirerity. As such, if you only want to accept output of a fully valid string then you should store the output in a temporary location until the parsing is complete.
@@ -114,7 +112,7 @@ Character sets are defined by putting characters inside square brackets. For exa
  @param str The string to parse
  @param block A block to handle any output
  @result YES if the string is valid, otherwise NO
- @since Available in M3Foundation 1.0 and later
+ @since M3Foundation 1.0 and later
 ***************************/
 - (BOOL)parseString:(NSString *)str outputBlock:(void (^)(NSString *output, NSInteger state))block;
 

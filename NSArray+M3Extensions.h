@@ -33,14 +33,14 @@
 
 /***************************
  This category adds some useful class methods for generating and accessing arrays.
- @since Available in M3Foundation 1.0 and later
+ @since M3Foundation 1.0 and later
  **************************/
 @interface NSArray(M3Extensions)
 
 /***************************
  Creates and returns an array with strings for 0-9 a-z.
  @result An array containing strings for 0-9, a-z.
- @since Available in M3Foundation 1.0 and later
+ @since M3Foundation 1.0 and later
  **************************/
 + (NSArray *)m3_alphaNumericArray;
 

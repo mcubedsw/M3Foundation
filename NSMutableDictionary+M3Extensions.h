@@ -33,7 +33,7 @@
 
 /***************************
  This category adds methods to simplify working with dictionaries
- @since PROJECT_NAME VERSION_NAME or later
+ @since M3Foundation 1.0 or later
  **************************/
 @interface NSMutableDictionary (M3Extensions)
 
@@ -41,7 +41,7 @@
  Adds an object to the dictionary, ignoring nil if passed in as the object
  @param aObj The object to add
  @param aKey The key to use for the object
- @since PROJECT_NAME VERSION_NAME or later
+ @since M3Foundation 1.0 or later
  **************************/
 - (void)m3_safeSetObject:(id)aObj forKey:(id)aKey;
 

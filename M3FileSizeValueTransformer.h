@@ -32,9 +32,8 @@
 #import <Cocoa/Cocoa.h>
 
 /***************************
- @class M3FileSizeValueTransformer
  Takes a value in bytes and converts it into the most appropriate unit eg 2048 bytes would return "2 KB"
- @since Available in M3Foundation 1.0 and later
+ @since M3Foundation 1.0 and later
 ***************************/
 @interface M3FileSizeValueTransformer : NSValueTransformer {
 

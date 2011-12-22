@@ -44,6 +44,7 @@
 
 @synthesize request, shouldAutomaticallyRetryAfterTimeOut;
 
+//*****//
 - (id)initWithURLRequest:(NSURLRequest *)aRequest {
 	if ((self = [super init])) {
 		request = [aRequest retain];
@@ -52,22 +53,25 @@
 	return self;
 }
 
+//*****//
 - (void)dealloc {
 	[request release];
 	[downloadCompletionBlock release];
 	[super dealloc];
 }
 
+//*****//
 - (void)setDownloadCompletionBlock:(void(^)(NSInteger aResponse, NSData *aData, NSError *aError))aBlock {
 	downloadCompletionBlock = [aBlock copy];
 }
 
+//*****//
 - (void)main {
 	NSHTTPURLResponse *response = nil;
 	NSError *error = nil;
 	NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
 	
-	if (!data && [error code] == NSURLErrorTimedOut) {
+	if (!data && [error code] == NSURLErrorTimedOut && self.shouldAutomaticallyRetryAfterTimeOut) {
 		data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
 	}
 	
@@ -76,6 +80,7 @@
 	} waitUntilDone:YES];
 }
 
+//*****//
 - (void)performBlock:(void (^)(void))aBlock {
 	aBlock();
 }

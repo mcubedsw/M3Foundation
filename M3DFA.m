@@ -43,8 +43,7 @@
 
 @implementation M3DFA
 
-
-
+//*****//
 - (id)initWithAutomaton:(NSString *)aut error:(NSError **)error {
 	if ((self = [super init])) {
 		initialState = NSNotFound;
@@ -54,12 +53,14 @@
 	return self;
 }
 
+//*****//
 - (void)dealloc {
 	[endStates release];
 	[automata release];
 	[super dealloc];
 }
 
+//*****//
 - (NSDictionary *)parseAutomata:(NSString *)aut error:(NSError **)error {
 	NSMutableDictionary *parsedAutomata = [NSMutableDictionary dictionary];
 	[aut enumerateLinesUsingBlock:^(NSString *line, BOOL *stop) {
@@ -120,6 +121,7 @@
 	return parsedAutomata;
 }
 
+//*****//
 - (id)parseRule:(NSString *)rule {
 	while ([rule hasPrefix:@" "]) {
 		rule = [rule substringFromIndex:1];
@@ -170,7 +172,7 @@
 	return rule;
 }
 
-
+//*****//
 - (BOOL)parseString:(NSString *)str outputBlock:(void (^)(NSString *output, NSInteger state))block {
 	NSInteger currentState = initialState;
 	

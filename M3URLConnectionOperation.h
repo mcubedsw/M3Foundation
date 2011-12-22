@@ -31,15 +31,39 @@
 
 #import <Cocoa/Cocoa.h>
 
-//typedef void (^M3DownloadCompletionBlock)(NSInteger aResponse, NSData *aData, NSError *aError);
-
-
+/***************************
+ An operation that encapsulates a URL connection
+ Behind the scenes this uses NS
+ @since M3Foundation 1.0 or later
+ **************************/
 @interface M3URLConnectionOperation : NSOperation
 
+/***************************
+ Initialise a new operation with the supplied request
+ @param aRequest The request for the connection operation
+ @return A newly initialised M3URLConnectionOperation
+ @since M3Foundation 1.0 or later
+ **************************/
 - (id)initWithURLRequest:(NSURLRequest *)aRequest;
 
+/***************************
+ Sets the block to call when the connection has completed
+ This block is called on the main thread. The operation doesn't complete until after it has executed
+ @param aBlock The completion block
+ @since M3Foundation 1.0 or later
+ **************************/
 - (void)setDownloadCompletionBlock:(void(^)(NSInteger aResponse, NSData *aData, NSError *aError))aBlock;
+
+/***************************
+ The request for the operation
+ @since M3Foundation 1.0 or later
+ **************************/
 @property (readonly) NSURLRequest *request;
+
+/***************************
+ Whether the operation should automatically try a second time after a time out.
+ @since M3Foundation 1.0 or later
+ **************************/
 @property (assign) BOOL shouldAutomaticallyRetryAfterTimeOut;
 
 @end

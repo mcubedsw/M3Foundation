@@ -34,17 +34,17 @@
 
 @implementation M3FileSizeValueTransformer
 
+//*****//
 + (Class)transformedValueClass {
     return [NSString class];
 }
 
+//*****//
 + (BOOL)allowsReverseTransformation {
     return NO;
 }
 
-/***************************
- Transforms value to the appropriate units
-***************************/
+//*****//
 - (id)transformedValue:(id)value {
 	if ([value isKindOfClass:[NSNumber class]]) {
 		double fileSize = [value doubleValue];

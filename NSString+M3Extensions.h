@@ -33,7 +33,7 @@
 
 /***************************
  This category adds some convienience methods to NSString
- @since Available in M3Foundation 1.0 and later
+ @since M3Foundation 1.0 and later
 ***************************/
 @interface NSString(M3Extensions) 
 
