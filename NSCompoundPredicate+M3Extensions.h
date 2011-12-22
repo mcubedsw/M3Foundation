@@ -31,7 +31,10 @@
 
 #import <Foundation/Foundation.h>
 
-
+/***************************
+ Additions to NSCompoundPredicate for converting to and from XML representations
+ @since PROJECT_NAME VERSION_NAME or later
+ **************************/
 @interface NSCompoundPredicate (M3Extensions)
 
 @end

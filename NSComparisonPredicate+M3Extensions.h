@@ -31,7 +31,10 @@
 
 #import <Foundation/Foundation.h>
 
-
-@interface NSComparisonPredicate (NSComparisonPredicate_M3Extensions)
+/***************************
+ Additions to NSComparisonPredicate for converting to and from XML representations
+ @since PROJECT_NAME VERSION_NAME or later
+ **************************/
+@interface NSComparisonPredicate (M3Extensions)
 
 @end

@@ -38,9 +38,9 @@
 @interface NSMutableDictionary (M3Extensions)
 
 /***************************
- BRIEF_HERE
- @param PARAM_NAME PARAM_DESCRIPTION
- @return RETURN_DESCRIPTION
+ Adds an object to the dictionary, ignoring nil if passed in as the object
+ @param aObj The object to add
+ @param aKey The key to use for the object
  @since PROJECT_NAME VERSION_NAME or later
  **************************/
 - (void)m3_safeSetObject:(id)aObj forKey:(id)aKey;

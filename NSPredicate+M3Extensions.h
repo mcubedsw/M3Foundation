@@ -31,10 +31,25 @@
 
 #import <Foundation/Foundation.h>
 
-
+/***************************
+ Additions to NSPredicate for converting to and from XML representations
+ @since PROJECT_NAME VERSION_NAME or later
+ **************************/
 @interface NSPredicate (M3Extensions)
 
+/***************************
+ Creates a new predicate from an XML representation
+ @param aElement The XML element at the root of the representation
+ @return The predicate generated from the XML or nil if it fails
+ @since PROJECT_NAME VERSION_NAME or later
+ **************************/
 + (NSPredicate *)m3_predicateFromXMLElement:(NSXMLElement *)aElement;
+
+/***************************
+ The XML representation for the predicate
+ @return The root element of the XML representation
+ @since PROJECT_NAME VERSION_NAME or later
+ **************************/
 - (NSXMLElement *)m3_xmlRepresentation;
 
 @end

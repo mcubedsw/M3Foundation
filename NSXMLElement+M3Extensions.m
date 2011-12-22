@@ -34,11 +34,11 @@
 
 @implementation NSXMLElement(M3Extensions)
 
-- (NSXMLElement *)m3_elementForName:(NSString *)str {
-	NSArray *elements = [self elementsForName:str];
-	if ([elements count]) {
+//*****//
+- (NSXMLElement *)m3_elementForName:(NSString *)aName {
+	NSArray *elements = [self elementsForName:aName];
+	if ([elements count])
 		return [elements objectAtIndex:0];
-	}
 	return nil;
 }
 

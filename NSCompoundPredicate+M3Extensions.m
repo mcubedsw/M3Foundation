@@ -35,7 +35,9 @@
 
 @implementation NSCompoundPredicate (M3Extensions)
 
+//*****//
 + (NSPredicate *)m3_predicateFromXMLElement:(NSXMLElement *)aElement {
+	//Generate the sub predicates
 	NSMutableArray *subpredicates = [NSMutableArray array];
 	for (NSXMLElement *subpred in [aElement elementsForName:@"predicate"]) {
 		[subpredicates addObject:[NSPredicate m3_predicateFromXMLElement:subpred]];
@@ -44,6 +46,7 @@
 		[subpredicates addObject:[NSPredicate m3_predicateFromXMLElement:subpred]];
 	}
 	
+	//Combine them into the correct type
 	NSString *type = [[aElement attributeForName:@"type"] stringValue];
 	if ([type isEqualToString:@"and"]) {
 		return [NSCompoundPredicate andPredicateWithSubpredicates:subpredicates];
@@ -55,6 +58,7 @@
 	return nil;
 }
 
+//*****//
 - (NSString *)_m3_compoundPredicateTypeString {
 	switch ([self compoundPredicateType]) {
 		case NSAndPredicateType:
@@ -67,6 +71,7 @@
 	return @"";
 }
 
+//*****//
 - (NSXMLElement *)m3_xmlRepresentation {
 	NSXMLElement *compoundElement = [NSXMLElement elementWithName:@"predicates"];
 	[compoundElement addAttribute:[NSXMLNode attributeWithName:@"type" stringValue:[self _m3_compoundPredicateTypeString]]];

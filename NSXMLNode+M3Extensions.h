@@ -31,11 +31,31 @@
 
 #import <Cocoa/Cocoa.h>
 
-
+/***************************
+ Extensions to NSXMLNode to simplify accessing data
+ @since PROJECT_NAME VERSION_NAME or later
+ **************************/
 @interface NSXMLNode (M3Extensions)
 
-- (NSInteger)m3_integerValue;
-- (CGFloat)m3_floatValue;
-- (NSXMLNode *)m3_nodeForXPath:(NSString *)xPath error:(NSError **)error;
+/***************************
+ The integer value of the node
+ @since PROJECT_NAME VERSION_NAME or later
+ **************************/
+@property (readonly) NSInteger m3_integerValue;
+
+/***************************
+ The float value of the node
+ @since PROJECT_NAME VERSION_NAME or later
+ **************************/
+@property (readonly) CGFloat m3_floatValue;
+
+/***************************
+ Return the first matching node for an xPath
+ @param aXPath The XPath to use for searching
+ @param aError A point to an error
+ @return The first matching XML node, or nil if an error occurs
+ @since PROJECT_NAME VERSION_NAME or later
+ **************************/
+- (NSXMLNode *)m3_nodeForXPath:(NSString *)aXPath error:(NSError **)aError;
 
 @end

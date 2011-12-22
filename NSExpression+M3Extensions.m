@@ -34,8 +34,11 @@
 
 @implementation NSExpression (M3Extensions)
 
+//*****//
 + (NSExpression *)m3_expressionFromXMLElement:(NSXMLElement *)aElement {
+	//Get the element type
 	NSString *type = [[aElement attributeForName:@"type"] stringValue];
+	//If a constant, find the value
 	if ([type isEqualToString:@"constant"]) {
 		NSString *valueType = [[aElement attributeForName:@"valueType"] stringValue];
 		id constantValue = nil;
@@ -47,22 +50,27 @@
 			constantValue = [NSNumber numberWithInteger:[[aElement stringValue] integerValue]];
 		}
 		return [NSExpression expressionForConstantValue:constantValue];
+	//If a variable use directly
 	} else if ([type isEqualToString:@"variable"]) {
 		return [NSExpression expressionForVariable:[aElement stringValue]];
+	//Same for key paths
 	} else if ([type isEqualToString:@"keyPath"]) {
 		return [NSExpression expressionForKeyPath:[aElement stringValue]];
+	//If an aggregate, collect together the sub expressions
 	} else if ([type isEqualToString:@"aggregate"]) {
 		NSMutableArray *aggregate = [NSMutableArray array];
 		for (NSXMLElement *element in [aElement children]) {
 			[aggregate addObject:[NSExpression m3_expressionFromXMLElement:element]];
 		}
 		return [NSExpression expressionForAggregate:aggregate];
+	//And if an evaluated object return
 	} else if ([type isEqualToString:@"evaluatedObject"]) {
 		return [NSExpression expressionForEvaluatedObject];
 	}
 	return nil;
 }
 
+//*****//
 - (void)_m3_addContentToElement:(NSXMLElement *)aElement {
 	NSExpressionType type = [self expressionType];
 	//Set the constant value and value type
@@ -114,6 +122,7 @@
 	}
 }
 
+//*****//
 - (NSXMLElement *)m3_xmlRepresentation {
 	NSXMLElement *expressionElement = [NSXMLElement elementWithName:@"expression"];
 	[self _m3_addContentToElement:expressionElement];

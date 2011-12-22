@@ -39,7 +39,7 @@ NSString *M3FileSizeOnDisk = @"M3FileSizeOnDisk";
 NSString *M3ReadableFileSize = @"M3ReadableFileSize";
 
 
-@interface NSFileManager()
+@interface NSFileManager(PrivateExtensions)
 
 - (void)m3_calcSizeInNewThread:(NSDictionary *)attributes;
 
@@ -59,6 +59,7 @@ NSString *M3ReadableFileSize = @"M3ReadableFileSize";
 	}
 }
 
+//*****//
 - (void)m3_calcSizeInNewThread:(NSDictionary *)attributes {	
 	NSString *filePath = [attributes objectForKey:@"filepath"];
 	// Copy the sending object over in case the code gets called again before it has finished execution	
@@ -106,6 +107,7 @@ NSString *M3ReadableFileSize = @"M3ReadableFileSize";
 	[pool release];
 }
 
+//*****//
 - (void)m3_returnObjectsToHandler:(NSDictionary *)dict {
 	[[dict objectForKey:@"handler"] performSelector:@selector(fileSizes:ofFileAtPath:) withObject:[dict objectForKey:@"fileSizes"] withObject:[dict objectForKey:@"filePath"]];
 }

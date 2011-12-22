@@ -33,7 +33,7 @@
 
 /***************************
  This category adds more ways of re-arranging objects in a mutable array
- @since Available in M3Foundation 1.0 and later
+ @since M3Foundation 1.0 and later
 ***************************/
 @interface NSMutableArray(M3Extensions)
 

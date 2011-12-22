@@ -37,7 +37,7 @@ extern NSString *M3ReadableFileSize;
 
 /***************************
  This category adds various useful methods for deleting and finding the size of files
- @since Available in M3Foundation 1.0 and later
+ @since M3Foundation 1.0 and later
  ***************************/
 @interface NSFileManager(M3Extensions)
 

@@ -34,15 +34,14 @@
 
 @implementation NSString(M3Extensions) 
 
-- (NSString *)m3_stringByRemovingCharactersFromEnd:(NSUInteger)number {
-	if ((NSInteger)number < 0) {
-		return nil;
-	}
-	return [self substringToIndex:[self length] - number];
+//*****//
+- (NSString *)m3_stringByRemovingCharactersFromEnd:(NSUInteger)aNumber {
+	return [self substringToIndex:[self length] - aNumber];
 }
 
-- (BOOL)m3_containsString:(NSString *)subString {
-	return [self rangeOfString:subString].location != NSNotFound;
+//*****//
+- (BOOL)m3_containsString:(NSString *)aSubString {
+	return [self rangeOfString:aSubString].location != NSNotFound;
 }
 
 @end

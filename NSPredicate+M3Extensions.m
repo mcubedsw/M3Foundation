@@ -31,14 +31,10 @@
 
 #import "NSPredicate+M3Extensions.h"
 
-@interface NSPredicate (M3ExtensionsPrivate) 
-
-@end
-
-
 
 @implementation NSPredicate (M3Extensions)
 
+//*****//
 + (NSPredicate *)m3_predicateFromXMLElement:(NSXMLElement *)aElement {
 	if ([[aElement name] isEqualToString:@"truePredicate"]) {
 		return [NSPredicate predicateWithValue:YES];
@@ -52,6 +48,7 @@
 	return nil;
 }
 
+//*****//
 - (NSXMLElement *)m3_xmlRepresentation {
 	if ([self isKindOfClass:NSClassFromString(@"NSTruePredicate")]) {
 		return [NSXMLElement elementWithName:@"truePredicate"];

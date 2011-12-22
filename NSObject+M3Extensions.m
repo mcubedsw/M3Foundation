@@ -34,18 +34,32 @@
 
 @implementation NSObject (M3Extensions)
 
+#pragma mark -
+#pragma mark Perform blocks
+
+//*****//
 - (void)m3_performBlock:(void (^)(void))aBlock afterDelay:(NSTimeInterval)aInterval {
 	[self performSelector:@selector(_m3_performBlock:) withObject:[aBlock copy] afterDelay:aInterval];
 }
 
-- (void)_m3_performBlock:(void (^)(void))aBlock {
-	aBlock();
-}
-
+//*****//
 - (void)m3_performBlock:(void (^)(void))aBlock afterDelay:(NSTimeInterval)aInterval inModes:(NSArray *)aArray {
 	[self performSelector:@selector(_m3_performBlock:) withObject:[aBlock copy] afterDelay:aInterval inModes:aArray];
 }
 
+//*****//
+- (void)_m3_performBlock:(void (^)(void))aBlock {
+	aBlock();
+}
+
+
+
+
+
+#pragma mark -
+#pragma mark Manipulating objects
+
+//*****//
 - (BOOL)m3_replaceImplementationOfMethodWithSelector:(SEL)aSelector with:(void *)aBlock {
 	NSString *className = NSStringFromClass([self class]);
 	NSArray *nameComponents = [className componentsSeparatedByString:@"_"];
@@ -70,6 +84,41 @@
 	IMP newIMP = imp_implementationWithBlock(aBlock);
 	Method methodToReplace = class_getInstanceMethod([self class], aSelector);
 	return class_addMethod([self class], aSelector, newIMP, method_getTypeEncoding(methodToReplace));
+}
+
+
+
+
+
+#pragma mark -
+#pragma mark Key Value Observing
+
+//*****//
+- (void)m3_addObserver:(NSObject *)observer forKeyPathsInArray:(NSArray *)keyPaths options:(NSKeyValueObservingOptions)options context:(void *)context {
+	for (NSString *path in keyPaths) {
+		[self addObserver:observer forKeyPath:path options:options context:context];
+	}
+}
+
+//*****//
+- (void)m3_removeObserver:(NSObject *)observer forKeyPathsInArray:(NSArray *)keyPaths {
+	for (NSString *path in keyPaths) {
+		[self removeObserver:observer forKeyPath:path];
+	}
+}
+
+//*****//
+- (void)m3_willChangeValueForKeys:(NSArray *)aKeys {
+	for (NSString *key in aKeys) {
+		[self willChangeValueForKey:key];
+	}
+}
+
+//*****//
+- (void)m3_didChangeValueForKeys:(NSArray *)aKeys {
+	for (NSString *key in aKeys) {
+		[self didChangeValueForKey:key];
+	}
 }
 
 @end
