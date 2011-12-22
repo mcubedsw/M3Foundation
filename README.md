@@ -5,6 +5,7 @@ M3Foundation is a collection of categories and classes that extend and enhance t
 As the version number suggests this is effectively 1.0, so the interfaces shouldn't change, but I do want to add some more tests, convert it to ARC and tidy up some source before I officially declare it 1.0
 
 M3Foundation includes the following:
+
 - Simplified access for arrays and dictionaries
 - performBlock:withSelector: methods
 - Replace the implementation of a method on a single object
@@ -15,6 +16,7 @@ M3Foundation includes the following:
 - Value transformers for file sizes and CSV strings
 - A deterministic finite automata class
 - A NSOperation subclass for URL connections
+
 And more
 
 M3Foundation requires Lion and Xcode 4.2+
