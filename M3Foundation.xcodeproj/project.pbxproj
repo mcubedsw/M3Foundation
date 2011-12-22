@@ -6,376 +6,376 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
-		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
-		990F989C13437290000E336B /* NSObject+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 990F989A13437290000E336B /* NSObject+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		990F989D13437290000E336B /* NSObject+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 990F989B13437290000E336B /* NSObject+M3Extensions.m */; };
-		9911BEB51421319200BE7671 /* M3URLConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9911BEB31421319200BE7671 /* M3URLConnectionOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9911BEB61421319200BE7671 /* M3URLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9911BEB41421319200BE7671 /* M3URLConnectionOperation.m */; };
-		992E8096131EAD2B00D45ED3 /* M3KeyValueObserving.h in Headers */ = {isa = PBXBuildFile; fileRef = 992E8094131EAD2B00D45ED3 /* M3KeyValueObserving.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		992E8097131EAD2B00D45ED3 /* M3KeyValueObserving.m in Sources */ = {isa = PBXBuildFile; fileRef = 992E8095131EAD2B00D45ED3 /* M3KeyValueObserving.m */; };
-		996007DE10F8C9510070D588 /* M3EncapsulatedURLConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 996007DA10F8C9510070D588 /* M3EncapsulatedURLConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		996007DF10F8C9510070D588 /* M3EncapsulatedURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 996007DB10F8C9510070D588 /* M3EncapsulatedURLConnection.m */; };
-		996007EA10F8C9640070D588 /* NSArray+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 996007E210F8C9640070D588 /* NSArray+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		996007EB10F8C9640070D588 /* NSArray+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 996007E310F8C9640070D588 /* NSArray+M3Extensions.m */; };
-		996007EC10F8C9640070D588 /* NSFileManager+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 996007E410F8C9640070D588 /* NSFileManager+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		996007ED10F8C9640070D588 /* NSFileManager+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 996007E510F8C9640070D588 /* NSFileManager+M3Extensions.m */; };
-		996007EE10F8C9640070D588 /* NSString+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 996007E610F8C9640070D588 /* NSString+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		996007EF10F8C9640070D588 /* NSString+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 996007E710F8C9640070D588 /* NSString+M3Extensions.m */; };
-		996007F010F8C9640070D588 /* NSXMLElement+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 996007E810F8C9640070D588 /* NSXMLElement+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		996007F110F8C9640070D588 /* NSXMLElement+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 996007E910F8C9640070D588 /* NSXMLElement+M3Extensions.m */; };
-		996007F410F8C96D0070D588 /* M3Date.h in Headers */ = {isa = PBXBuildFile; fileRef = 996007F210F8C96D0070D588 /* M3Date.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		996007F510F8C96D0070D588 /* M3Date.m in Sources */ = {isa = PBXBuildFile; fileRef = 996007F310F8C96D0070D588 /* M3Date.m */; };
-		9960080610F8C9980070D588 /* M3CSVValueTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9960080210F8C9980070D588 /* M3CSVValueTransformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9960080710F8C9980070D588 /* M3CSVValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9960080310F8C9980070D588 /* M3CSVValueTransformer.m */; };
-		9960080810F8C9980070D588 /* M3FileSizeValueTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9960080410F8C9980070D588 /* M3FileSizeValueTransformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9960080910F8C9980070D588 /* M3FileSizeValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9960080510F8C9980070D588 /* M3FileSizeValueTransformer.m */; };
-		99600CBF10F8CD630070D588 /* M3Foundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 99600CBE10F8CD630070D588 /* M3Foundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		99600D1C10F8D00B0070D588 /* M3Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* M3Foundation.framework */; };
-		99600D2310F8D0500070D588 /* NSArray+M3ExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99600D2210F8D0500070D588 /* NSArray+M3ExtensionsTests.m */; };
-		99600D4110F8D1470070D588 /* M3Foundation.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* M3Foundation.framework */; };
-		99600D9F10F8D5150070D588 /* NSString+M3ExtensionsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 99600D9E10F8D5150070D588 /* NSString+M3ExtensionsTest.m */; };
-		99600DB110F8D5490070D588 /* M3CSVValueTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99600DB010F8D5490070D588 /* M3CSVValueTransformerTests.m */; };
-		99600DB610F8D5540070D588 /* M3FileSizeValueTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99600DB510F8D5540070D588 /* M3FileSizeValueTransformerTests.m */; };
-		9960245813460BFF0029725D /* NSCompoundPredicate+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9960245613460BFF0029725D /* NSCompoundPredicate+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9960245913460BFF0029725D /* NSCompoundPredicate+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9960245713460BFF0029725D /* NSCompoundPredicate+M3Extensions.m */; };
-		9960245C13460D800029725D /* NSComparisonPredicate+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9960245A13460D800029725D /* NSComparisonPredicate+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9960245D13460D800029725D /* NSComparisonPredicate+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9960245B13460D800029725D /* NSComparisonPredicate+M3Extensions.m */; };
-		99602460134620430029725D /* NSExpression+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9960245E134620430029725D /* NSExpression+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		99602461134620430029725D /* NSExpression+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9960245F134620430029725D /* NSExpression+M3Extensions.m */; };
-		9961D6BD1344BE0000103BE6 /* NSPredicate+M3ExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9961D6BA1344BCFC00103BE6 /* NSPredicate+M3ExtensionsTests.m */; };
-		9961D6C01344E64400103BE6 /* NSPredicate+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9961D6BE1344E64400103BE6 /* NSPredicate+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9961D6C11344E64400103BE6 /* NSPredicate+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9961D6BF1344E64400103BE6 /* NSPredicate+M3Extensions.m */; };
-		996EF59B1347507600345D64 /* NSPredicateXMLTestData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 996EF5991347507200345D64 /* NSPredicateXMLTestData.txt */; };
-		996EF59C134751FF00345D64 /* AXPathDFA.txt in Resources */ = {isa = PBXBuildFile; fileRef = 998F76EB11AF135400580AB2 /* AXPathDFA.txt */; };
-		9988599D11B81976007D2911 /* NSMutableArray+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 998F717211AF10F900580AB2 /* NSMutableArray+M3Extensions.m */; };
-		9988599F11B81976007D2911 /* M3IndexSetEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 998F718811AF114400580AB2 /* M3IndexSetEnumerator.m */; };
-		998859A011B81976007D2911 /* M3AccessibilityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 998F76ED11AF135400580AB2 /* M3AccessibilityController.m */; };
-		998859A111B81976007D2911 /* M3AccessibleUIElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 998F76EF11AF135400580AB2 /* M3AccessibleUIElement.m */; };
-		998859A211B81976007D2911 /* M3DFA.m in Sources */ = {isa = PBXBuildFile; fileRef = 998F76F111AF135400580AB2 /* M3DFA.m */; };
-		998859A311B81976007D2911 /* NSMutableSet+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 998F76F911AF138C00580AB2 /* NSMutableSet+M3Extensions.m */; };
-		998859A411B8198D007D2911 /* NSMutableArray+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 998F717111AF10F900580AB2 /* NSMutableArray+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		998859AB11B819C9007D2911 /* M3IndexSetEnumerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 998F718711AF114400580AB2 /* M3IndexSetEnumerator.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		998859AC11B819DC007D2911 /* NSMutableSet+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 998F76F811AF138C00580AB2 /* NSMutableSet+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		998859AD11B819DC007D2911 /* M3AccessibilityController.h in Headers */ = {isa = PBXBuildFile; fileRef = 998F76EC11AF135400580AB2 /* M3AccessibilityController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		998859AE11B819DC007D2911 /* M3AccessibleUIElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 998F76EE11AF135400580AB2 /* M3AccessibleUIElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		998859AF11B819DC007D2911 /* M3DFA.h in Headers */ = {isa = PBXBuildFile; fileRef = 998F76F011AF135400580AB2 /* M3DFA.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9994863F1358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9994863D1358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		999486401358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9994863E1358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.m */; };
-		99A7D91511D397270011B922 /* NSXMLNode+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 99A7D91311D397270011B922 /* NSXMLNode+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		99A7D91611D397270011B922 /* NSXMLNode+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A7D91411D397270011B922 /* NSXMLNode+M3Extensions.m */; };
-/* End PBXBuildFile section */
+/* Begin PBXBuildFile section***************************/
+		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources***************************/ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings***************************/; };
+		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks***************************/ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework***************************/; };
+		990F989C13437290000E336B /* NSObject+M3Extensions.h in Headers***************************/ = {isa = PBXBuildFile; fileRef = 990F989A13437290000E336B /* NSObject+M3Extensions.h***************************/; settings = {ATTRIBUTES = (Public, ); }; };
+		990F989D13437290000E336B /* NSObject+M3Extensions.m in Sources***************************/ = {isa = PBXBuildFile; fileRef = 990F989B13437290000E336B /* NSObject+M3Extensions.m***************************/; };
+		9911BEB51421319200BE7671 /* M3URLConnectionOperation.h in Headers***************************/ = {isa = PBXBuildFile; fileRef = 9911BEB31421319200BE7671 /* M3URLConnectionOperation.h***************************/; settings = {ATTRIBUTES = (Public, ); }; };
+		9911BEB61421319200BE7671 /* M3URLConnectionOperation.m in Sources***************************/ = {isa = PBXBuildFile; fileRef = 9911BEB41421319200BE7671 /* M3URLConnectionOperation.m***************************/; };
+		992E8096131EAD2B00D45ED3 /* M3KeyValueObserving.h in Headers***************************/ = {isa = PBXBuildFile; fileRef = 992E8094131EAD2B00D45ED3 /* M3KeyValueObserving.h***************************/; settings = {ATTRIBUTES = (Public, ); }; };
+		992E8097131EAD2B00D45ED3 /* M3KeyValueObserving.m in Sources***************************/ = {isa = PBXBuildFile; fileRef = 992E8095131EAD2B00D45ED3 /* M3KeyValueObserving.m***************************/; };
+		996007DE10F8C9510070D588 /* M3EncapsulatedURLConnection.h in Headers***************************/ = {isa = PBXBuildFile; fileRef = 996007DA10F8C9510070D588 /* M3EncapsulatedURLConnection.h***************************/; settings = {ATTRIBUTES = (Public, ); }; };
+		996007DF10F8C9510070D588 /* M3EncapsulatedURLConnection.m in Sources***************************/ = {isa = PBXBuildFile; fileRef = 996007DB10F8C9510070D588 /* M3EncapsulatedURLConnection.m***************************/; };
+		996007EA10F8C9640070D588 /* NSArray+M3Extensions.h in Headers***************************/ = {isa = PBXBuildFile; fileRef = 996007E210F8C9640070D588 /* NSArray+M3Extensions.h***************************/; settings = {ATTRIBUTES = (Public, ); }; };
+		996007EB10F8C9640070D588 /* NSArray+M3Extensions.m in Sources***************************/ = {isa = PBXBuildFile; fileRef = 996007E310F8C9640070D588 /* NSArray+M3Extensions.m***************************/; };
+		996007EC10F8C9640070D588 /* NSFileManager+M3Extensions.h in Headers***************************/ = {isa = PBXBuildFile; fileRef = 996007E410F8C9640070D588 /* NSFileManager+M3Extensions.h***************************/; settings = {ATTRIBUTES = (Public, ); }; };
+		996007ED10F8C9640070D588 /* NSFileManager+M3Extensions.m in Sources***************************/ = {isa = PBXBuildFile; fileRef = 996007E510F8C9640070D588 /* NSFileManager+M3Extensions.m***************************/; };
+		996007EE10F8C9640070D588 /* NSString+M3Extensions.h in Headers***************************/ = {isa = PBXBuildFile; fileRef = 996007E610F8C9640070D588 /* NSString+M3Extensions.h***************************/; settings = {ATTRIBUTES = (Public, ); }; };
+		996007EF10F8C9640070D588 /* NSString+M3Extensions.m in Sources***************************/ = {isa = PBXBuildFile; fileRef = 996007E710F8C9640070D588 /* NSString+M3Extensions.m***************************/; };
+		996007F010F8C9640070D588 /* NSXMLElement+M3Extensions.h in Headers***************************/ = {isa = PBXBuildFile; fileRef = 996007E810F8C9640070D588 /* NSXMLElement+M3Extensions.h***************************/; settings = {ATTRIBUTES = (Public, ); }; };
+		996007F110F8C9640070D588 /* NSXMLElement+M3Extensions.m in Sources***************************/ = {isa = PBXBuildFile; fileRef = 996007E910F8C9640070D588 /* NSXMLElement+M3Extensions.m***************************/; };
+		996007F410F8C96D0070D588 /* M3Date.h in Headers***************************/ = {isa = PBXBuildFile; fileRef = 996007F210F8C96D0070D588 /* M3Date.h***************************/; settings = {ATTRIBUTES = (Public, ); }; };
+		996007F510F8C96D0070D588 /* M3Date.m in Sources***************************/ = {isa = PBXBuildFile; fileRef = 996007F310F8C96D0070D588 /* M3Date.m***************************/; };
+		9960080610F8C9980070D588 /* M3CSVValueTransformer.h in Headers***************************/ = {isa = PBXBuildFile; fileRef = 9960080210F8C9980070D588 /* M3CSVValueTransformer.h***************************/; settings = {ATTRIBUTES = (Public, ); }; };
+		9960080710F8C9980070D588 /* M3CSVValueTransformer.m in Sources***************************/ = {isa = PBXBuildFile; fileRef = 9960080310F8C9980070D588 /* M3CSVValueTransformer.m***************************/; };
+		9960080810F8C9980070D588 /* M3FileSizeValueTransformer.h in Headers***************************/ = {isa = PBXBuildFile; fileRef = 9960080410F8C9980070D588 /* M3FileSizeValueTransformer.h***************************/; settings = {ATTRIBUTES = (Public, ); }; };
+		9960080910F8C9980070D588 /* M3FileSizeValueTransformer.m in Sources***************************/ = {isa = PBXBuildFile; fileRef = 9960080510F8C9980070D588 /* M3FileSizeValueTransformer.m***************************/; };
+		99600CBF10F8CD630070D588 /* M3Foundation.h in Headers***************************/ = {isa = PBXBuildFile; fileRef = 99600CBE10F8CD630070D588 /* M3Foundation.h***************************/; settings = {ATTRIBUTES = (Public, ); }; };
+		99600D1C10F8D00B0070D588 /* M3Foundation.framework in Frameworks***************************/ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* M3Foundation.framework***************************/; };
+		99600D2310F8D0500070D588 /* NSArray+M3ExtensionsTests.m in Sources***************************/ = {isa = PBXBuildFile; fileRef = 99600D2210F8D0500070D588 /* NSArray+M3ExtensionsTests.m***************************/; };
+		99600D4110F8D1470070D588 /* M3Foundation.framework in Copy Frameworks***************************/ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* M3Foundation.framework***************************/; };
+		99600D9F10F8D5150070D588 /* NSString+M3ExtensionsTest.m in Sources***************************/ = {isa = PBXBuildFile; fileRef = 99600D9E10F8D5150070D588 /* NSString+M3ExtensionsTest.m***************************/; };
+		99600DB110F8D5490070D588 /* M3CSVValueTransformerTests.m in Sources***************************/ = {isa = PBXBuildFile; fileRef = 99600DB010F8D5490070D588 /* M3CSVValueTransformerTests.m***************************/; };
+		99600DB610F8D5540070D588 /* M3FileSizeValueTransformerTests.m in Sources***************************/ = {isa = PBXBuildFile; fileRef = 99600DB510F8D5540070D588 /* M3FileSizeValueTransformerTests.m***************************/; };
+		9960245813460BFF0029725D /* NSCompoundPredicate+M3Extensions.h in Headers***************************/ = {isa = PBXBuildFile; fileRef = 9960245613460BFF0029725D /* NSCompoundPredicate+M3Extensions.h***************************/; settings = {ATTRIBUTES = (Public, ); }; };
+		9960245913460BFF0029725D /* NSCompoundPredicate+M3Extensions.m in Sources***************************/ = {isa = PBXBuildFile; fileRef = 9960245713460BFF0029725D /* NSCompoundPredicate+M3Extensions.m***************************/; };
+		9960245C13460D800029725D /* NSComparisonPredicate+M3Extensions.h in Headers***************************/ = {isa = PBXBuildFile; fileRef = 9960245A13460D800029725D /* NSComparisonPredicate+M3Extensions.h***************************/; settings = {ATTRIBUTES = (Public, ); }; };
+		9960245D13460D800029725D /* NSComparisonPredicate+M3Extensions.m in Sources***************************/ = {isa = PBXBuildFile; fileRef = 9960245B13460D800029725D /* NSComparisonPredicate+M3Extensions.m***************************/; };
+		99602460134620430029725D /* NSExpression+M3Extensions.h in Headers***************************/ = {isa = PBXBuildFile; fileRef = 9960245E134620430029725D /* NSExpression+M3Extensions.h***************************/; settings = {ATTRIBUTES = (Public, ); }; };
+		99602461134620430029725D /* NSExpression+M3Extensions.m in Sources***************************/ = {isa = PBXBuildFile; fileRef = 9960245F134620430029725D /* NSExpression+M3Extensions.m***************************/; };
+		9961D6BD1344BE0000103BE6 /* NSPredicate+M3ExtensionsTests.m in Sources***************************/ = {isa = PBXBuildFile; fileRef = 9961D6BA1344BCFC00103BE6 /* NSPredicate+M3ExtensionsTests.m***************************/; };
+		9961D6C01344E64400103BE6 /* NSPredicate+M3Extensions.h in Headers***************************/ = {isa = PBXBuildFile; fileRef = 9961D6BE1344E64400103BE6 /* NSPredicate+M3Extensions.h***************************/; settings = {ATTRIBUTES = (Public, ); }; };
+		9961D6C11344E64400103BE6 /* NSPredicate+M3Extensions.m in Sources***************************/ = {isa = PBXBuildFile; fileRef = 9961D6BF1344E64400103BE6 /* NSPredicate+M3Extensions.m***************************/; };
+		996EF59B1347507600345D64 /* NSPredicateXMLTestData.txt in Resources***************************/ = {isa = PBXBuildFile; fileRef = 996EF5991347507200345D64 /* NSPredicateXMLTestData.txt***************************/; };
+		996EF59C134751FF00345D64 /* AXPathDFA.txt in Resources***************************/ = {isa = PBXBuildFile; fileRef = 998F76EB11AF135400580AB2 /* AXPathDFA.txt***************************/; };
+		9988599D11B81976007D2911 /* NSMutableArray+M3Extensions.m in Sources***************************/ = {isa = PBXBuildFile; fileRef = 998F717211AF10F900580AB2 /* NSMutableArray+M3Extensions.m***************************/; };
+		9988599F11B81976007D2911 /* M3IndexSetEnumerator.m in Sources***************************/ = {isa = PBXBuildFile; fileRef = 998F718811AF114400580AB2 /* M3IndexSetEnumerator.m***************************/; };
+		998859A011B81976007D2911 /* M3AccessibilityController.m in Sources***************************/ = {isa = PBXBuildFile; fileRef = 998F76ED11AF135400580AB2 /* M3AccessibilityController.m***************************/; };
+		998859A111B81976007D2911 /* M3AccessibleUIElement.m in Sources***************************/ = {isa = PBXBuildFile; fileRef = 998F76EF11AF135400580AB2 /* M3AccessibleUIElement.m***************************/; };
+		998859A211B81976007D2911 /* M3DFA.m in Sources***************************/ = {isa = PBXBuildFile; fileRef = 998F76F111AF135400580AB2 /* M3DFA.m***************************/; };
+		998859A311B81976007D2911 /* NSMutableSet+M3Extensions.m in Sources***************************/ = {isa = PBXBuildFile; fileRef = 998F76F911AF138C00580AB2 /* NSMutableSet+M3Extensions.m***************************/; };
+		998859A411B8198D007D2911 /* NSMutableArray+M3Extensions.h in Headers***************************/ = {isa = PBXBuildFile; fileRef = 998F717111AF10F900580AB2 /* NSMutableArray+M3Extensions.h***************************/; settings = {ATTRIBUTES = (Public, ); }; };
+		998859AB11B819C9007D2911 /* M3IndexSetEnumerator.h in Headers***************************/ = {isa = PBXBuildFile; fileRef = 998F718711AF114400580AB2 /* M3IndexSetEnumerator.h***************************/; settings = {ATTRIBUTES = (Public, ); }; };
+		998859AC11B819DC007D2911 /* NSMutableSet+M3Extensions.h in Headers***************************/ = {isa = PBXBuildFile; fileRef = 998F76F811AF138C00580AB2 /* NSMutableSet+M3Extensions.h***************************/; settings = {ATTRIBUTES = (Public, ); }; };
+		998859AD11B819DC007D2911 /* M3AccessibilityController.h in Headers***************************/ = {isa = PBXBuildFile; fileRef = 998F76EC11AF135400580AB2 /* M3AccessibilityController.h***************************/; settings = {ATTRIBUTES = (Public, ); }; };
+		998859AE11B819DC007D2911 /* M3AccessibleUIElement.h in Headers***************************/ = {isa = PBXBuildFile; fileRef = 998F76EE11AF135400580AB2 /* M3AccessibleUIElement.h***************************/; settings = {ATTRIBUTES = (Public, ); }; };
+		998859AF11B819DC007D2911 /* M3DFA.h in Headers***************************/ = {isa = PBXBuildFile; fileRef = 998F76F011AF135400580AB2 /* M3DFA.h***************************/; settings = {ATTRIBUTES = (Public, ); }; };
+		9994863F1358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.h in Headers***************************/ = {isa = PBXBuildFile; fileRef = 9994863D1358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.h***************************/; settings = {ATTRIBUTES = (Public, ); }; };
+		999486401358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.m in Sources***************************/ = {isa = PBXBuildFile; fileRef = 9994863E1358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.m***************************/; };
+		99A7D91511D397270011B922 /* NSXMLNode+M3Extensions.h in Headers***************************/ = {isa = PBXBuildFile; fileRef = 99A7D91311D397270011B922 /* NSXMLNode+M3Extensions.h***************************/; settings = {ATTRIBUTES = (Public, ); }; };
+		99A7D91611D397270011B922 /* NSXMLNode+M3Extensions.m in Sources***************************/ = {isa = PBXBuildFile; fileRef = 99A7D91411D397270011B922 /* NSXMLNode+M3Extensions.m***************************/; };
+/* End PBXBuildFile section***************************/
 
-/* Begin PBXContainerItemProxy section */
-		99600CE810F8CF5C0070D588 /* PBXContainerItemProxy */ = {
+/* Begin PBXContainerItemProxy section***************************/
+		99600CE810F8CF5C0070D588 /* PBXContainerItemProxy***************************/ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object***************************/;
 			proxyType = 1;
 			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = M3Foundation;
 		};
-/* End PBXContainerItemProxy section */
+/* End PBXContainerItemProxy section***************************/
 
-/* Begin PBXCopyFilesBuildPhase section */
-		99600D4810F8D1490070D588 /* Copy Frameworks */ = {
+/* Begin PBXCopyFilesBuildPhase section***************************/
+		99600D4810F8D1490070D588 /* Copy Frameworks***************************/ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				99600D4110F8D1470070D588 /* M3Foundation.framework in Copy Frameworks */,
+				99600D4110F8D1470070D588 /* M3Foundation.framework in Copy Frameworks***************************/,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXCopyFilesBuildPhase section */
+/* End PBXCopyFilesBuildPhase section***************************/
 
-/* Begin PBXFileReference section */
-		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		0867D6A5FE840307C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
-		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		32DBCF5E0370ADEE00C91783 /* M3Foundation_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3Foundation_Prefix.pch; sourceTree = "<group>"; };
-		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8DC2EF5B0486A6940098B216 /* M3Foundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = M3Foundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		990F989A13437290000E336B /* NSObject+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+M3Extensions.h"; sourceTree = "<group>"; };
-		990F989B13437290000E336B /* NSObject+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+M3Extensions.m"; sourceTree = "<group>"; };
-		9911BEB31421319200BE7671 /* M3URLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3URLConnectionOperation.h; sourceTree = "<group>"; };
-		9911BEB41421319200BE7671 /* M3URLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3URLConnectionOperation.m; sourceTree = "<group>"; };
-		992E8094131EAD2B00D45ED3 /* M3KeyValueObserving.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3KeyValueObserving.h; sourceTree = "<group>"; };
-		992E8095131EAD2B00D45ED3 /* M3KeyValueObserving.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3KeyValueObserving.m; sourceTree = "<group>"; };
-		996007DA10F8C9510070D588 /* M3EncapsulatedURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3EncapsulatedURLConnection.h; sourceTree = "<group>"; };
-		996007DB10F8C9510070D588 /* M3EncapsulatedURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3EncapsulatedURLConnection.m; sourceTree = "<group>"; };
-		996007E210F8C9640070D588 /* NSArray+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+M3Extensions.h"; sourceTree = "<group>"; };
-		996007E310F8C9640070D588 /* NSArray+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+M3Extensions.m"; sourceTree = "<group>"; };
-		996007E410F8C9640070D588 /* NSFileManager+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+M3Extensions.h"; sourceTree = "<group>"; };
-		996007E510F8C9640070D588 /* NSFileManager+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+M3Extensions.m"; sourceTree = "<group>"; };
-		996007E610F8C9640070D588 /* NSString+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+M3Extensions.h"; sourceTree = "<group>"; };
-		996007E710F8C9640070D588 /* NSString+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+M3Extensions.m"; sourceTree = "<group>"; };
-		996007E810F8C9640070D588 /* NSXMLElement+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSXMLElement+M3Extensions.h"; sourceTree = "<group>"; };
-		996007E910F8C9640070D588 /* NSXMLElement+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSXMLElement+M3Extensions.m"; sourceTree = "<group>"; };
-		996007F210F8C96D0070D588 /* M3Date.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3Date.h; sourceTree = "<group>"; };
-		996007F310F8C96D0070D588 /* M3Date.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3Date.m; sourceTree = "<group>"; };
-		9960080210F8C9980070D588 /* M3CSVValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3CSVValueTransformer.h; sourceTree = "<group>"; };
-		9960080310F8C9980070D588 /* M3CSVValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3CSVValueTransformer.m; sourceTree = "<group>"; };
-		9960080410F8C9980070D588 /* M3FileSizeValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3FileSizeValueTransformer.h; sourceTree = "<group>"; };
-		9960080510F8C9980070D588 /* M3FileSizeValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3FileSizeValueTransformer.m; sourceTree = "<group>"; };
-		99600CBE10F8CD630070D588 /* M3Foundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3Foundation.h; sourceTree = "<group>"; };
-		99600CE310F8CEF60070D588 /* M3FoundationTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = M3FoundationTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		99600CE410F8CEF60070D588 /* M3FoundationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "M3FoundationTests-Info.plist"; sourceTree = "<group>"; };
-		99600D2110F8D0500070D588 /* NSArray+M3ExtensionsTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+M3ExtensionsTests.h"; sourceTree = "<group>"; };
-		99600D2210F8D0500070D588 /* NSArray+M3ExtensionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+M3ExtensionsTests.m"; sourceTree = "<group>"; };
-		99600D9D10F8D5150070D588 /* NSString+M3ExtensionsTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+M3ExtensionsTest.h"; sourceTree = "<group>"; };
-		99600D9E10F8D5150070D588 /* NSString+M3ExtensionsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+M3ExtensionsTest.m"; sourceTree = "<group>"; };
-		99600DAF10F8D5490070D588 /* M3CSVValueTransformerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3CSVValueTransformerTests.h; sourceTree = "<group>"; };
-		99600DB010F8D5490070D588 /* M3CSVValueTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3CSVValueTransformerTests.m; sourceTree = "<group>"; };
-		99600DB410F8D5540070D588 /* M3FileSizeValueTransformerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3FileSizeValueTransformerTests.h; sourceTree = "<group>"; };
-		99600DB510F8D5540070D588 /* M3FileSizeValueTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3FileSizeValueTransformerTests.m; sourceTree = "<group>"; };
-		9960245613460BFF0029725D /* NSCompoundPredicate+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCompoundPredicate+M3Extensions.h"; sourceTree = "<group>"; };
-		9960245713460BFF0029725D /* NSCompoundPredicate+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCompoundPredicate+M3Extensions.m"; sourceTree = "<group>"; };
-		9960245A13460D800029725D /* NSComparisonPredicate+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSComparisonPredicate+M3Extensions.h"; sourceTree = "<group>"; };
-		9960245B13460D800029725D /* NSComparisonPredicate+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSComparisonPredicate+M3Extensions.m"; sourceTree = "<group>"; };
-		9960245E134620430029725D /* NSExpression+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSExpression+M3Extensions.h"; sourceTree = "<group>"; };
-		9960245F134620430029725D /* NSExpression+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSExpression+M3Extensions.m"; sourceTree = "<group>"; };
-		9961D6B91344BCFC00103BE6 /* NSPredicate+M3ExtensionsTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPredicate+M3ExtensionsTests.h"; sourceTree = "<group>"; };
-		9961D6BA1344BCFC00103BE6 /* NSPredicate+M3ExtensionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPredicate+M3ExtensionsTests.m"; sourceTree = "<group>"; };
-		9961D6BE1344E64400103BE6 /* NSPredicate+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPredicate+M3Extensions.h"; sourceTree = "<group>"; };
-		9961D6BF1344E64400103BE6 /* NSPredicate+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPredicate+M3Extensions.m"; sourceTree = "<group>"; };
-		996EF5991347507200345D64 /* NSPredicateXMLTestData.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NSPredicateXMLTestData.txt; sourceTree = "<group>"; };
-		998F717111AF10F900580AB2 /* NSMutableArray+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+M3Extensions.h"; sourceTree = "<group>"; };
-		998F717211AF10F900580AB2 /* NSMutableArray+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+M3Extensions.m"; sourceTree = "<group>"; };
-		998F718711AF114400580AB2 /* M3IndexSetEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3IndexSetEnumerator.h; sourceTree = "<group>"; };
-		998F718811AF114400580AB2 /* M3IndexSetEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3IndexSetEnumerator.m; sourceTree = "<group>"; };
-		998F76EB11AF135400580AB2 /* AXPathDFA.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AXPathDFA.txt; sourceTree = "<group>"; };
-		998F76EC11AF135400580AB2 /* M3AccessibilityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3AccessibilityController.h; sourceTree = "<group>"; };
-		998F76ED11AF135400580AB2 /* M3AccessibilityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3AccessibilityController.m; sourceTree = "<group>"; };
-		998F76EE11AF135400580AB2 /* M3AccessibleUIElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3AccessibleUIElement.h; sourceTree = "<group>"; };
-		998F76EF11AF135400580AB2 /* M3AccessibleUIElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3AccessibleUIElement.m; sourceTree = "<group>"; };
-		998F76F011AF135400580AB2 /* M3DFA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3DFA.h; sourceTree = "<group>"; };
-		998F76F111AF135400580AB2 /* M3DFA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3DFA.m; sourceTree = "<group>"; };
-		998F76F811AF138C00580AB2 /* NSMutableSet+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableSet+M3Extensions.h"; sourceTree = "<group>"; };
-		998F76F911AF138C00580AB2 /* NSMutableSet+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableSet+M3Extensions.m"; sourceTree = "<group>"; };
-		9994863D1358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+M3Extensions.h"; sourceTree = "<group>"; };
-		9994863E1358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+M3Extensions.m"; sourceTree = "<group>"; };
-		99A7D91311D397270011B922 /* NSXMLNode+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSXMLNode+M3Extensions.h"; sourceTree = "<group>"; };
-		99A7D91411D397270011B922 /* NSXMLNode+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSXMLNode+M3Extensions.m"; sourceTree = "<group>"; };
-		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
-/* End PBXFileReference section */
+/* Begin PBXFileReference section***************************/
+		0867D69BFE84028FC02AAC07 /* Foundation.framework***************************/ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		0867D6A5FE840307C02AAC07 /* AppKit.framework***************************/ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		089C1667FE841158C02AAC07 /* English***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework***************************/ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		32DBCF5E0370ADEE00C91783 /* M3Foundation_Prefix.pch***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3Foundation_Prefix.pch; sourceTree = "<group>"; };
+		8DC2EF5A0486A6940098B216 /* Info.plist***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DC2EF5B0486A6940098B216 /* M3Foundation.framework***************************/ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = M3Foundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		990F989A13437290000E336B /* NSObject+M3Extensions.h***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+M3Extensions.h"; sourceTree = "<group>"; };
+		990F989B13437290000E336B /* NSObject+M3Extensions.m***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+M3Extensions.m"; sourceTree = "<group>"; };
+		9911BEB31421319200BE7671 /* M3URLConnectionOperation.h***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3URLConnectionOperation.h; sourceTree = "<group>"; };
+		9911BEB41421319200BE7671 /* M3URLConnectionOperation.m***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3URLConnectionOperation.m; sourceTree = "<group>"; };
+		992E8094131EAD2B00D45ED3 /* M3KeyValueObserving.h***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3KeyValueObserving.h; sourceTree = "<group>"; };
+		992E8095131EAD2B00D45ED3 /* M3KeyValueObserving.m***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3KeyValueObserving.m; sourceTree = "<group>"; };
+		996007DA10F8C9510070D588 /* M3EncapsulatedURLConnection.h***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3EncapsulatedURLConnection.h; sourceTree = "<group>"; };
+		996007DB10F8C9510070D588 /* M3EncapsulatedURLConnection.m***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3EncapsulatedURLConnection.m; sourceTree = "<group>"; };
+		996007E210F8C9640070D588 /* NSArray+M3Extensions.h***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+M3Extensions.h"; sourceTree = "<group>"; };
+		996007E310F8C9640070D588 /* NSArray+M3Extensions.m***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+M3Extensions.m"; sourceTree = "<group>"; };
+		996007E410F8C9640070D588 /* NSFileManager+M3Extensions.h***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+M3Extensions.h"; sourceTree = "<group>"; };
+		996007E510F8C9640070D588 /* NSFileManager+M3Extensions.m***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+M3Extensions.m"; sourceTree = "<group>"; };
+		996007E610F8C9640070D588 /* NSString+M3Extensions.h***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+M3Extensions.h"; sourceTree = "<group>"; };
+		996007E710F8C9640070D588 /* NSString+M3Extensions.m***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+M3Extensions.m"; sourceTree = "<group>"; };
+		996007E810F8C9640070D588 /* NSXMLElement+M3Extensions.h***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSXMLElement+M3Extensions.h"; sourceTree = "<group>"; };
+		996007E910F8C9640070D588 /* NSXMLElement+M3Extensions.m***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSXMLElement+M3Extensions.m"; sourceTree = "<group>"; };
+		996007F210F8C96D0070D588 /* M3Date.h***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3Date.h; sourceTree = "<group>"; };
+		996007F310F8C96D0070D588 /* M3Date.m***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3Date.m; sourceTree = "<group>"; };
+		9960080210F8C9980070D588 /* M3CSVValueTransformer.h***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3CSVValueTransformer.h; sourceTree = "<group>"; };
+		9960080310F8C9980070D588 /* M3CSVValueTransformer.m***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3CSVValueTransformer.m; sourceTree = "<group>"; };
+		9960080410F8C9980070D588 /* M3FileSizeValueTransformer.h***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3FileSizeValueTransformer.h; sourceTree = "<group>"; };
+		9960080510F8C9980070D588 /* M3FileSizeValueTransformer.m***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3FileSizeValueTransformer.m; sourceTree = "<group>"; };
+		99600CBE10F8CD630070D588 /* M3Foundation.h***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3Foundation.h; sourceTree = "<group>"; };
+		99600CE310F8CEF60070D588 /* M3FoundationTests.octest***************************/ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = M3FoundationTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		99600CE410F8CEF60070D588 /* M3FoundationTests-Info.plist***************************/ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "M3FoundationTests-Info.plist"; sourceTree = "<group>"; };
+		99600D2110F8D0500070D588 /* NSArray+M3ExtensionsTests.h***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+M3ExtensionsTests.h"; sourceTree = "<group>"; };
+		99600D2210F8D0500070D588 /* NSArray+M3ExtensionsTests.m***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+M3ExtensionsTests.m"; sourceTree = "<group>"; };
+		99600D9D10F8D5150070D588 /* NSString+M3ExtensionsTest.h***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+M3ExtensionsTest.h"; sourceTree = "<group>"; };
+		99600D9E10F8D5150070D588 /* NSString+M3ExtensionsTest.m***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+M3ExtensionsTest.m"; sourceTree = "<group>"; };
+		99600DAF10F8D5490070D588 /* M3CSVValueTransformerTests.h***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3CSVValueTransformerTests.h; sourceTree = "<group>"; };
+		99600DB010F8D5490070D588 /* M3CSVValueTransformerTests.m***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3CSVValueTransformerTests.m; sourceTree = "<group>"; };
+		99600DB410F8D5540070D588 /* M3FileSizeValueTransformerTests.h***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3FileSizeValueTransformerTests.h; sourceTree = "<group>"; };
+		99600DB510F8D5540070D588 /* M3FileSizeValueTransformerTests.m***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3FileSizeValueTransformerTests.m; sourceTree = "<group>"; };
+		9960245613460BFF0029725D /* NSCompoundPredicate+M3Extensions.h***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCompoundPredicate+M3Extensions.h"; sourceTree = "<group>"; };
+		9960245713460BFF0029725D /* NSCompoundPredicate+M3Extensions.m***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCompoundPredicate+M3Extensions.m"; sourceTree = "<group>"; };
+		9960245A13460D800029725D /* NSComparisonPredicate+M3Extensions.h***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSComparisonPredicate+M3Extensions.h"; sourceTree = "<group>"; };
+		9960245B13460D800029725D /* NSComparisonPredicate+M3Extensions.m***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSComparisonPredicate+M3Extensions.m"; sourceTree = "<group>"; };
+		9960245E134620430029725D /* NSExpression+M3Extensions.h***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSExpression+M3Extensions.h"; sourceTree = "<group>"; };
+		9960245F134620430029725D /* NSExpression+M3Extensions.m***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSExpression+M3Extensions.m"; sourceTree = "<group>"; };
+		9961D6B91344BCFC00103BE6 /* NSPredicate+M3ExtensionsTests.h***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPredicate+M3ExtensionsTests.h"; sourceTree = "<group>"; };
+		9961D6BA1344BCFC00103BE6 /* NSPredicate+M3ExtensionsTests.m***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPredicate+M3ExtensionsTests.m"; sourceTree = "<group>"; };
+		9961D6BE1344E64400103BE6 /* NSPredicate+M3Extensions.h***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPredicate+M3Extensions.h"; sourceTree = "<group>"; };
+		9961D6BF1344E64400103BE6 /* NSPredicate+M3Extensions.m***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPredicate+M3Extensions.m"; sourceTree = "<group>"; };
+		996EF5991347507200345D64 /* NSPredicateXMLTestData.txt***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NSPredicateXMLTestData.txt; sourceTree = "<group>"; };
+		998F717111AF10F900580AB2 /* NSMutableArray+M3Extensions.h***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+M3Extensions.h"; sourceTree = "<group>"; };
+		998F717211AF10F900580AB2 /* NSMutableArray+M3Extensions.m***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+M3Extensions.m"; sourceTree = "<group>"; };
+		998F718711AF114400580AB2 /* M3IndexSetEnumerator.h***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3IndexSetEnumerator.h; sourceTree = "<group>"; };
+		998F718811AF114400580AB2 /* M3IndexSetEnumerator.m***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3IndexSetEnumerator.m; sourceTree = "<group>"; };
+		998F76EB11AF135400580AB2 /* AXPathDFA.txt***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AXPathDFA.txt; sourceTree = "<group>"; };
+		998F76EC11AF135400580AB2 /* M3AccessibilityController.h***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3AccessibilityController.h; sourceTree = "<group>"; };
+		998F76ED11AF135400580AB2 /* M3AccessibilityController.m***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3AccessibilityController.m; sourceTree = "<group>"; };
+		998F76EE11AF135400580AB2 /* M3AccessibleUIElement.h***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3AccessibleUIElement.h; sourceTree = "<group>"; };
+		998F76EF11AF135400580AB2 /* M3AccessibleUIElement.m***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3AccessibleUIElement.m; sourceTree = "<group>"; };
+		998F76F011AF135400580AB2 /* M3DFA.h***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3DFA.h; sourceTree = "<group>"; };
+		998F76F111AF135400580AB2 /* M3DFA.m***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3DFA.m; sourceTree = "<group>"; };
+		998F76F811AF138C00580AB2 /* NSMutableSet+M3Extensions.h***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableSet+M3Extensions.h"; sourceTree = "<group>"; };
+		998F76F911AF138C00580AB2 /* NSMutableSet+M3Extensions.m***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableSet+M3Extensions.m"; sourceTree = "<group>"; };
+		9994863D1358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.h***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+M3Extensions.h"; sourceTree = "<group>"; };
+		9994863E1358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.m***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+M3Extensions.m"; sourceTree = "<group>"; };
+		99A7D91311D397270011B922 /* NSXMLNode+M3Extensions.h***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSXMLNode+M3Extensions.h"; sourceTree = "<group>"; };
+		99A7D91411D397270011B922 /* NSXMLNode+M3Extensions.m***************************/ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSXMLNode+M3Extensions.m"; sourceTree = "<group>"; };
+		D2F7E79907B2D74100F64583 /* CoreData.framework***************************/ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+/* End PBXFileReference section***************************/
 
-/* Begin PBXFrameworksBuildPhase section */
-		8DC2EF560486A6940098B216 /* Frameworks */ = {
+/* Begin PBXFrameworksBuildPhase section***************************/
+		8DC2EF560486A6940098B216 /* Frameworks***************************/ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */,
+				8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks***************************/,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		99600CE010F8CEF60070D588 /* Frameworks */ = {
+		99600CE010F8CEF60070D588 /* Frameworks***************************/ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99600D1C10F8D00B0070D588 /* M3Foundation.framework in Frameworks */,
+				99600D1C10F8D00B0070D588 /* M3Foundation.framework in Frameworks***************************/,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXFrameworksBuildPhase section */
+/* End PBXFrameworksBuildPhase section***************************/
 
-/* Begin PBXGroup section */
-		034768DFFF38A50411DB9C8B /* Products */ = {
+/* Begin PBXGroup section***************************/
+		034768DFFF38A50411DB9C8B /* Products***************************/ = {
 			isa = PBXGroup;
 			children = (
-				8DC2EF5B0486A6940098B216 /* M3Foundation.framework */,
-				99600CE310F8CEF60070D588 /* M3FoundationTests.octest */,
+				8DC2EF5B0486A6940098B216 /* M3Foundation.framework***************************/,
+				99600CE310F8CEF60070D588 /* M3FoundationTests.octest***************************/,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0867D691FE84028FC02AAC07 /* M3Foundation */ = {
+		0867D691FE84028FC02AAC07 /* M3Foundation***************************/ = {
 			isa = PBXGroup;
 			children = (
-				99600CBE10F8CD630070D588 /* M3Foundation.h */,
-				99225A4A11386E58008970B7 /* Categories */,
-				08FB77AEFE84172EC02AAC07 /* Classes */,
-				99600D2010F8D02E0070D588 /* Tests */,
-				32C88DFF0371C24200C91783 /* Other Sources */,
-				089C1665FE841158C02AAC07 /* Resources */,
-				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
-				034768DFFF38A50411DB9C8B /* Products */,
-				99600CE410F8CEF60070D588 /* M3FoundationTests-Info.plist */,
+				99600CBE10F8CD630070D588 /* M3Foundation.h***************************/,
+				99225A4A11386E58008970B7 /* Categories***************************/,
+				08FB77AEFE84172EC02AAC07 /* Classes***************************/,
+				99600D2010F8D02E0070D588 /* Tests***************************/,
+				32C88DFF0371C24200C91783 /* Other Sources***************************/,
+				089C1665FE841158C02AAC07 /* Resources***************************/,
+				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries***************************/,
+				034768DFFF38A50411DB9C8B /* Products***************************/,
+				99600CE410F8CEF60070D588 /* M3FoundationTests-Info.plist***************************/,
 			);
 			name = M3Foundation;
 			sourceTree = "<group>";
 		};
-		0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */ = {
+		0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries***************************/ = {
 			isa = PBXGroup;
 			children = (
-				1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */,
-				1058C7B2FEA5585E11CA2CBB /* Other Frameworks */,
+				1058C7B0FEA5585E11CA2CBB /* Linked Frameworks***************************/,
+				1058C7B2FEA5585E11CA2CBB /* Other Frameworks***************************/,
 			);
 			name = "External Frameworks and Libraries";
 			sourceTree = "<group>";
 		};
-		089C1665FE841158C02AAC07 /* Resources */ = {
+		089C1665FE841158C02AAC07 /* Resources***************************/ = {
 			isa = PBXGroup;
 			children = (
-				998F76EB11AF135400580AB2 /* AXPathDFA.txt */,
-				8DC2EF5A0486A6940098B216 /* Info.plist */,
-				089C1666FE841158C02AAC07 /* InfoPlist.strings */,
+				998F76EB11AF135400580AB2 /* AXPathDFA.txt***************************/,
+				8DC2EF5A0486A6940098B216 /* Info.plist***************************/,
+				089C1666FE841158C02AAC07 /* InfoPlist.strings***************************/,
 			);
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		08FB77AEFE84172EC02AAC07 /* Classes */ = {
+		08FB77AEFE84172EC02AAC07 /* Classes***************************/ = {
 			isa = PBXGroup;
 			children = (
-				998F76EC11AF135400580AB2 /* M3AccessibilityController.h */,
-				998F76ED11AF135400580AB2 /* M3AccessibilityController.m */,
-				998F76EE11AF135400580AB2 /* M3AccessibleUIElement.h */,
-				998F76EF11AF135400580AB2 /* M3AccessibleUIElement.m */,
-				9960080210F8C9980070D588 /* M3CSVValueTransformer.h */,
-				9960080310F8C9980070D588 /* M3CSVValueTransformer.m */,
-				996007F210F8C96D0070D588 /* M3Date.h */,
-				996007F310F8C96D0070D588 /* M3Date.m */,
-				998F76F011AF135400580AB2 /* M3DFA.h */,
-				998F76F111AF135400580AB2 /* M3DFA.m */,
-				996007DA10F8C9510070D588 /* M3EncapsulatedURLConnection.h */,
-				996007DB10F8C9510070D588 /* M3EncapsulatedURLConnection.m */,
-				9960080410F8C9980070D588 /* M3FileSizeValueTransformer.h */,
-				9960080510F8C9980070D588 /* M3FileSizeValueTransformer.m */,
-				998F718711AF114400580AB2 /* M3IndexSetEnumerator.h */,
-				998F718811AF114400580AB2 /* M3IndexSetEnumerator.m */,
-				9911BEB31421319200BE7671 /* M3URLConnectionOperation.h */,
-				9911BEB41421319200BE7671 /* M3URLConnectionOperation.m */,
+				998F76EC11AF135400580AB2 /* M3AccessibilityController.h***************************/,
+				998F76ED11AF135400580AB2 /* M3AccessibilityController.m***************************/,
+				998F76EE11AF135400580AB2 /* M3AccessibleUIElement.h***************************/,
+				998F76EF11AF135400580AB2 /* M3AccessibleUIElement.m***************************/,
+				9960080210F8C9980070D588 /* M3CSVValueTransformer.h***************************/,
+				9960080310F8C9980070D588 /* M3CSVValueTransformer.m***************************/,
+				996007F210F8C96D0070D588 /* M3Date.h***************************/,
+				996007F310F8C96D0070D588 /* M3Date.m***************************/,
+				998F76F011AF135400580AB2 /* M3DFA.h***************************/,
+				998F76F111AF135400580AB2 /* M3DFA.m***************************/,
+				996007DA10F8C9510070D588 /* M3EncapsulatedURLConnection.h***************************/,
+				996007DB10F8C9510070D588 /* M3EncapsulatedURLConnection.m***************************/,
+				9960080410F8C9980070D588 /* M3FileSizeValueTransformer.h***************************/,
+				9960080510F8C9980070D588 /* M3FileSizeValueTransformer.m***************************/,
+				998F718711AF114400580AB2 /* M3IndexSetEnumerator.h***************************/,
+				998F718811AF114400580AB2 /* M3IndexSetEnumerator.m***************************/,
+				9911BEB31421319200BE7671 /* M3URLConnectionOperation.h***************************/,
+				9911BEB41421319200BE7671 /* M3URLConnectionOperation.m***************************/,
 			);
 			name = Classes;
 			sourceTree = "<group>";
 		};
-		1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */ = {
+		1058C7B0FEA5585E11CA2CBB /* Linked Frameworks***************************/ = {
 			isa = PBXGroup;
 			children = (
-				1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */,
+				1058C7B1FEA5585E11CA2CBB /* Cocoa.framework***************************/,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
 		};
-		1058C7B2FEA5585E11CA2CBB /* Other Frameworks */ = {
+		1058C7B2FEA5585E11CA2CBB /* Other Frameworks***************************/ = {
 			isa = PBXGroup;
 			children = (
-				0867D6A5FE840307C02AAC07 /* AppKit.framework */,
-				D2F7E79907B2D74100F64583 /* CoreData.framework */,
-				0867D69BFE84028FC02AAC07 /* Foundation.framework */,
+				0867D6A5FE840307C02AAC07 /* AppKit.framework***************************/,
+				D2F7E79907B2D74100F64583 /* CoreData.framework***************************/,
+				0867D69BFE84028FC02AAC07 /* Foundation.framework***************************/,
 			);
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		32C88DFF0371C24200C91783 /* Other Sources */ = {
+		32C88DFF0371C24200C91783 /* Other Sources***************************/ = {
 			isa = PBXGroup;
 			children = (
-				32DBCF5E0370ADEE00C91783 /* M3Foundation_Prefix.pch */,
+				32DBCF5E0370ADEE00C91783 /* M3Foundation_Prefix.pch***************************/,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
 		};
-		99225A4A11386E58008970B7 /* Categories */ = {
+		99225A4A11386E58008970B7 /* Categories***************************/ = {
 			isa = PBXGroup;
 			children = (
-				996007E210F8C9640070D588 /* NSArray+M3Extensions.h */,
-				996007E310F8C9640070D588 /* NSArray+M3Extensions.m */,
-				996007E410F8C9640070D588 /* NSFileManager+M3Extensions.h */,
-				996007E510F8C9640070D588 /* NSFileManager+M3Extensions.m */,
-				998F717111AF10F900580AB2 /* NSMutableArray+M3Extensions.h */,
-				998F717211AF10F900580AB2 /* NSMutableArray+M3Extensions.m */,
-				9994863D1358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.h */,
-				9994863E1358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.m */,
-				998F76F811AF138C00580AB2 /* NSMutableSet+M3Extensions.h */,
-				998F76F911AF138C00580AB2 /* NSMutableSet+M3Extensions.m */,
-				990F989A13437290000E336B /* NSObject+M3Extensions.h */,
-				990F989B13437290000E336B /* NSObject+M3Extensions.m */,
-				996007E610F8C9640070D588 /* NSString+M3Extensions.h */,
-				996007E710F8C9640070D588 /* NSString+M3Extensions.m */,
-				996007E810F8C9640070D588 /* NSXMLElement+M3Extensions.h */,
-				996007E910F8C9640070D588 /* NSXMLElement+M3Extensions.m */,
-				99A7D91311D397270011B922 /* NSXMLNode+M3Extensions.h */,
-				99A7D91411D397270011B922 /* NSXMLNode+M3Extensions.m */,
-				9961D6BE1344E64400103BE6 /* NSPredicate+M3Extensions.h */,
-				9961D6BF1344E64400103BE6 /* NSPredicate+M3Extensions.m */,
-				9960245613460BFF0029725D /* NSCompoundPredicate+M3Extensions.h */,
-				9960245713460BFF0029725D /* NSCompoundPredicate+M3Extensions.m */,
-				9960245A13460D800029725D /* NSComparisonPredicate+M3Extensions.h */,
-				9960245B13460D800029725D /* NSComparisonPredicate+M3Extensions.m */,
-				9960245E134620430029725D /* NSExpression+M3Extensions.h */,
-				9960245F134620430029725D /* NSExpression+M3Extensions.m */,
-				992E8094131EAD2B00D45ED3 /* M3KeyValueObserving.h */,
-				992E8095131EAD2B00D45ED3 /* M3KeyValueObserving.m */,
+				996007E210F8C9640070D588 /* NSArray+M3Extensions.h***************************/,
+				996007E310F8C9640070D588 /* NSArray+M3Extensions.m***************************/,
+				996007E410F8C9640070D588 /* NSFileManager+M3Extensions.h***************************/,
+				996007E510F8C9640070D588 /* NSFileManager+M3Extensions.m***************************/,
+				998F717111AF10F900580AB2 /* NSMutableArray+M3Extensions.h***************************/,
+				998F717211AF10F900580AB2 /* NSMutableArray+M3Extensions.m***************************/,
+				9994863D1358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.h***************************/,
+				9994863E1358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.m***************************/,
+				998F76F811AF138C00580AB2 /* NSMutableSet+M3Extensions.h***************************/,
+				998F76F911AF138C00580AB2 /* NSMutableSet+M3Extensions.m***************************/,
+				990F989A13437290000E336B /* NSObject+M3Extensions.h***************************/,
+				990F989B13437290000E336B /* NSObject+M3Extensions.m***************************/,
+				996007E610F8C9640070D588 /* NSString+M3Extensions.h***************************/,
+				996007E710F8C9640070D588 /* NSString+M3Extensions.m***************************/,
+				996007E810F8C9640070D588 /* NSXMLElement+M3Extensions.h***************************/,
+				996007E910F8C9640070D588 /* NSXMLElement+M3Extensions.m***************************/,
+				99A7D91311D397270011B922 /* NSXMLNode+M3Extensions.h***************************/,
+				99A7D91411D397270011B922 /* NSXMLNode+M3Extensions.m***************************/,
+				9961D6BE1344E64400103BE6 /* NSPredicate+M3Extensions.h***************************/,
+				9961D6BF1344E64400103BE6 /* NSPredicate+M3Extensions.m***************************/,
+				9960245613460BFF0029725D /* NSCompoundPredicate+M3Extensions.h***************************/,
+				9960245713460BFF0029725D /* NSCompoundPredicate+M3Extensions.m***************************/,
+				9960245A13460D800029725D /* NSComparisonPredicate+M3Extensions.h***************************/,
+				9960245B13460D800029725D /* NSComparisonPredicate+M3Extensions.m***************************/,
+				9960245E134620430029725D /* NSExpression+M3Extensions.h***************************/,
+				9960245F134620430029725D /* NSExpression+M3Extensions.m***************************/,
+				992E8094131EAD2B00D45ED3 /* M3KeyValueObserving.h***************************/,
+				992E8095131EAD2B00D45ED3 /* M3KeyValueObserving.m***************************/,
 			);
 			name = Categories;
 			sourceTree = "<group>";
 		};
-		99600D2010F8D02E0070D588 /* Tests */ = {
+		99600D2010F8D02E0070D588 /* Tests***************************/ = {
 			isa = PBXGroup;
 			children = (
-				99600D2110F8D0500070D588 /* NSArray+M3ExtensionsTests.h */,
-				99600D2210F8D0500070D588 /* NSArray+M3ExtensionsTests.m */,
-				99600DAF10F8D5490070D588 /* M3CSVValueTransformerTests.h */,
-				99600DB010F8D5490070D588 /* M3CSVValueTransformerTests.m */,
-				99600DB410F8D5540070D588 /* M3FileSizeValueTransformerTests.h */,
-				99600DB510F8D5540070D588 /* M3FileSizeValueTransformerTests.m */,
-				99600D9D10F8D5150070D588 /* NSString+M3ExtensionsTest.h */,
-				99600D9E10F8D5150070D588 /* NSString+M3ExtensionsTest.m */,
-				9961D6B91344BCFC00103BE6 /* NSPredicate+M3ExtensionsTests.h */,
-				9961D6BA1344BCFC00103BE6 /* NSPredicate+M3ExtensionsTests.m */,
-				996EF5991347507200345D64 /* NSPredicateXMLTestData.txt */,
+				99600D2110F8D0500070D588 /* NSArray+M3ExtensionsTests.h***************************/,
+				99600D2210F8D0500070D588 /* NSArray+M3ExtensionsTests.m***************************/,
+				99600DAF10F8D5490070D588 /* M3CSVValueTransformerTests.h***************************/,
+				99600DB010F8D5490070D588 /* M3CSVValueTransformerTests.m***************************/,
+				99600DB410F8D5540070D588 /* M3FileSizeValueTransformerTests.h***************************/,
+				99600DB510F8D5540070D588 /* M3FileSizeValueTransformerTests.m***************************/,
+				99600D9D10F8D5150070D588 /* NSString+M3ExtensionsTest.h***************************/,
+				99600D9E10F8D5150070D588 /* NSString+M3ExtensionsTest.m***************************/,
+				9961D6B91344BCFC00103BE6 /* NSPredicate+M3ExtensionsTests.h***************************/,
+				9961D6BA1344BCFC00103BE6 /* NSPredicate+M3ExtensionsTests.m***************************/,
+				996EF5991347507200345D64 /* NSPredicateXMLTestData.txt***************************/,
 			);
 			path = Tests;
 			sourceTree = "<group>";
 		};
-/* End PBXGroup section */
+/* End PBXGroup section***************************/
 
-/* Begin PBXHeadersBuildPhase section */
-		8DC2EF500486A6940098B216 /* Headers */ = {
+/* Begin PBXHeadersBuildPhase section***************************/
+		8DC2EF500486A6940098B216 /* Headers***************************/ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99600CBF10F8CD630070D588 /* M3Foundation.h in Headers */,
-				998859AD11B819DC007D2911 /* M3AccessibilityController.h in Headers */,
-				998859AE11B819DC007D2911 /* M3AccessibleUIElement.h in Headers */,
-				9960080610F8C9980070D588 /* M3CSVValueTransformer.h in Headers */,
-				996007F410F8C96D0070D588 /* M3Date.h in Headers */,
-				998859AF11B819DC007D2911 /* M3DFA.h in Headers */,
-				996007DE10F8C9510070D588 /* M3EncapsulatedURLConnection.h in Headers */,
-				998859AB11B819C9007D2911 /* M3IndexSetEnumerator.h in Headers */,
-				9960080810F8C9980070D588 /* M3FileSizeValueTransformer.h in Headers */,
-				996007EA10F8C9640070D588 /* NSArray+M3Extensions.h in Headers */,
-				996007EC10F8C9640070D588 /* NSFileManager+M3Extensions.h in Headers */,
-				998859A411B8198D007D2911 /* NSMutableArray+M3Extensions.h in Headers */,
-				998859AC11B819DC007D2911 /* NSMutableSet+M3Extensions.h in Headers */,
-				996007EE10F8C9640070D588 /* NSString+M3Extensions.h in Headers */,
-				996007F010F8C9640070D588 /* NSXMLElement+M3Extensions.h in Headers */,
-				99A7D91511D397270011B922 /* NSXMLNode+M3Extensions.h in Headers */,
-				992E8096131EAD2B00D45ED3 /* M3KeyValueObserving.h in Headers */,
-				990F989C13437290000E336B /* NSObject+M3Extensions.h in Headers */,
-				9961D6C01344E64400103BE6 /* NSPredicate+M3Extensions.h in Headers */,
-				9960245813460BFF0029725D /* NSCompoundPredicate+M3Extensions.h in Headers */,
-				99602460134620430029725D /* NSExpression+M3Extensions.h in Headers */,
-				9911BEB51421319200BE7671 /* M3URLConnectionOperation.h in Headers */,
-				9960245C13460D800029725D /* NSComparisonPredicate+M3Extensions.h in Headers */,
-				9994863F1358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.h in Headers */,
+				99600CBF10F8CD630070D588 /* M3Foundation.h in Headers***************************/,
+				998859AD11B819DC007D2911 /* M3AccessibilityController.h in Headers***************************/,
+				998859AE11B819DC007D2911 /* M3AccessibleUIElement.h in Headers***************************/,
+				9960080610F8C9980070D588 /* M3CSVValueTransformer.h in Headers***************************/,
+				996007F410F8C96D0070D588 /* M3Date.h in Headers***************************/,
+				998859AF11B819DC007D2911 /* M3DFA.h in Headers***************************/,
+				996007DE10F8C9510070D588 /* M3EncapsulatedURLConnection.h in Headers***************************/,
+				998859AB11B819C9007D2911 /* M3IndexSetEnumerator.h in Headers***************************/,
+				9960080810F8C9980070D588 /* M3FileSizeValueTransformer.h in Headers***************************/,
+				996007EA10F8C9640070D588 /* NSArray+M3Extensions.h in Headers***************************/,
+				996007EC10F8C9640070D588 /* NSFileManager+M3Extensions.h in Headers***************************/,
+				998859A411B8198D007D2911 /* NSMutableArray+M3Extensions.h in Headers***************************/,
+				998859AC11B819DC007D2911 /* NSMutableSet+M3Extensions.h in Headers***************************/,
+				996007EE10F8C9640070D588 /* NSString+M3Extensions.h in Headers***************************/,
+				996007F010F8C9640070D588 /* NSXMLElement+M3Extensions.h in Headers***************************/,
+				99A7D91511D397270011B922 /* NSXMLNode+M3Extensions.h in Headers***************************/,
+				992E8096131EAD2B00D45ED3 /* M3KeyValueObserving.h in Headers***************************/,
+				990F989C13437290000E336B /* NSObject+M3Extensions.h in Headers***************************/,
+				9961D6C01344E64400103BE6 /* NSPredicate+M3Extensions.h in Headers***************************/,
+				9960245813460BFF0029725D /* NSCompoundPredicate+M3Extensions.h in Headers***************************/,
+				99602460134620430029725D /* NSExpression+M3Extensions.h in Headers***************************/,
+				9911BEB51421319200BE7671 /* M3URLConnectionOperation.h in Headers***************************/,
+				9960245C13460D800029725D /* NSComparisonPredicate+M3Extensions.h in Headers***************************/,
+				9994863F1358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.h in Headers***************************/,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXHeadersBuildPhase section */
+/* End PBXHeadersBuildPhase section***************************/
 
-/* Begin PBXNativeTarget section */
-		8DC2EF4F0486A6940098B216 /* M3Foundation */ = {
+/* Begin PBXNativeTarget section***************************/
+		8DC2EF4F0486A6940098B216 /* M3Foundation***************************/ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "M3Foundation" */;
+			buildConfigurationList = 1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "M3Foundation"***************************/;
 			buildPhases = (
-				8DC2EF500486A6940098B216 /* Headers */,
-				8DC2EF520486A6940098B216 /* Resources */,
-				8DC2EF540486A6940098B216 /* Sources */,
-				8DC2EF560486A6940098B216 /* Frameworks */,
+				8DC2EF500486A6940098B216 /* Headers***************************/,
+				8DC2EF520486A6940098B216 /* Resources***************************/,
+				8DC2EF540486A6940098B216 /* Sources***************************/,
+				8DC2EF560486A6940098B216 /* Frameworks***************************/,
 			);
 			buildRules = (
 			);
@@ -384,38 +384,38 @@
 			name = M3Foundation;
 			productInstallPath = "$(HOME)/Library/Frameworks";
 			productName = M3Foundation;
-			productReference = 8DC2EF5B0486A6940098B216 /* M3Foundation.framework */;
+			productReference = 8DC2EF5B0486A6940098B216 /* M3Foundation.framework***************************/;
 			productType = "com.apple.product-type.framework";
 		};
-		99600CE210F8CEF60070D588 /* M3FoundationTests */ = {
+		99600CE210F8CEF60070D588 /* M3FoundationTests***************************/ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 99600CE710F8CEF60070D588 /* Build configuration list for PBXNativeTarget "M3FoundationTests" */;
+			buildConfigurationList = 99600CE710F8CEF60070D588 /* Build configuration list for PBXNativeTarget "M3FoundationTests"***************************/;
 			buildPhases = (
-				99600D4810F8D1490070D588 /* Copy Frameworks */,
-				99600CDE10F8CEF60070D588 /* Resources */,
-				99600CDF10F8CEF60070D588 /* Sources */,
-				99600CE010F8CEF60070D588 /* Frameworks */,
-				99600CE110F8CEF60070D588 /* ShellScript */,
+				99600D4810F8D1490070D588 /* Copy Frameworks***************************/,
+				99600CDE10F8CEF60070D588 /* Resources***************************/,
+				99600CDF10F8CEF60070D588 /* Sources***************************/,
+				99600CE010F8CEF60070D588 /* Frameworks***************************/,
+				99600CE110F8CEF60070D588 /* ShellScript***************************/,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				99600CE910F8CF5C0070D588 /* PBXTargetDependency */,
+				99600CE910F8CF5C0070D588 /* PBXTargetDependency***************************/,
 			);
 			name = M3FoundationTests;
 			productName = M3FoundationTests;
-			productReference = 99600CE310F8CEF60070D588 /* M3FoundationTests.octest */;
+			productReference = 99600CE310F8CEF60070D588 /* M3FoundationTests.octest***************************/;
 			productType = "com.apple.product-type.bundle";
 		};
-/* End PBXNativeTarget section */
+/* End PBXNativeTarget section***************************/
 
-/* Begin PBXProject section */
-		0867D690FE84028FC02AAC07 /* Project object */ = {
+/* Begin PBXProject section***************************/
+		0867D690FE84028FC02AAC07 /* Project object***************************/ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0420;
 			};
-			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "M3Foundation" */;
+			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "M3Foundation"***************************/;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -425,39 +425,39 @@
 				French,
 				German,
 			);
-			mainGroup = 0867D691FE84028FC02AAC07 /* M3Foundation */;
-			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			mainGroup = 0867D691FE84028FC02AAC07 /* M3Foundation***************************/;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products***************************/;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8DC2EF4F0486A6940098B216 /* M3Foundation */,
-				99600CE210F8CEF60070D588 /* M3FoundationTests */,
+				8DC2EF4F0486A6940098B216 /* M3Foundation***************************/,
+				99600CE210F8CEF60070D588 /* M3FoundationTests***************************/,
 			);
 		};
-/* End PBXProject section */
+/* End PBXProject section***************************/
 
-/* Begin PBXResourcesBuildPhase section */
-		8DC2EF520486A6940098B216 /* Resources */ = {
+/* Begin PBXResourcesBuildPhase section***************************/
+		8DC2EF520486A6940098B216 /* Resources***************************/ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */,
-				996EF59C134751FF00345D64 /* AXPathDFA.txt in Resources */,
+				8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources***************************/,
+				996EF59C134751FF00345D64 /* AXPathDFA.txt in Resources***************************/,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		99600CDE10F8CEF60070D588 /* Resources */ = {
+		99600CDE10F8CEF60070D588 /* Resources***************************/ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				996EF59B1347507600345D64 /* NSPredicateXMLTestData.txt in Resources */,
+				996EF59B1347507600345D64 /* NSPredicateXMLTestData.txt in Resources***************************/,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXResourcesBuildPhase section */
+/* End PBXResourcesBuildPhase section***************************/
 
-/* Begin PBXShellScriptBuildPhase section */
-		99600CE110F8CEF60070D588 /* ShellScript */ = {
+/* Begin PBXShellScriptBuildPhase section***************************/
+		99600CE110F8CEF60070D588 /* ShellScript***************************/ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -470,74 +470,74 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
-/* End PBXShellScriptBuildPhase section */
+/* End PBXShellScriptBuildPhase section***************************/
 
-/* Begin PBXSourcesBuildPhase section */
-		8DC2EF540486A6940098B216 /* Sources */ = {
+/* Begin PBXSourcesBuildPhase section***************************/
+		8DC2EF540486A6940098B216 /* Sources***************************/ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				996007DF10F8C9510070D588 /* M3EncapsulatedURLConnection.m in Sources */,
-				996007EB10F8C9640070D588 /* NSArray+M3Extensions.m in Sources */,
-				996007ED10F8C9640070D588 /* NSFileManager+M3Extensions.m in Sources */,
-				996007EF10F8C9640070D588 /* NSString+M3Extensions.m in Sources */,
-				996007F110F8C9640070D588 /* NSXMLElement+M3Extensions.m in Sources */,
-				996007F510F8C96D0070D588 /* M3Date.m in Sources */,
-				9960080710F8C9980070D588 /* M3CSVValueTransformer.m in Sources */,
-				9960080910F8C9980070D588 /* M3FileSizeValueTransformer.m in Sources */,
-				9988599D11B81976007D2911 /* NSMutableArray+M3Extensions.m in Sources */,
-				9988599F11B81976007D2911 /* M3IndexSetEnumerator.m in Sources */,
-				998859A011B81976007D2911 /* M3AccessibilityController.m in Sources */,
-				998859A111B81976007D2911 /* M3AccessibleUIElement.m in Sources */,
-				998859A211B81976007D2911 /* M3DFA.m in Sources */,
-				998859A311B81976007D2911 /* NSMutableSet+M3Extensions.m in Sources */,
-				99A7D91611D397270011B922 /* NSXMLNode+M3Extensions.m in Sources */,
-				992E8097131EAD2B00D45ED3 /* M3KeyValueObserving.m in Sources */,
-				990F989D13437290000E336B /* NSObject+M3Extensions.m in Sources */,
-				9961D6C11344E64400103BE6 /* NSPredicate+M3Extensions.m in Sources */,
-				9960245913460BFF0029725D /* NSCompoundPredicate+M3Extensions.m in Sources */,
-				9960245D13460D800029725D /* NSComparisonPredicate+M3Extensions.m in Sources */,
-				99602461134620430029725D /* NSExpression+M3Extensions.m in Sources */,
-				999486401358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.m in Sources */,
-				9911BEB61421319200BE7671 /* M3URLConnectionOperation.m in Sources */,
+				996007DF10F8C9510070D588 /* M3EncapsulatedURLConnection.m in Sources***************************/,
+				996007EB10F8C9640070D588 /* NSArray+M3Extensions.m in Sources***************************/,
+				996007ED10F8C9640070D588 /* NSFileManager+M3Extensions.m in Sources***************************/,
+				996007EF10F8C9640070D588 /* NSString+M3Extensions.m in Sources***************************/,
+				996007F110F8C9640070D588 /* NSXMLElement+M3Extensions.m in Sources***************************/,
+				996007F510F8C96D0070D588 /* M3Date.m in Sources***************************/,
+				9960080710F8C9980070D588 /* M3CSVValueTransformer.m in Sources***************************/,
+				9960080910F8C9980070D588 /* M3FileSizeValueTransformer.m in Sources***************************/,
+				9988599D11B81976007D2911 /* NSMutableArray+M3Extensions.m in Sources***************************/,
+				9988599F11B81976007D2911 /* M3IndexSetEnumerator.m in Sources***************************/,
+				998859A011B81976007D2911 /* M3AccessibilityController.m in Sources***************************/,
+				998859A111B81976007D2911 /* M3AccessibleUIElement.m in Sources***************************/,
+				998859A211B81976007D2911 /* M3DFA.m in Sources***************************/,
+				998859A311B81976007D2911 /* NSMutableSet+M3Extensions.m in Sources***************************/,
+				99A7D91611D397270011B922 /* NSXMLNode+M3Extensions.m in Sources***************************/,
+				992E8097131EAD2B00D45ED3 /* M3KeyValueObserving.m in Sources***************************/,
+				990F989D13437290000E336B /* NSObject+M3Extensions.m in Sources***************************/,
+				9961D6C11344E64400103BE6 /* NSPredicate+M3Extensions.m in Sources***************************/,
+				9960245913460BFF0029725D /* NSCompoundPredicate+M3Extensions.m in Sources***************************/,
+				9960245D13460D800029725D /* NSComparisonPredicate+M3Extensions.m in Sources***************************/,
+				99602461134620430029725D /* NSExpression+M3Extensions.m in Sources***************************/,
+				999486401358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.m in Sources***************************/,
+				9911BEB61421319200BE7671 /* M3URLConnectionOperation.m in Sources***************************/,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		99600CDF10F8CEF60070D588 /* Sources */ = {
+		99600CDF10F8CEF60070D588 /* Sources***************************/ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99600D2310F8D0500070D588 /* NSArray+M3ExtensionsTests.m in Sources */,
-				99600D9F10F8D5150070D588 /* NSString+M3ExtensionsTest.m in Sources */,
-				99600DB110F8D5490070D588 /* M3CSVValueTransformerTests.m in Sources */,
-				9961D6BD1344BE0000103BE6 /* NSPredicate+M3ExtensionsTests.m in Sources */,
-				99600DB610F8D5540070D588 /* M3FileSizeValueTransformerTests.m in Sources */,
+				99600D2310F8D0500070D588 /* NSArray+M3ExtensionsTests.m in Sources***************************/,
+				99600D9F10F8D5150070D588 /* NSString+M3ExtensionsTest.m in Sources***************************/,
+				99600DB110F8D5490070D588 /* M3CSVValueTransformerTests.m in Sources***************************/,
+				9961D6BD1344BE0000103BE6 /* NSPredicate+M3ExtensionsTests.m in Sources***************************/,
+				99600DB610F8D5540070D588 /* M3FileSizeValueTransformerTests.m in Sources***************************/,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXSourcesBuildPhase section */
+/* End PBXSourcesBuildPhase section***************************/
 
-/* Begin PBXTargetDependency section */
-		99600CE910F8CF5C0070D588 /* PBXTargetDependency */ = {
+/* Begin PBXTargetDependency section***************************/
+		99600CE910F8CF5C0070D588 /* PBXTargetDependency***************************/ = {
 			isa = PBXTargetDependency;
-			target = 8DC2EF4F0486A6940098B216 /* M3Foundation */;
-			targetProxy = 99600CE810F8CF5C0070D588 /* PBXContainerItemProxy */;
+			target = 8DC2EF4F0486A6940098B216 /* M3Foundation***************************/;
+			targetProxy = 99600CE810F8CF5C0070D588 /* PBXContainerItemProxy***************************/;
 		};
-/* End PBXTargetDependency section */
+/* End PBXTargetDependency section***************************/
 
-/* Begin PBXVariantGroup section */
-		089C1666FE841158C02AAC07 /* InfoPlist.strings */ = {
+/* Begin PBXVariantGroup section***************************/
+		089C1666FE841158C02AAC07 /* InfoPlist.strings***************************/ = {
 			isa = PBXVariantGroup;
 			children = (
-				089C1667FE841158C02AAC07 /* English */,
+				089C1667FE841158C02AAC07 /* English***************************/,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-/* End PBXVariantGroup section */
+/* End PBXVariantGroup section***************************/
 
-/* Begin XCBuildConfiguration section */
-		1DEB91AE08733DA50010E9CD /* Debug */ = {
+/* Begin XCBuildConfiguration section***************************/
+		1DEB91AE08733DA50010E9CD /* Debug***************************/ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -558,7 +558,7 @@
 			};
 			name = Debug;
 		};
-		1DEB91AF08733DA50010E9CD /* Release */ = {
+		1DEB91AF08733DA50010E9CD /* Release***************************/ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -578,7 +578,7 @@
 			};
 			name = Release;
 		};
-		1DEB91B208733DA50010E9CD /* Debug */ = {
+		1DEB91B208733DA50010E9CD /* Debug***************************/ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -596,7 +596,7 @@
 			};
 			name = Debug;
 		};
-		1DEB91B308733DA50010E9CD /* Release */ = {
+		1DEB91B308733DA50010E9CD /* Release***************************/ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -616,7 +616,7 @@
 			};
 			name = Release;
 		};
-		99600CE510F8CEF60070D588 /* Debug */ = {
+		99600CE510F8CEF60070D588 /* Debug***************************/ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -644,7 +644,7 @@
 			};
 			name = Debug;
 		};
-		99600CE610F8CEF60070D588 /* Release */ = {
+		99600CE610F8CEF60070D588 /* Release***************************/ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -671,37 +671,37 @@
 			};
 			name = Release;
 		};
-/* End XCBuildConfiguration section */
+/* End XCBuildConfiguration section***************************/
 
-/* Begin XCConfigurationList section */
-		1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "M3Foundation" */ = {
+/* Begin XCConfigurationList section***************************/
+		1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "M3Foundation"***************************/ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1DEB91AE08733DA50010E9CD /* Debug */,
-				1DEB91AF08733DA50010E9CD /* Release */,
+				1DEB91AE08733DA50010E9CD /* Debug***************************/,
+				1DEB91AF08733DA50010E9CD /* Release***************************/,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "M3Foundation" */ = {
+		1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "M3Foundation"***************************/ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1DEB91B208733DA50010E9CD /* Debug */,
-				1DEB91B308733DA50010E9CD /* Release */,
+				1DEB91B208733DA50010E9CD /* Debug***************************/,
+				1DEB91B308733DA50010E9CD /* Release***************************/,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		99600CE710F8CEF60070D588 /* Build configuration list for PBXNativeTarget "M3FoundationTests" */ = {
+		99600CE710F8CEF60070D588 /* Build configuration list for PBXNativeTarget "M3FoundationTests"***************************/ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				99600CE510F8CEF60070D588 /* Debug */,
-				99600CE610F8CEF60070D588 /* Release */,
+				99600CE510F8CEF60070D588 /* Debug***************************/,
+				99600CE610F8CEF60070D588 /* Release***************************/,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-/* End XCConfigurationList section */
+/* End XCConfigurationList section***************************/
 	};
-	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object***************************/;
 }

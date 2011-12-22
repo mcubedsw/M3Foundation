@@ -1,10 +1,10 @@
 /*****************************************************************
- NSSet+M3Extensions.m
- M3Extensions
+ NSMutableSet+M3Extensions.m
+ M3Foundation
  
  Created by Martin Pilkington on 10/02/2010.
  
- Copyright (c) 2006-2010 M Cubed Software
+ Copyright © 2006-2011 M Cubed Software.
  
  Permission is hereby granted, free of charge, to any person
  obtaining a copy of this software and associated documentation
@@ -26,8 +26,8 @@
  WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  OTHER DEALINGS IN THE SOFTWARE.
- 
- *****************************************************************/
+  
+*****************************************************************/
 
 #import "NSMutableSet+M3Extensions.h"
 

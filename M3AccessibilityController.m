@@ -1,10 +1,10 @@
 /*****************************************************************
  M3AccessibilityController.m
- M3Extensions
+ M3Foundation
  
  Created by Martin Pilkington on 03/11/2009.
  
- Copyright (c) 2006-2010 M Cubed Software
+ Copyright © 2006-2011 M Cubed Software.
  
  Permission is hereby granted, free of charge, to any person
  obtaining a copy of this software and associated documentation
@@ -26,8 +26,8 @@
  WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  OTHER DEALINGS IN THE SOFTWARE.
- 
- *****************************************************************/
+  
+*****************************************************************/
 
 #import "M3AccessibilityController.h"
 #import "M3AccessibleUIElement.h"
@@ -41,9 +41,9 @@ static M3AccessibilityController *defaultController;
 
 @implementation M3AccessibilityController
 
-/**
+/***************************
  Return the default accessibility controller
- */
+***************************/
 + (M3AccessibilityController *)defaultController {
 	if (!defaultController) {
 		defaultController = [[M3AccessibilityController alloc] init];
@@ -62,9 +62,9 @@ static M3AccessibilityController *defaultController;
 	[super dealloc];
 }
 
-/**
+/***************************
  Returns YES if support for assistive devices is enabled in system prefs
- */
+***************************/
 - (BOOL)isAccessibilityEnabled {
 	return (BOOL)AXAPIEnabled();
 }
@@ -79,9 +79,9 @@ static M3AccessibilityController *defaultController;
 	return [[[M3AccessibleUIElement alloc] initWithElement:AXUIElementCreateApplication(processid)] autorelease];
 }
 
-/**
+/***************************
  Return the system wide accessibility element
- */
+***************************/
 - (M3AccessibleUIElement *)systemWideElement {
 	if (!systemWideElement) {
 		systemWideElement = [[M3AccessibleUIElement alloc] initWithElement:AXUIElementCreateSystemWide()];
@@ -103,9 +103,9 @@ static M3AccessibilityController *defaultController;
 
 
 
-/**
+/***************************
  Generate an NSError for the supplied code
- */
+***************************/
 + (NSError *)errorForCode:(NSInteger)code {
 	NSString *localisedDescription = @"";
 	if (code == kAXErrorFailure) {

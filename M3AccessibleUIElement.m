@@ -1,10 +1,10 @@
 /*****************************************************************
  M3AccessibleUIElement.m
- M3Extensions
+ M3Foundation
  
  Created by Martin Pilkington on 03/11/2009.
  
- Copyright (c) 2006-2010 M Cubed Software
+ Copyright © 2006-2011 M Cubed Software.
  
  Permission is hereby granted, free of charge, to any person
  obtaining a copy of this software and associated documentation
@@ -26,8 +26,8 @@
  WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  OTHER DEALINGS IN THE SOFTWARE.
- 
- *****************************************************************/
+  
+*****************************************************************/
 
 #import "M3AccessibleUIElement.h"
 #import "M3AccessibilityController.h"
@@ -64,9 +64,9 @@
 	[super finalize];
 }
 
-/**
+/***************************
  Returns the description for a supplied action
- */
+***************************/
 - (NSString *)descriptionForAction:(NSString *)action error:(NSError **)error {
 	CFStringRef description = nil;
 	AXError errorCode = AXUIElementCopyActionDescription (element, (CFStringRef)action, &description);
@@ -76,9 +76,9 @@
 	return returnError != nil ? (NSString *)description : nil;
 }
 
-/**
+/***************************
  Returns an array of the action names
- */
+***************************/
 - (NSArray *)actionNamesAndError:(NSError **)error {
 	CFArrayRef names = nil;
 	AXError errorCode = AXUIElementCopyActionNames(element, &names);
@@ -88,9 +88,9 @@
 	return (NSArray *)names;
 }
 
-/**
+/***************************
  Returns an array of the attribute names;
- */
+***************************/
 - (NSArray *)attributeNamesAndError:(NSError **)error {
 	CFArrayRef names = nil;
 	AXError errorCode = AXUIElementCopyAttributeNames(element, &names);
@@ -100,9 +100,9 @@
 	return (NSArray *)names;
 }
 
-/**
+/***************************
  Returns the value for a supplied attribute
- */
+***************************/
 - (id)valueForAttribute:(NSString *)attribute error:(NSError **)error {
 	CFTypeRef value = nil;
 	if ([[self attributeNamesAndError:NULL] containsObject:attribute]) {
@@ -124,9 +124,9 @@
 	return [self sanitiseValue:(id)values];
 }
 
-/**
+/***************************
  Defines if an attribute is settable
- */
+***************************/
 - (BOOL)isAttributeSettable:(NSString *)attribute error:(NSError **)error {
 	Boolean settable;
 	AXError errorCode = AXUIElementIsAttributeSettable(element, (CFStringRef)attribute, &settable);
@@ -136,9 +136,9 @@
 	return (BOOL)settable;
 }
 
-/**
+/***************************
  Performs the supplied action
- */
+***************************/
 - (BOOL)performAction:(NSString *)action error:(NSError **)error {
 	AXError errorCode = AXUIElementPerformAction(element, (CFStringRef)action);
 	NSError *returnError = [M3AccessibilityController errorForCode:(NSInteger)errorCode];
@@ -149,9 +149,9 @@
 	return YES;
 }
 
-/**
+/***************************
  Posts a keyboard event
- */
+***************************/
 - (BOOL)postKeyboardEventWithKeyCharacter:(CGCharCode)keyChar virtualKey:(CGKeyCode)virtualKey keyDown:(BOOL)keyDown error:(NSError **)error {
 	AXError errorCode = AXUIElementPostKeyboardEvent(element, keyChar, virtualKey, (Boolean)keyDown);
 	NSError *returnError = [M3AccessibilityController errorForCode:(NSInteger)errorCode];
@@ -162,9 +162,9 @@
 	return YES;
 }
 
-/**
+/***************************
  Sets the value of the supplied attribute
- */
+***************************/
 - (BOOL)setValue:(id)value forAttribute:(NSString *)attribute error:(NSError **)error {
 	AXError errorCode = AXUIElementSetAttributeValue(element, (CFStringRef)attribute, (CFTypeRef)value);
 	NSError *returnError = [M3AccessibilityController errorForCode:(NSInteger)errorCode];
@@ -179,9 +179,9 @@
 
 
 
-/**
+/***************************
  Santises the output, putting it into appropriate objects
- */
+***************************/
 - (id)sanitiseValue:(id)value {
 	if (!value)
 		return nil;
@@ -235,9 +235,9 @@
 }
 
 
-/**
+/***************************
  Return the process ID for the element
- */
+***************************/
 - (pid_t)processIDAndError:(NSError **)error {
 	pid_t pid = 0;
 	AXError errorCode = AXUIElementGetPid(element, &pid);
@@ -248,9 +248,9 @@
 	return pid;
 }
 
-/**
+/***************************
  Test equality
- */
+***************************/
 - (BOOL)isEqual:(id)object {
 	if (![[self valueForAttribute:(NSString *)kAXRoleAttribute error:NULL] isEqualToString:[object valueForAttribute:(NSString *)kAXRoleAttribute error:NULL]]) {
 		return NO;

@@ -1,10 +1,10 @@
 /*****************************************************************
  NSXMLElement+M3Extensions.h
- M3Extensions
+ M3Foundation
  
  Created by Martin Pilkington on 10/05/2008.
  
- Copyright (c) 2006-2010 M Cubed Software
+ Copyright © 2006-2011 M Cubed Software.
  
  Permission is hereby granted, free of charge, to any person
  obtaining a copy of this software and associated documentation
@@ -26,26 +26,26 @@
  WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  OTHER DEALINGS IN THE SOFTWARE.
- 
- *****************************************************************/
+  
+*****************************************************************/
 
 #import <Cocoa/Cocoa.h>
 
-/**
+/***************************
  @category NSXMLElement(M3Extensions)
  This category adds some convienience methods to NSXMLElement
  @since Available in M3Foundation 1.0 and later
- */
+***************************/
 @interface NSXMLElement(M3Extensions)
 
-/**
+/***************************
  Returns the element with the supplied name, or the first element with that name
  <b>Discussion</b>
  Equivalent to [[self elementsForName:str] objectAtIndex:0]
  @param str The name of the element
  @result The element with the supplied name
  @since Available in M3Foundation 1.0 and later
- */
+***************************/
 - (NSXMLElement *)m3_elementForName:(NSString *)str;
 
 @end

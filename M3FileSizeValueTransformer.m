@@ -1,10 +1,10 @@
 /*****************************************************************
  M3FileSizeValueTransformer.m
- M3Extensions
+ M3Foundation
  
  Created by Martin Pilkington on 16/08/2009.
  
- Copyright (c) 2006-2010 M Cubed Software
+ Copyright © 2006-2011 M Cubed Software.
  
  Permission is hereby granted, free of charge, to any person
  obtaining a copy of this software and associated documentation
@@ -26,8 +26,8 @@
  WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  OTHER DEALINGS IN THE SOFTWARE.
- 
- *****************************************************************/
+  
+*****************************************************************/
 
 #import "M3FileSizeValueTransformer.h"
 
@@ -42,9 +42,9 @@
     return NO;
 }
 
-/**
+/***************************
  Transforms value to the appropriate units
- */
+***************************/
 - (id)transformedValue:(id)value {
 	if ([value isKindOfClass:[NSNumber class]]) {
 		double fileSize = [value doubleValue];
