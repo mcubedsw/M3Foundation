@@ -10,11 +10,8 @@
 #import "M3AccessibilityController.h"
 #import "M3AccessibleUIElement.h"
 #import "M3CSVValueTransformer.h"
-#import "M3Date.h"
 #import "M3DFA.h"
-#import "M3EncapsulatedURLConnection.h"
 #import "M3FileSizeValueTransformer.h"
-#import "M3IndexSetEnumerator.h"
 #import "M3URLConnectionOperation.h"
 
 //Categories
@@ -31,4 +28,3 @@
 #import "NSString+M3Extensions.h"
 #import "NSXMLElement+M3Extensions.h"
 #import "NSXMLNode+M3Extensions.h"
-#import "M3KeyValueObserving.h"

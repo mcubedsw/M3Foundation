@@ -31,13 +31,13 @@
 
 
 - (void)testArrayWithNumberToFrom {
-	STAssertEquals((NSUInteger)10, [[NSArray m3_arrayWithNumbersTo:10 from:1] count], @"");
-	STAssertEquals((NSUInteger)5, [[NSArray m3_arrayWithNumbersTo:-8 from:-4] count], @"");
-	STAssertEquals((NSUInteger)42, [[NSArray m3_arrayWithNumbersTo:-21 from:20] count], @"");
+	STAssertEquals((NSUInteger)10, [[NSArray m3_arrayWithNumbersFrom:1 to:10] count], @"");
+	STAssertEquals((NSUInteger)5, [[NSArray m3_arrayWithNumbersFrom:-4 to:-8] count], @"");
+	STAssertEquals((NSUInteger)42, [[NSArray m3_arrayWithNumbersFrom:20 to:-21] count], @"");
 }
 
 - (void)testArrayWithNumberToFrom2 {
-	STAssertNil([NSArray m3_arrayWithNumbersTo:42 from:42], @"");
+	STAssertNil([NSArray m3_arrayWithNumbersFrom:42 to:42], @"");
 }
 
 @end

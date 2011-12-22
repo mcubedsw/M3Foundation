@@ -23,8 +23,7 @@
 + (NSArray *)m3_alphaNumericArray;
 
 /***************************
- Creates and returns an array or NSNumber objects increasing from minValue to maxValue in integer increments.
- If minValue is greater than maxValue then nil will be returned.
+ Creates and returns an array or NSNumber objects from minValue to maxValue in integer steps.
  @param maxValue The maximum value in the array
  @param minValue The minimum value in the array
  @result An array containing NSNumbers for the supplied values, or nil on error.

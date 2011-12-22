@@ -172,6 +172,7 @@
 				AXValueGetValue(valueRef, kAXValueCFRangeType, &rawValue);
 				return [NSValue valueWithRange:rawValue];
 			}
+			default: {}
 		}
 	}
 	

@@ -56,6 +56,7 @@
 		999486401358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9994863E1358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.m */; };
 		99A7D91511D397270011B922 /* NSXMLNode+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 99A7D91311D397270011B922 /* NSXMLNode+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99A7D91611D397270011B922 /* NSXMLNode+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A7D91411D397270011B922 /* NSXMLNode+M3Extensions.m */; };
+		99DF329814A39BFD0082C524 /* M3Foundation_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 99DF329714A39BFD0082C524 /* M3Foundation_Prefix.pch */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,8 +88,6 @@
 		0867D6A5FE840307C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		32DBCF5E0370ADEE00C91783 /* M3Foundation_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3Foundation_Prefix.pch; sourceTree = "<group>"; };
-		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* M3Foundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = M3Foundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		990F989A13437290000E336B /* NSObject+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+M3Extensions.h"; sourceTree = "<group>"; };
 		990F989B13437290000E336B /* NSObject+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+M3Extensions.m"; sourceTree = "<group>"; };
@@ -142,6 +141,8 @@
 		9994863E1358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+M3Extensions.m"; sourceTree = "<group>"; };
 		99A7D91311D397270011B922 /* NSXMLNode+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSXMLNode+M3Extensions.h"; sourceTree = "<group>"; };
 		99A7D91411D397270011B922 /* NSXMLNode+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSXMLNode+M3Extensions.m"; sourceTree = "<group>"; };
+		99DF329714A39BFD0082C524 /* M3Foundation_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = M3Foundation_Prefix.pch; path = Framework/M3Foundation_Prefix.pch; sourceTree = "<group>"; };
+		99DF329914A39C030082C524 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Framework/Info.plist; sourceTree = "<group>"; };
 		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -177,15 +178,12 @@
 		0867D691FE84028FC02AAC07 /* M3Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				99600CBE10F8CD630070D588 /* M3Foundation.h */,
-				99225A4A11386E58008970B7 /* Categories */,
-				08FB77AEFE84172EC02AAC07 /* Classes */,
+				99DF329B14A39C070082C524 /* Framework */,
 				99600D2010F8D02E0070D588 /* Tests */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				089C1665FE841158C02AAC07 /* Resources */,
 				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
 				034768DFFF38A50411DB9C8B /* Products */,
-				99600CE410F8CEF60070D588 /* M3FoundationTests-Info.plist */,
 			);
 			name = M3Foundation;
 			sourceTree = "<group>";
@@ -202,7 +200,7 @@
 		089C1665FE841158C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8DC2EF5A0486A6940098B216 /* Info.plist */,
+				99DF329914A39C030082C524 /* Info.plist */,
 				089C1666FE841158C02AAC07 /* InfoPlist.strings */,
 			);
 			name = Resources;
@@ -248,7 +246,7 @@
 		32C88DFF0371C24200C91783 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				32DBCF5E0370ADEE00C91783 /* M3Foundation_Prefix.pch */,
+				99DF329714A39BFD0082C524 /* M3Foundation_Prefix.pch */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -289,6 +287,7 @@
 		99600D2010F8D02E0070D588 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				99600CE410F8CEF60070D588 /* M3FoundationTests-Info.plist */,
 				99600D2110F8D0500070D588 /* NSArray+M3ExtensionsTests.h */,
 				99600D2210F8D0500070D588 /* NSArray+M3ExtensionsTests.m */,
 				99600DAF10F8D5490070D588 /* M3CSVValueTransformerTests.h */,
@@ -302,6 +301,16 @@
 				996EF5991347507200345D64 /* NSPredicateXMLTestData.txt */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		99DF329B14A39C070082C524 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				99600CBE10F8CD630070D588 /* M3Foundation.h */,
+				99225A4A11386E58008970B7 /* Categories */,
+				08FB77AEFE84172EC02AAC07 /* Classes */,
+			);
+			path = Framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,6 +340,7 @@
 				9911BEB51421319200BE7671 /* M3URLConnectionOperation.h in Headers */,
 				9960245C13460D800029725D /* NSComparisonPredicate+M3Extensions.h in Headers */,
 				9994863F1358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.h in Headers */,
+				99DF329814A39BFD0082C524 /* M3Foundation_Prefix.pch in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +506,7 @@
 				089C1667FE841158C02AAC07 /* English */,
 			);
 			name = InfoPlist.strings;
+			path = Framework;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -514,8 +525,8 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = M3Foundation_Prefix.pch;
-				INFOPLIST_FILE = Info.plist;
+				GCC_PREFIX_HEADER = Framework/M3Foundation_Prefix.pch;
+				INFOPLIST_FILE = Framework/Info.plist;
 				INSTALL_PATH = "@rpath";
 				PRODUCT_NAME = M3Foundation;
 				WRAPPER_EXTENSION = framework;
@@ -532,9 +543,9 @@
 				FRAMEWORK_VERSION = A;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = M3Foundation_Prefix.pch;
+				GCC_PREFIX_HEADER = Framework/M3Foundation_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = NS_BUILD_32_LIKE_64;
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = Framework/Info.plist;
 				INSTALL_PATH = "@rpath";
 				LD_DYLIB_INSTALL_NAME = "$(DYLIB_INSTALL_NAME_BASE:standardizepath)/$(EXECUTABLE_PATH)";
 				PRODUCT_NAME = M3Foundation;
@@ -595,7 +606,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "M3FoundationTests-Info.plist";
+				INFOPLIST_FILE = "Tests/M3FoundationTests-Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -621,7 +632,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "M3FoundationTests-Info.plist";
+				INFOPLIST_FILE = "Tests/M3FoundationTests-Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
 				OTHER_LDFLAGS = (
 					"-framework",
