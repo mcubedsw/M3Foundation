@@ -33,6 +33,8 @@
 
 #if NS_BLOCKS_AVAILABLE
 
+/** NB: Yes this is kinda ugly internally. I'll clean it up after I've written tests **/
+
 @interface M3DFA ()
 
 - (NSDictionary *)parseAutomata:(NSString *)aut error:(NSError **)error;
@@ -63,30 +65,34 @@
 //*****//
 - (NSDictionary *)parseAutomata:(NSString *)aut error:(NSError **)error {
 	NSMutableDictionary *parsedAutomata = [NSMutableDictionary dictionary];
+	
+	//Loop trhough our lines
 	[aut enumerateLinesUsingBlock:^(NSString *line, BOOL *stop) {
+		//Get the state and the transitions
 		NSInteger split = [line rangeOfString:@":"].location;
 		NSInteger state = [[line substringToIndex:split] integerValue];
 		if (initialState == NSNotFound) {
 			initialState = state;
 		}
-		NSMutableArray *transitions = [NSMutableArray array];
 		
+		NSMutableArray *transitions = [NSMutableArray array];
 		NSString *temp = nil;
 		//Get individual transitions
-		for (NSString *str in [[line substringFromIndex:split+1] componentsSeparatedByString:@","]) {
-			while ([str hasPrefix:@" "]) {
-				str = [str substringFromIndex:1];
+		for (NSString *transitionString in [[line substringFromIndex:split+1] componentsSeparatedByString:@","]) {
+			while ([transitionString hasPrefix:@" "]) {
+				transitionString = [transitionString substringFromIndex:1];
 			}
-			if ([str hasSuffix:@"\""]) {
-				temp = str;
+			if ([transitionString hasSuffix:@"\""]) {
+				temp = transitionString;
 			} else if (temp) {
-				[transitions addObject:[NSString stringWithFormat:@"%@,%@", temp, str]];
+				[transitions addObject:[NSString stringWithFormat:@"%@,%@", temp, transitionString]];
 				temp = nil;
 			} else {
-				[transitions addObject:str];
+				[transitions addObject:transitionString];
 			}
 		}
 		
+		//Get the rules, states and whether it outputs
 		NSMutableArray *finishedTransitions = [NSMutableArray array];
 		for (NSString *str in transitions) {
 			str = [str stringByReplacingOccurrencesOfString:@"\">\"" withString:@"{{{{GREATERTHAN}}}}"];
@@ -130,10 +136,13 @@
 		rule = [rule substringToIndex:[rule length]-1];
 	}
 	
+	//And now the end is near…
 	if ([rule isEqualToString:@"END"]) {
 		return nil;
+	//Unquote
 	} else if ([rule hasPrefix:@"\""] && [rule hasSuffix:@"\""]) {
 		return [rule substringWithRange:NSMakeRange(1, [rule length] - 2)];
+	//Handle character sets
 	} else if ([rule hasPrefix:@"["] && [rule hasSuffix:@"]"]) {
 		NSMutableString *str = [NSMutableString stringWithString:rule];
 		NSMutableCharacterSet *characterSet = [[NSMutableCharacterSet alloc] init];
@@ -157,11 +166,7 @@
 			[characterSet formUnionWithCharacterSet:[NSCharacterSet decimalDigitCharacterSet]];
 			[str deleteCharactersInRange:numbers];
 		}
-		
 
-		
-		
-		
 		[characterSet addCharactersInString:str];
 		return [characterSet autorelease];
 		
@@ -178,9 +183,13 @@
 	
 	NSInteger index = 0;
 	NSMutableString *outputString = [NSMutableString string];
+	
+	//While we still have more characters
 	while (index < [str length]) {
+		//Get the next character and the current rules
 		NSString *character = [str substringWithRange:NSMakeRange(index, 1)];
 		NSArray *rules = [automata objectForKey:[NSNumber numberWithInteger:currentState]];
+		//Find the matching rule and move to the next state
 		for (NSDictionary *rule in rules) {
 			id ruleObject = [rule objectForKey:@"rule"];
 			NSInteger newState = [[rule objectForKey:@"newState"] integerValue];
@@ -225,6 +234,7 @@
 		}
 		index++;
 	}
+	//Was the string accepted?
 	return [endStates containsObject:[NSNumber numberWithInteger:currentState]];
 }
 
