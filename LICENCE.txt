@@ -1,4 +1,4 @@
-M3CoreData: Copyright (c) 2006-2011 by M Cubed Software
+Copyright (c) 2006-2011 by M Cubed Software
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
