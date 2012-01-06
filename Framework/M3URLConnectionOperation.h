@@ -25,12 +25,11 @@
 - (id)initWithURLRequest:(NSURLRequest *)aRequest;
 
 /***************************
- Sets the block to call when the connection has completed
+ The block to call when the connection has completed
  This block is called on the main thread. The operation doesn't complete until after it has executed
- @param aBlock The completion block
  @since M3Foundation 1.0 or later
  **************************/
-- (void)setDownloadCompletionBlock:(void(^)(NSInteger aResponse, NSData *aData, NSError *aError))aBlock;
+@property (copy) void (^downloadCompletionBlock)(NSInteger aResponse, NSData *aData, NSError *aError);
 
 /***************************
  The request for the operation

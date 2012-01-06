@@ -20,7 +20,7 @@
 
 @implementation M3URLConnectionOperation
 
-@synthesize request, shouldAutomaticallyRetryAfterTimeOut;
+@synthesize request, shouldAutomaticallyRetryAfterTimeOut, downloadCompletionBlock;
 
 //*****//
 - (id)initWithURLRequest:(NSURLRequest *)aRequest {
@@ -36,11 +36,6 @@
 	[request release];
 	[downloadCompletionBlock release];
 	[super dealloc];
-}
-
-//*****//
-- (void)setDownloadCompletionBlock:(void(^)(NSInteger aResponse, NSData *aData, NSError *aError))aBlock {
-	downloadCompletionBlock = [aBlock copy];
 }
 
 //*****//
