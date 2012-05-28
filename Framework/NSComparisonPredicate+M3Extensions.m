@@ -12,7 +12,7 @@
 #import "NSXMLElement+M3Extensions.h"
 #import "NSArray+M3Extensions.h"
 
-@interface NSComparisonPredicate () 
+@interface NSComparisonPredicate (M3Extensions_Private)
 
 + (NSDictionary *)_m3_modifierMap;
 + (NSDictionary *)_m3_operatorTypeMap;

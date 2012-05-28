@@ -50,7 +50,7 @@
 		//While the class name is registered try the next number
 		while (objc_getClass([newClassName cStringUsingEncoding:NSUTF8StringEncoding])) {
 			classNumber++;
-			newClassName = [NSString stringWithFormat:@"%@%d", newClassName, classNumber];
+			newClassName = [NSString stringWithFormat:@"%@%ld", newClassName, classNumber];
 		}
 		
 		//Register the class with the runtime and then change our class
