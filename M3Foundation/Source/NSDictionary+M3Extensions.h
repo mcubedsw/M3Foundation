@@ -10,6 +10,7 @@
 
 @interface NSDictionary (M3Extensions)
 
+#warning Comment Needed
 - (NSDictionary *)m3_dictionaryBySettingObject:(id)aObject forKey:(id)aKey;
 
 @end

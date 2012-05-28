@@ -10,16 +10,17 @@
 #import "NSMutableArray+M3Extensions.h"
 
 
-@implementation NSMutableArray(M3Extensions)
+@implementation NSMutableArray (M3Extensions)
 
 //*****//
 - (void)m3_moveObject:(id)aObject toIndex:(NSUInteger)aIndex {
 	id movingObject = aObject;
 	[self removeObject:aObject];
-	if (aIndex < [self count])
+	if (aIndex < self.count) {
 		[self insertObject:movingObject atIndex:aIndex];
-	else 
+	} else {
 		[self addObject:movingObject];
+	}
 }
 	 
 @end

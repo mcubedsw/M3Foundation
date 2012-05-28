@@ -13,7 +13,6 @@
 
 //Categories
 #import "NSObject+M3Extensions.h"
-#import "NSFileManager+M3Extensions.h"
 #import "NSString+M3Extensions.h"
 
 #import "NSArray+M3Extensions.h"

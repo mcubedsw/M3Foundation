@@ -13,7 +13,7 @@
  This category adds some convienience methods to NSXMLElement
  @since M3Foundation 1.0 and later
 ***************************/
-@interface NSXMLElement(M3Extensions)
+@interface NSXMLElement (M3Extensions)
 
 /***************************
  Returns the element with the supplied name, or the first element with that name

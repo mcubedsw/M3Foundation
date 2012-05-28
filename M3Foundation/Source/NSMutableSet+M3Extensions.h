@@ -13,7 +13,7 @@
  Adds some more set operations to NSMutableSet
  @since M3Foundation 1.0 and later
 ***************************/
-@interface NSMutableSet(M3Extensions)
+@interface NSMutableSet (M3Extensions)
 
 /***************************
  Modifies the receiver to represent the difference between itself and the supplied set

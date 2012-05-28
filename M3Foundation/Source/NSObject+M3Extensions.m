@@ -39,10 +39,10 @@
 
 //*****//
 - (BOOL)m3_replaceImplementationOfMethodWithSelector:(SEL)aSelector with:(void *)aBlock {
-	NSString *className = NSStringFromClass([self class]);
+	NSString *className = NSStringFromClass(self.class);
 	NSArray *nameComponents = [className componentsSeparatedByString:@"_"];
 	//Check if we're already a singleton
-	if (![[nameComponents lastObject] hasPrefix:@"m3singleton"]) {
+	if (![nameComponents.lastObject hasPrefix:@"m3singleton"]) {
 		//If not then get the subclass name to use
 		NSString *newClassNamePrefix = [NSString stringWithFormat:@"%@_m3singleton", className];
 		NSString *newClassName = newClassNamePrefix;
@@ -55,13 +55,13 @@
 		
 		//Register the class with the runtime and then change our class
 		const char *name = [newClassName cStringUsingEncoding:NSUTF8StringEncoding];
-		Class newSubclass = objc_allocateClassPair([self class], name, 0);
+		Class newSubclass = objc_allocateClassPair(self.class, name, 0);
 		objc_registerClassPair(newSubclass);
 		object_setClass(self, newSubclass);
 	}
 	IMP newIMP = imp_implementationWithBlock((__bridge id)(aBlock));
-	Method methodToReplace = class_getInstanceMethod([self class], aSelector);
-	return class_addMethod([self class], aSelector, newIMP, method_getTypeEncoding(methodToReplace));
+	Method methodToReplace = class_getInstanceMethod(self.class, aSelector);
+	return class_addMethod(self.class, aSelector, newIMP, method_getTypeEncoding(methodToReplace));
 }
 
 
@@ -72,16 +72,16 @@
 #pragma mark Key Value Observing
 
 //*****//
-- (void)m3_addObserver:(NSObject *)observer forKeyPathsInArray:(NSArray *)keyPaths options:(NSKeyValueObservingOptions)options context:(void *)context {
-	for (NSString *path in keyPaths) {
-		[self addObserver:observer forKeyPath:path options:options context:context];
+- (void)m3_addObserver:(NSObject *)aObserver forKeyPathsInArray:(NSArray *)aKeyPaths options:(NSKeyValueObservingOptions)aOptions context:(void *)aContext {
+	for (NSString *path in aKeyPaths) {
+		[self addObserver:aObserver forKeyPath:path options:aOptions context:aContext];
 	}
 }
 
 //*****//
-- (void)m3_removeObserver:(NSObject *)observer forKeyPathsInArray:(NSArray *)keyPaths {
-	for (NSString *path in keyPaths) {
-		[self removeObserver:observer forKeyPath:path];
+- (void)m3_removeObserver:(NSObject *)aObserver forKeyPathsInArray:(NSArray *)aKeyPaths {
+	for (NSString *path in aKeyPaths) {
+		[self removeObserver:aObserver forKeyPath:path];
 	}
 }
 

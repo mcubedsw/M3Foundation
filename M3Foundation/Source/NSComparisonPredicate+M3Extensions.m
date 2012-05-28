@@ -12,12 +12,6 @@
 #import "NSXMLElement+M3Extensions.h"
 #import "NSArray+M3Extensions.h"
 
-@interface NSComparisonPredicate (M3Extensions_Private)
-
-+ (NSDictionary *)_m3_modifierMap;
-+ (NSDictionary *)_m3_operatorTypeMap;
-
-@end
 
 
 @implementation NSComparisonPredicate (M3Extensions)
@@ -31,15 +25,17 @@
 	//Find our modifier value
 	NSComparisonPredicateModifier modifier = NSDirectPredicateModifier;
 	if ([aElement attributeForName:@"modifier"]) {
-		NSNumber *value = [[[self _m3_modifierMap] allKeysForObject:[[aElement attributeForName:@"modifier"] stringValue]] m3_safeObjectAtIndex:0];
-		modifier = [value integerValue];
+		NSString *attributeKey = [aElement attributeForName:@"modifier"].stringValue;
+		NSNumber *value = [[[self p_modifierMap] allKeysForObject:attributeKey] m3_safeObjectAtIndex:0];
+		modifier = value.integerValue;
 	}
 	
 	//And our operator
 	NSPredicateOperatorType operator = NSEqualToPredicateOperatorType;
 	if ([aElement attributeForName:@"operatorType"]) {
-		NSNumber *value = [[[self _m3_operatorTypeMap] allKeysForObject:[[aElement attributeForName:@"operatorType"] stringValue]] m3_safeObjectAtIndex:0];
-		operator = [value integerValue];
+		NSString *attributeKey = [aElement attributeForName:@"operatorType"].stringValue;
+		NSNumber *value = [[[self p_operatorTypeMap] allKeysForObject:attributeKey] m3_safeObjectAtIndex:0];
+		operator = value.integerValue;
 	}
 	
 	//And our options
@@ -52,39 +48,49 @@
 	}
 	
 	//Go go gadget predicate
-	return [NSComparisonPredicate predicateWithLeftExpression:leftExpression rightExpression:rightExpression modifier:modifier type:operator options:options];
+	return [NSComparisonPredicate predicateWithLeftExpression:leftExpression
+											  rightExpression:rightExpression
+													 modifier:modifier
+														 type:operator
+													  options:options];
 }
 
 //*****//
-+ (NSDictionary *)_m3_modifierMap {
-	return [NSDictionary dictionaryWithObjectsAndKeys:@"direct", [NSNumber numberWithInt:NSDirectPredicateModifier], @"any", [NSNumber numberWithInt:NSAnyPredicateModifier], @"all", [NSNumber numberWithInt:NSAllPredicateModifier], nil];
++ (NSDictionary *)p_modifierMap {
+	return @{
+		@"direct":[NSNumber numberWithInt:NSDirectPredicateModifier],
+		@"any":[NSNumber numberWithInt:NSAnyPredicateModifier],
+		@"all":[NSNumber numberWithInt:NSAllPredicateModifier]
+	};
 }
 
 //*****//
-+ (NSDictionary *)_m3_operatorTypeMap {
-	return [NSDictionary dictionaryWithObjectsAndKeys:@"lessThan", [NSNumber numberWithInt:NSLessThanPredicateOperatorType],
-			@"lessThanOrEqualTo", [NSNumber numberWithInt:NSLessThanOrEqualToPredicateOperatorType],
-			@"greaterThan", [NSNumber numberWithInt:NSGreaterThanPredicateOperatorType],
-			@"greaterThanOrEqualTo", [NSNumber numberWithInt:NSGreaterThanOrEqualToPredicateOperatorType],
-			@"equalTo", [NSNumber numberWithInt:NSEqualToPredicateOperatorType],
-			@"matches", [NSNumber numberWithInt:NSMatchesPredicateOperatorType],
-			@"like", [NSNumber numberWithInt:NSLikePredicateOperatorType],
-			@"beginsWith", [NSNumber numberWithInt:NSBeginsWithPredicateOperatorType],
-			@"endsWith", [NSNumber numberWithInt:NSEndsWithPredicateOperatorType],
-			@"in", [NSNumber numberWithInt:NSInPredicateOperatorType],
-			@"customSelector", [NSNumber numberWithInt:NSCustomSelectorPredicateOperatorType],
-			@"contains", [NSNumber numberWithInt:NSContainsPredicateOperatorType],
-			@"between", [NSNumber numberWithInt:NSBetweenPredicateOperatorType], nil];
++ (NSDictionary *)p_operatorTypeMap {
+	return @{
+		@"lessThan":[NSNumber numberWithInt:NSLessThanPredicateOperatorType],
+		@"lessThanOrEqualTo":[NSNumber numberWithInt:NSLessThanOrEqualToPredicateOperatorType],
+		@"greaterThan":[NSNumber numberWithInt:NSGreaterThanPredicateOperatorType],
+		@"greaterThanOrEqualTo":[NSNumber numberWithInt:NSGreaterThanOrEqualToPredicateOperatorType],
+		@"equalTo":[NSNumber numberWithInt:NSEqualToPredicateOperatorType],
+		@"matches":[NSNumber numberWithInt:NSMatchesPredicateOperatorType],
+		@"like":[NSNumber numberWithInt:NSLikePredicateOperatorType],
+		@"beginsWith":[NSNumber numberWithInt:NSBeginsWithPredicateOperatorType],
+		@"endsWith":[NSNumber numberWithInt:NSEndsWithPredicateOperatorType],
+		@"in":[NSNumber numberWithInt:NSInPredicateOperatorType],
+		@"customSelector":[NSNumber numberWithInt:NSCustomSelectorPredicateOperatorType],
+		@"contains":[NSNumber numberWithInt:NSContainsPredicateOperatorType],
+		@"between":[NSNumber numberWithInt:NSBetweenPredicateOperatorType]
+	};
 }
 
 //*****//
-- (NSString *)_m3_modifierString {
-	return [[[self class] _m3_modifierMap] objectForKey:[NSNumber numberWithInt:[self comparisonPredicateModifier]]];
+- (NSString *)p_modifierString {
+	return [[self.class p_modifierMap] objectForKey:[NSNumber numberWithInt:self.comparisonPredicateModifier]];
 }
 
 //*****//
-- (NSString *)_m3_operatorTypeString {
-	return [[[self class] _m3_operatorTypeMap] objectForKey:[NSNumber numberWithInt:[self predicateOperatorType]]];
+- (NSString *)p_operatorTypeString {
+	return [[self.class p_operatorTypeMap] objectForKey:[NSNumber numberWithInt:self.predicateOperatorType]];
 }
 
 //*****//
@@ -93,14 +99,14 @@
 	NSXMLElement *comparisonElement = [NSXMLElement elementWithName:@"predicate"];
 	
 	//Set all its attributes
-	[comparisonElement addAttribute:[NSXMLNode attributeWithName:@"operatorType" stringValue:[self _m3_operatorTypeString]]];
+	[comparisonElement addAttribute:[NSXMLNode attributeWithName:@"operatorType" stringValue:self.p_operatorTypeString]];
 	
 	if ([self comparisonPredicateModifier] != NSDirectPredicateModifier) {
-		[comparisonElement addAttribute:[NSXMLNode attributeWithName:@"modifier" stringValue:[self _m3_modifierString]]];
+		[comparisonElement addAttribute:[NSXMLNode attributeWithName:@"modifier" stringValue:self.p_modifierString]];
 	}
 	
 	if ([self predicateOperatorType] == NSCustomSelectorPredicateOperatorType) {
-		[comparisonElement addAttribute:[NSXMLNode attributeWithName:@"selector" stringValue:NSStringFromSelector([self customSelector])]];
+		[comparisonElement addAttribute:[NSXMLNode attributeWithName:@"selector" stringValue:NSStringFromSelector(self.customSelector)]];
 	}
 
 	if ([self options] & NSCaseInsensitivePredicateOption) {
@@ -112,11 +118,11 @@
 	}
 	
 	//And add its expressions
-	NSXMLElement *leftExpressionElement = [[self leftExpression] m3_xmlRepresentation];
+	NSXMLElement *leftExpressionElement = self.leftExpression.m3_xmlRepresentation;
 	[leftExpressionElement setName:@"leftExpression"];
 	[comparisonElement addChild:leftExpressionElement];
 	
-	NSXMLElement *rightExpressionElement = [[self rightExpression] m3_xmlRepresentation];
+	NSXMLElement *rightExpressionElement = self.rightExpression.m3_xmlRepresentation;
 	[rightExpressionElement setName:@"rightExpression"];
 	[comparisonElement addChild:rightExpressionElement];
 	

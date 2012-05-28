@@ -13,7 +13,7 @@
  This category adds some useful class methods for generating and accessing arrays.
  @since M3Foundation 1.0 and later
  **************************/
-@interface NSArray(M3Extensions)
+@interface NSArray (M3Extensions)
 
 /***************************
  Creates and returns an array with strings for 0-9 a-z.
@@ -24,12 +24,12 @@
 
 /***************************
  Creates and returns an array or NSNumber objects from minValue to maxValue in integer steps.
- @param maxValue The maximum value in the array
- @param minValue The minimum value in the array
+ @param aMaxValue The maximum value in the array
+ @param aMinValue The minimum value in the array
  @result An array containing NSNumbers for the supplied values, or nil on error.
 @since M3Foundation 1.0 and later
  **************************/
-+ (NSArray *)m3_arrayWithNumbersFrom:(NSInteger)minValue to:(NSInteger)maxValue;
++ (NSArray *)m3_arrayWithNumbersFrom:(NSInteger)aMinValue to:(NSInteger)aMaxValue;
 
 /***************************
  A safer version of objectAtIndex: which returns nil for an out of bounds index.
@@ -45,6 +45,6 @@
  @return The first object matching the test
  @since M3Foundation 1.0 or later
  **************************/
-- (id)m3_objectPassingTest:(BOOL (^)(id aObj))aTest;
+- (id)m3_objectPassingTest:(BOOL (^)(id aObject))aTest;
 
 @end

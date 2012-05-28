@@ -14,9 +14,9 @@
 //*****//
 - (NSSet *)m3_objectsWithCount:(NSUInteger)aCount {
 	NSMutableSet *returnSet = [NSMutableSet set];
-	for (id obj in self) {
-		if ([self countForObject:obj] == aCount) {
-			[returnSet addObject:obj];
+	for (id object in self) {
+		if ([self countForObject:object] == aCount) {
+			[returnSet addObject:object];
 		}
 	}
 	return [returnSet copy];
@@ -25,8 +25,8 @@
 //*****//
 - (NSUInteger)m3_countedObjectTotal {
 	NSUInteger totalCount = 0;
-	for (id obj in self) {
-		totalCount += [self countForObject:obj];
+	for (id object in self) {
+		totalCount += [self countForObject:object];
 	}
 	return totalCount;
 }

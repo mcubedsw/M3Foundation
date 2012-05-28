@@ -20,13 +20,11 @@
 
 @implementation M3URLConnectionOperation
 
-@synthesize request, shouldAutomaticallyRetryAfterTimeOut, downloadCompletionBlock;
-
 //*****//
 - (id)initWithURLRequest:(NSURLRequest *)aRequest {
 	if ((self = [super init])) {
-		request = aRequest;
-		shouldAutomaticallyRetryAfterTimeOut = YES;
+		_request = aRequest;
+		_shouldAutomaticallyRetryAfterTimeOut = YES;
 	}
 	return self;
 }
@@ -38,12 +36,12 @@
 	NSError *error = nil;
 	NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
 	
-	if (!data && [error code] == NSURLErrorTimedOut && self.shouldAutomaticallyRetryAfterTimeOut) {
+	if (!data && (error.code == NSURLErrorTimedOut) && self.shouldAutomaticallyRetryAfterTimeOut) {
 		data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
 	}
 	
 	[self performSelectorOnMainThread:@selector(performBlock:) withObject:^{
-		downloadCompletionBlock([response statusCode], data, error);
+		downloadCompletionBlock(response.statusCode, data, error);
 	} waitUntilDone:YES];
 }
 

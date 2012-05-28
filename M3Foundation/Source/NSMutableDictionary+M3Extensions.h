@@ -17,10 +17,10 @@
 
 /***************************
  Adds an object to the dictionary, ignoring nil if passed in as the object
- @param aObj The object to add
+ @param aObject The object to add
  @param aKey The key to use for the object
  @since M3Foundation 1.0 or later
  **************************/
-- (void)m3_safeSetObject:(id)aObj forKey:(id)aKey;
+- (void)m3_safeSetObject:(id)aObject forKey:(id)aKey;
 
 @end

@@ -23,21 +23,25 @@
 }
 
 //*****//
-- (id)transformedValue:(id)value {
-	if ([value isKindOfClass:[NSString class]]) {
-		if ([value length])
-			return [value componentsSeparatedByString:@","];
+- (id)transformedValue:(id)aValue {
+	if (![aValue isKindOfClass:[NSString class]]) {
+		return nil;
 	}
-	return nil;
+	if (![aValue length]) {
+		return nil;
+	}
+	return [aValue componentsSeparatedByString:@","];
 }
 
 //*****//
-- (id)reverseTransformedValue:(id)value {
-	if ([value isKindOfClass:[NSArray class]]) {
-		if ([value count])
-			return [value componentsJoinedByString:@","];
+- (id)reverseTransformedValue:(id)aValue {
+	if (![aValue isKindOfClass:[NSArray class]]) {
+		return nil;
 	}
-	return nil;
+	if(![aValue count]) {
+		return nil;
+	}
+	return [aValue componentsJoinedByString:@","];
 }
 
 @end

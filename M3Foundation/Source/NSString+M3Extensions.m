@@ -14,9 +14,10 @@
 
 //*****//
 - (NSString *)m3_stringByRemovingCharactersFromEnd:(NSUInteger)aNumber {
-	if (aNumber > [self length])
+	if (aNumber > self.length) {
 		return nil;
-	return [self substringToIndex:[self length] - aNumber];
+	}
+	return [self substringToIndex:self.length - aNumber];
 }
 
 //*****//

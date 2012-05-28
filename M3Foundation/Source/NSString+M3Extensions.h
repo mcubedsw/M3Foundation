@@ -7,17 +7,15 @@
  Please read the LICENCE.txt for licensing information
 *****************************************************************/
 
-#import <Cocoa/Cocoa.h>
-
 /***************************
  This category adds some convienience methods to NSString
  @since M3Foundation 1.0 and later
 ***************************/
-@interface NSString(M3Extensions) 
+@interface NSString (M3Extensions) 
 
 /***************************
  Returns a string with the specified number of characters removed from the end
- @param number The number of characters to be removed from the end of the string
+ @param aNumber The number of characters to be removed from the end of the string
  @result Returns an NSString object with with the specified number of characters are removed
  @since M3Foundation 1.0 and later
 ***************************/
@@ -25,7 +23,7 @@
 
 /***************************
  Finds whether the string contains the supplied substring
- @param subString The string to test for
+ @param aSubString The string to test for
  @result Returns true if the string contains subString
  @since M3Foundation 1.0 and later
 ***************************/

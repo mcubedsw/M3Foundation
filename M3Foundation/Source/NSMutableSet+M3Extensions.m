@@ -10,7 +10,7 @@
 #import "NSMutableSet+M3Extensions.h"
 
 
-@implementation NSMutableSet(M3Extensions)
+@implementation NSMutableSet (M3Extensions)
 
 //*****//
 - (void)m3_differenceSet:(NSSet *)aSet {

@@ -25,20 +25,20 @@
 	}
 	
 	//Combine them into the correct type
-	NSString *type = [[aElement attributeForName:@"type"] stringValue];
+	NSString *type = [aElement attributeForName:@"type"].stringValue;
 	if ([type isEqualToString:@"and"]) {
 		return [NSCompoundPredicate andPredicateWithSubpredicates:subpredicates];
 	} else if ([type isEqualToString:@"or"]) {
 		return [NSCompoundPredicate orPredicateWithSubpredicates:subpredicates];
-	} else if ([type isEqualToString:@"not"] && [subpredicates count] == 1) {
-		return [NSCompoundPredicate notPredicateWithSubpredicate:[subpredicates objectAtIndex:0]];
+	} else if ([type isEqualToString:@"not"] && subpredicates.count == 1) {
+		return [NSCompoundPredicate notPredicateWithSubpredicate:subpredicates[0]];
 	}
 	return nil;
 }
 
 //*****//
-- (NSString *)_m3_compoundPredicateTypeString {
-	switch ([self compoundPredicateType]) {
+- (NSString *)p_compoundPredicateTypeString {
+	switch (self.compoundPredicateType) {
 		case NSAndPredicateType:
 			return @"and";
 		case NSOrPredicateType:
@@ -52,9 +52,9 @@
 //*****//
 - (NSXMLElement *)m3_xmlRepresentation {
 	NSXMLElement *compoundElement = [NSXMLElement elementWithName:@"predicates"];
-	[compoundElement addAttribute:[NSXMLNode attributeWithName:@"type" stringValue:[self _m3_compoundPredicateTypeString]]];
-	for (NSPredicate *subPred in [self subpredicates]) {
-		[compoundElement addChild:[subPred m3_xmlRepresentation]];
+	[compoundElement addAttribute:[NSXMLNode attributeWithName:@"type" stringValue:self.p_compoundPredicateTypeString]];
+	for (NSPredicate *subPred in self.subpredicates) {
+		[compoundElement addChild:subPred.m3_xmlRepresentation];
 	}
 	return compoundElement;
 }

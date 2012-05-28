@@ -11,6 +11,7 @@
 
 @interface NSCountedSet (M3Extensions)
 
+#warning Comments Needed
 - (NSSet *)m3_objectsWithCount:(NSUInteger)aCount;
 - (NSUInteger)m3_countedObjectTotal;
 

@@ -10,13 +10,14 @@
 #import "NSXMLElement+M3Extensions.h"
 
 
-@implementation NSXMLElement(M3Extensions)
+@implementation NSXMLElement (M3Extensions)
 
 //*****//
 - (NSXMLElement *)m3_elementForName:(NSString *)aName {
 	NSArray *elements = [self elementsForName:aName];
-	if ([elements count])
-		return [elements objectAtIndex:0];
+	if (elements.count) {
+		return elements[0];
+	}
 	return nil;
 }
 

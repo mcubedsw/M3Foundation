@@ -9,30 +9,32 @@
 
 #import "NSArray+M3Extensions.h"
 
-
-@implementation NSArray(M3Extensions)
+@implementation NSArray (M3Extensions)
 
 //*****//
 + (NSArray *)m3_alphaNumericArray {
-	return [NSArray arrayWithObjects:@"0", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", 
-		@"a", @"b", @"c", @"d", @"e", @"f", @"g", @"h", @"i", @"j", @"k", @"l", @"m", @"n", @"o", 
-		@"p", @"q", @"r", @"s", @"t", @"u", @"v", @"w", @"x", @"y", @"z", nil];
+	return @[
+		@"0", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"a", @"b",
+		@"c", @"d", @"e", @"f", @"g", @"h", @"i", @"j", @"k", @"l", @"m", @"n",
+		@"o", @"p", @"q", @"r", @"s", @"t", @"u", @"v", @"w", @"x", @"y", @"z"
+	];
 }
 
 //*****//
-+ (NSArray *)m3_arrayWithNumbersFrom:(NSInteger)minValue to:(NSInteger)maxValue {
-	if (maxValue == minValue)
++ (NSArray *)m3_arrayWithNumbersFrom:(NSInteger)aMinValue to:(NSInteger)aMaxValue {
+	if (aMaxValue == aMinValue) {
 		return nil;
+	}
 	
 	NSMutableArray *returnArray = [NSMutableArray array];
 	NSInteger i;
 	//loop through the number sequence adding them to our array
-	if (maxValue > minValue) {
-		for (i = minValue; i <= maxValue; i++) {
+	if (aMaxValue > aMinValue) {
+		for (i = aMinValue; i <= aMaxValue; i++) {
 			[returnArray addObject:[NSNumber numberWithInteger:i]];
 		}
 	} else {
-		for (i = minValue; i >= maxValue; i--) {
+		for (i = aMinValue; i >= aMaxValue; i--) {
 			[returnArray addObject:[NSNumber numberWithInteger:i]];
 		}
 	}
@@ -41,16 +43,16 @@
 
 //*****//
 - (id)m3_safeObjectAtIndex:(NSUInteger)aIndex {
-	if (aIndex < [self count]) {
-		return [self objectAtIndex:aIndex];
+	if (aIndex < self.count) {
+		return self[aIndex];
 	}
 	return nil;
 }
 
 //*****//
-- (id)m3_objectPassingTest:(BOOL (^)(id aObj))aTest {
-	NSArray *objects = [self filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
-		return aTest(evaluatedObject);
+- (id)m3_objectPassingTest:(BOOL (^)(id aObject))aTest {
+	NSArray *objects = [self filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id aEvaluatedObject, NSDictionary *aBindings) {
+		return aTest(aEvaluatedObject);
 	}]];
 	return [objects m3_safeObjectAtIndex:0];
 }

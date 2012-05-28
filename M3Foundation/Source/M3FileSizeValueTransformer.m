@@ -23,21 +23,22 @@
 }
 
 //*****//
-- (id)transformedValue:(id)value {
-	if ([value isKindOfClass:[NSNumber class]]) {
-		double fileSize = [value doubleValue];
-		NSArray *units = [NSArray arrayWithObjects:@"bytes", @"KB", @"MB", @"GB", @"TB", @"PB", @"EB", @"ZB", @"YB", nil];
-		NSInteger currentIndex = 0;
-		while (fileSize > 1000) {
-			currentIndex++;
-			fileSize /= 1000;
-		}
-		if (currentIndex == 0) {
-			return [NSString stringWithFormat:@"%.0f %@", fileSize, [units objectAtIndex:currentIndex]];
-		}
-		return [NSString stringWithFormat:@"%.2f %@", fileSize, [units objectAtIndex:currentIndex]];
+- (id)transformedValue:(id)aValue {
+	if (![aValue isKindOfClass:[NSNumber class]]) {
+		return nil;
 	}
-	return nil;
+	
+	double fileSize = [aValue doubleValue];
+	NSArray *units = @[ @"bytes", @"KB", @"MB", @"GB", @"TB", @"PB", @"EB", @"ZB", @"YB" ];
+	NSInteger currentIndex = 0;
+	while (fileSize > 1000) {
+		currentIndex++;
+		fileSize /= 1000;
+	}
+	if (currentIndex == 0) {
+		return [NSString stringWithFormat:@"%.0f %@", fileSize, units[currentIndex]];
+	}
+	return [NSString stringWithFormat:@"%.2f %@", fileSize, units[currentIndex]];
 }
 
 @end

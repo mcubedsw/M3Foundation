@@ -14,19 +14,19 @@
 
 //*****//
 - (NSInteger)m3_integerValue {
-	return [[self stringValue] integerValue];
+	return self.stringValue.integerValue;
 }
 
 //*****//
 - (CGFloat)m3_floatValue {
-	return [[self stringValue] floatValue];
+	return self.stringValue.floatValue;
 }
 
 //*****//
-- (NSXMLNode *)m3_nodeForXPath:(NSString *)xPath error:(NSError **)error {
-	NSArray *nodes = [self nodesForXPath:xPath error:&*error];
-	if ([nodes count]) {
-		return [nodes objectAtIndex:0];
+- (NSXMLNode *)m3_nodeForXPath:(NSString *)aXPath error:(NSError **)aError {
+	NSArray *nodes = [self nodesForXPath:aXPath error:aError];
+	if (nodes.count) {
+		return nodes[0];
 	}
 	return nil;
 }

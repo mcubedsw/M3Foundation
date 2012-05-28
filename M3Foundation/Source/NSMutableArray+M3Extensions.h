@@ -13,7 +13,7 @@
  This category adds more ways of re-arranging objects in a mutable array
  @since M3Foundation 1.0 and later
 ***************************/
-@interface NSMutableArray(M3Extensions)
+@interface NSMutableArray (M3Extensions)
 
 /***************************
  Moves the supplied object to the new index

@@ -15,8 +15,6 @@
 		9911BEB61421319200BE7671 /* M3URLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9911BEB41421319200BE7671 /* M3URLConnectionOperation.m */; };
 		996007EA10F8C9640070D588 /* NSArray+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 996007E210F8C9640070D588 /* NSArray+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		996007EB10F8C9640070D588 /* NSArray+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 996007E310F8C9640070D588 /* NSArray+M3Extensions.m */; };
-		996007EC10F8C9640070D588 /* NSFileManager+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 996007E410F8C9640070D588 /* NSFileManager+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		996007ED10F8C9640070D588 /* NSFileManager+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 996007E510F8C9640070D588 /* NSFileManager+M3Extensions.m */; };
 		996007EE10F8C9640070D588 /* NSString+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 996007E610F8C9640070D588 /* NSString+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		996007EF10F8C9640070D588 /* NSString+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 996007E710F8C9640070D588 /* NSString+M3Extensions.m */; };
 		996007F010F8C9640070D588 /* NSXMLElement+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 996007E810F8C9640070D588 /* NSXMLElement+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -79,8 +77,6 @@
 		991C4DE01573F5CC00CC43F3 /* M3FoundationTests_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = M3FoundationTests_Prefix.pch; path = M3FoundationTests/M3FoundationTests_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		996007E210F8C9640070D588 /* NSArray+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+M3Extensions.h"; sourceTree = "<group>"; };
 		996007E310F8C9640070D588 /* NSArray+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+M3Extensions.m"; sourceTree = "<group>"; };
-		996007E410F8C9640070D588 /* NSFileManager+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+M3Extensions.h"; sourceTree = "<group>"; };
-		996007E510F8C9640070D588 /* NSFileManager+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+M3Extensions.m"; sourceTree = "<group>"; };
 		996007E610F8C9640070D588 /* NSString+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+M3Extensions.h"; sourceTree = "<group>"; };
 		996007E710F8C9640070D588 /* NSString+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+M3Extensions.m"; sourceTree = "<group>"; };
 		996007E810F8C9640070D588 /* NSXMLElement+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSXMLElement+M3Extensions.h"; sourceTree = "<group>"; };
@@ -277,8 +273,6 @@
 				990F989B13437290000E336B /* NSObject+M3Extensions.m */,
 				996007E610F8C9640070D588 /* NSString+M3Extensions.h */,
 				996007E710F8C9640070D588 /* NSString+M3Extensions.m */,
-				996007E410F8C9640070D588 /* NSFileManager+M3Extensions.h */,
-				996007E510F8C9640070D588 /* NSFileManager+M3Extensions.m */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -369,7 +363,6 @@
 				9960080610F8C9980070D588 /* M3CSVValueTransformer.h in Headers */,
 				9960080810F8C9980070D588 /* M3FileSizeValueTransformer.h in Headers */,
 				996007EA10F8C9640070D588 /* NSArray+M3Extensions.h in Headers */,
-				996007EC10F8C9640070D588 /* NSFileManager+M3Extensions.h in Headers */,
 				998859A411B8198D007D2911 /* NSMutableArray+M3Extensions.h in Headers */,
 				998859AC11B819DC007D2911 /* NSMutableSet+M3Extensions.h in Headers */,
 				996007EE10F8C9640070D588 /* NSString+M3Extensions.h in Headers */,
@@ -499,7 +492,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				996007EB10F8C9640070D588 /* NSArray+M3Extensions.m in Sources */,
-				996007ED10F8C9640070D588 /* NSFileManager+M3Extensions.m in Sources */,
 				996007EF10F8C9640070D588 /* NSString+M3Extensions.m in Sources */,
 				996007F110F8C9640070D588 /* NSXMLElement+M3Extensions.m in Sources */,
 				9960080710F8C9980070D588 /* M3CSVValueTransformer.m in Sources */,

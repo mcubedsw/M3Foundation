@@ -13,9 +13,9 @@
 @implementation NSMutableDictionary (M3Extensions)
 
 //*****//
-- (void)m3_safeSetObject:(id)aObj forKey:(id)aKey {
-	if (aObj && aKey) {
-		[self setObject:aObj forKey:aKey];
+- (void)m3_safeSetObject:(id)aObject forKey:(id)aKey {
+	if (aObject && aKey) {
+		self[aKey] = aObject;
 	}
 }
 

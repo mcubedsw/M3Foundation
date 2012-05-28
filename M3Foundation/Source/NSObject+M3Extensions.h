@@ -7,7 +7,6 @@
  Please read the LICENCE.txt for licensing information
 *****************************************************************/
 
-#import <Foundation/Foundation.h>
 
 @interface NSObject (M3Extensions)
 
