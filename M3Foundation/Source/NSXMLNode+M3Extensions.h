@@ -7,8 +7,6 @@
  Please read the LICENCE.txt for licensing information
 *****************************************************************/
 
-#import <Cocoa/Cocoa.h>
-
 /***************************
  Extensions to NSXMLNode to simplify accessing data
  @since M3Foundation 1.0 or later

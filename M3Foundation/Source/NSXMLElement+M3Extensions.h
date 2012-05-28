@@ -7,8 +7,6 @@
  Please read the LICENCE.txt for licensing information
 *****************************************************************/
 
-#import <Cocoa/Cocoa.h>
-
 /***************************
  This category adds some convienience methods to NSXMLElement
  @since M3Foundation 1.0 and later

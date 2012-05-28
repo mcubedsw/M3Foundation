@@ -6,8 +6,6 @@
 //  Copyright 2012 M Cubed Software. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 @interface NSDictionary (M3Extensions)
 
 #warning Comment Needed

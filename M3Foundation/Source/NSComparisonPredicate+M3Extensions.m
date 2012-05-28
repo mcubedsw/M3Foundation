@@ -13,7 +13,6 @@
 #import "NSArray+M3Extensions.h"
 
 
-
 @implementation NSComparisonPredicate (M3Extensions)
 
 //*****//

@@ -7,8 +7,6 @@
  Please read the LICENCE.txt for licensing information
 *****************************************************************/
 
-#import <Foundation/Foundation.h>
-
 /***************************
  This category adds more ways of re-arranging objects in a mutable array
  @since M3Foundation 1.0 and later

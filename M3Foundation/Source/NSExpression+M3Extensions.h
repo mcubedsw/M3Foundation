@@ -7,7 +7,6 @@
  Please read the LICENCE.txt for licensing information
 *****************************************************************/
 
-#import <Foundation/Foundation.h>
 
 /***************************
  Additions to NSExpression for converting to and from XML representations

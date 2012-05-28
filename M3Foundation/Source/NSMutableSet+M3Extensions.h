@@ -7,8 +7,6 @@
  Please read the LICENCE.txt for licensing information
 *****************************************************************/
 
-#import <Cocoa/Cocoa.h>
-
 /***************************
  Adds some more set operations to NSMutableSet
  @since M3Foundation 1.0 and later

@@ -7,8 +7,6 @@
  Please read the LICENCE.txt for licensing information
  *****************************************************************/
 
-#import <Foundation/Foundation.h>
-
 @interface NSCountedSet (M3Extensions)
 
 #warning Comments Needed

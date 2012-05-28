@@ -7,8 +7,6 @@
  Please read the LICENCE.txt for licensing information
 *****************************************************************/
 
-#import <Foundation/Foundation.h>
-
 /***************************
  This category adds methods to simplify working with dictionaries
  @since M3Foundation 1.0 or later

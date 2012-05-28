@@ -9,16 +9,11 @@
 
 #import "M3URLConnectionOperation.h"
 
-@interface M3URLConnectionOperation () {
+
+@implementation M3URLConnectionOperation {
 	NSURLRequest *request;
 	void(^downloadCompletionBlock)(NSInteger aResponse, NSData *aData, NSError *aError);
 }
-
-@end
-
-
-
-@implementation M3URLConnectionOperation
 
 //*****//
 - (id)initWithURLRequest:(NSURLRequest *)aRequest {

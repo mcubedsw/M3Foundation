@@ -7,7 +7,6 @@
  Please read the LICENCE.txt for licensing information
 *****************************************************************/
 
-#import <Cocoa/Cocoa.h>
 
 /***************************
  Takes a value in bytes and converts it into the most appropriate unit eg 2048 bytes would return "2 KB"
