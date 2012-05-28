@@ -6,13 +6,27 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		991C4DE61574088800CC43F3 /* Process Build Numbers */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 991C4DE71574088800CC43F3 /* Build configuration list for PBXAggregateTarget "Process Build Numbers" */;
+			buildPhases = (
+				991C4DEA157408A000CC43F3 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "Process Build Numbers";
+			productName = "Process Build Number";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
-		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 		990F989C13437290000E336B /* NSObject+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 990F989A13437290000E336B /* NSObject+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		990F989D13437290000E336B /* NSObject+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 990F989B13437290000E336B /* NSObject+M3Extensions.m */; };
 		9911BEB51421319200BE7671 /* M3URLConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9911BEB31421319200BE7671 /* M3URLConnectionOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9911BEB61421319200BE7671 /* M3URLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9911BEB41421319200BE7671 /* M3URLConnectionOperation.m */; };
+		991C4DED15740CCE00CC43F3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		996007EA10F8C9640070D588 /* NSArray+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 996007E210F8C9640070D588 /* NSArray+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		996007EB10F8C9640070D588 /* NSArray+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 996007E310F8C9640070D588 /* NSArray+M3Extensions.m */; };
 		996007EE10F8C9640070D588 /* NSString+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 996007E610F8C9640070D588 /* NSString+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -55,6 +69,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		991C4DEB15740C4300CC43F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 991C4DE61574088800CC43F3;
+			remoteInfo = "Process Build Number";
+		};
 		99600CE810F8CF5C0070D588 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
@@ -75,6 +96,7 @@
 		9911BEB31421319200BE7671 /* M3URLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3URLConnectionOperation.h; sourceTree = "<group>"; };
 		9911BEB41421319200BE7671 /* M3URLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3URLConnectionOperation.m; sourceTree = "<group>"; };
 		991C4DE01573F5CC00CC43F3 /* M3FoundationTests_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = M3FoundationTests_Prefix.pch; path = M3FoundationTests/M3FoundationTests_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		991C4DE41574084300CC43F3 /* Info.plist.prefix */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Info.plist.prefix; sourceTree = "<group>"; };
 		996007E210F8C9640070D588 /* NSArray+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+M3Extensions.h"; sourceTree = "<group>"; };
 		996007E310F8C9640070D588 /* NSArray+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+M3Extensions.m"; sourceTree = "<group>"; };
 		996007E610F8C9640070D588 /* NSString+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+M3Extensions.h"; sourceTree = "<group>"; };
@@ -216,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				99DF329914A39C030082C524 /* Info.plist */,
+				991C4DE41574084300CC43F3 /* Info.plist.prefix */,
 				99DF329714A39BFD0082C524 /* M3Foundation_Prefix.pch */,
 			);
 			name = "Other Files";
@@ -396,6 +419,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				991C4DEC15740C4300CC43F3 /* PBXTargetDependency */,
 			);
 			name = M3Foundation;
 			productInstallPath = "$(HOME)/Library/Frameworks";
@@ -447,6 +471,7 @@
 			targets = (
 				8DC2EF4F0486A6940098B216 /* M3Foundation */,
 				99600CE210F8CEF60070D588 /* M3FoundationTests */,
+				991C4DE61574088800CC43F3 /* Process Build Numbers */,
 			);
 		};
 /* End PBXProject section */
@@ -456,7 +481,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */,
+				991C4DED15740CCE00CC43F3 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +496,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		991C4DEA157408A000CC43F3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/M3Foundation/Info.plist.prefix",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Info.plist.prefix",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "ruby \"${SRCROOT}/Scripts/processbuildnumbers.rb\"";
+		};
 		99600CE110F8CEF60070D588 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -526,6 +566,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		991C4DEC15740C4300CC43F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 991C4DE61574088800CC43F3 /* Process Build Numbers */;
+			targetProxy = 991C4DEB15740C4300CC43F3 /* PBXContainerItemProxy */;
+		};
 		99600CE910F8CF5C0070D588 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8DC2EF4F0486A6940098B216 /* M3Foundation */;
@@ -556,9 +601,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(TARGET_NAME)/$(TARGET_NAME)_Prefix.pch";
 				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				INFOPLIST_PREFIX_HEADER = "$(TARGET_TEMP_DIR)/../Process Build Numbers.build/DerivedSources/Info.plist.prefix";
+				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "@rpath";
 				PRODUCT_NAME = M3Foundation;
-				SDKROOT = macosx;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -572,10 +618,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(TARGET_NAME)/$(TARGET_NAME)_Prefix.pch";
 				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				INFOPLIST_PREFIX_HEADER = "$(TARGET_TEMP_DIR)/../Process Build Numbers.build/DerivedSources/Info.plist.prefix";
+				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "@rpath";
 				LD_DYLIB_INSTALL_NAME = "$(DYLIB_INSTALL_NAME_BASE:standardizepath)/$(EXECUTABLE_PATH)";
 				PRODUCT_NAME = M3Foundation;
-				SDKROOT = macosx;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
@@ -613,12 +660,25 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				OTHER_CFLAGS = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
 				STRIP_INSTALLED_PRODUCT = NO;
 				STRIP_STYLE = all;
 				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		991C4DE81574088800CC43F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		991C4DE91574088800CC43F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -648,7 +708,6 @@
 					SenTestingKit,
 				);
 				PRODUCT_NAME = M3FoundationTests;
-				SDKROOT = macosx;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -678,7 +737,6 @@
 					SenTestingKit,
 				);
 				PRODUCT_NAME = M3FoundationTests;
-				SDKROOT = macosx;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
@@ -703,6 +761,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		991C4DE71574088800CC43F3 /* Build configuration list for PBXAggregateTarget "Process Build Numbers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				991C4DE81574088800CC43F3 /* Debug */,
+				991C4DE91574088800CC43F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		99600CE710F8CEF60070D588 /* Build configuration list for PBXNativeTarget "M3FoundationTests" */ = {
 			isa = XCConfigurationList;
