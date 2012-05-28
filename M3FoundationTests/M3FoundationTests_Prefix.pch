@@ -1,0 +1,14 @@
+//
+//  M3FoundationTests_Prefix.pch
+//  M3Foundation
+//
+//  Created by Martin Pilkington on 28/05/2012.
+//
+//
+
+#ifndef M3Foundation_M3FoundationTests_Prefix_pch
+#define M3Foundation_M3FoundationTests_Prefix_pch
+
+
+
+#endif

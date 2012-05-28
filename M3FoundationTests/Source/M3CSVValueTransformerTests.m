@@ -16,14 +16,12 @@
 	M3CSVValueTransformer *transform = [[M3CSVValueTransformer alloc] init];
 	NSArray *array = [NSArray arrayWithObjects:@"42", @"possums", @"went", @"on", @"holiday", nil];
 	STAssertEqualObjects(array, [transform transformedValue:@"42,possums,went,on,holiday"], @"");
-	[transform release];
 }
 
 - (void)testReverseTransform {
 	M3CSVValueTransformer *transform = [[M3CSVValueTransformer alloc] init];
 	NSArray *array = [NSArray arrayWithObjects:@"42", @"possums", @"went", @"on", @"holiday", nil];
 	STAssertEqualObjects(@"42,possums,went,on,holiday", [transform reverseTransformedValue:array], @"");
-	[transform release];
 }
 
 @end

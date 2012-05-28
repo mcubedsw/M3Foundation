@@ -18,7 +18,6 @@
 	[self unionSet:aSet];
 	[setB intersectSet:aSet];
 	[self minusSet:setB];
-	[setB release];
 }
 	 
 @end

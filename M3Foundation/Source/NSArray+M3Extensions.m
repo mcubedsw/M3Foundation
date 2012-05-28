@@ -36,7 +36,7 @@
 			[returnArray addObject:[NSNumber numberWithInteger:i]];
 		}
 	}
-	return [[returnArray copy] autorelease];
+	return [returnArray copy];
 }
 
 //*****//

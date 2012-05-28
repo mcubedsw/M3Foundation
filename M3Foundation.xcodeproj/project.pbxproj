@@ -28,7 +28,6 @@
 		99600CBF10F8CD630070D588 /* M3Foundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 99600CBE10F8CD630070D588 /* M3Foundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99600D1C10F8D00B0070D588 /* M3Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* M3Foundation.framework */; };
 		99600D2310F8D0500070D588 /* NSArray+M3ExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99600D2210F8D0500070D588 /* NSArray+M3ExtensionsTests.m */; };
-		99600D4110F8D1470070D588 /* M3Foundation.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* M3Foundation.framework */; };
 		99600D9F10F8D5150070D588 /* NSString+M3ExtensionsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 99600D9E10F8D5150070D588 /* NSString+M3ExtensionsTest.m */; };
 		99600DB110F8D5490070D588 /* M3CSVValueTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99600DB010F8D5490070D588 /* M3CSVValueTransformerTests.m */; };
 		99600DB610F8D5540070D588 /* M3FileSizeValueTransformerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99600DB510F8D5540070D588 /* M3FileSizeValueTransformerTests.m */; };
@@ -67,20 +66,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		99600D4810F8D1490070D588 /* Copy Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				99600D4110F8D1470070D588 /* M3Foundation.framework in Copy Frameworks */,
-			);
-			name = "Copy Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		0867D6A5FE840307C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
@@ -91,6 +76,7 @@
 		990F989B13437290000E336B /* NSObject+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+M3Extensions.m"; sourceTree = "<group>"; };
 		9911BEB31421319200BE7671 /* M3URLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3URLConnectionOperation.h; sourceTree = "<group>"; };
 		9911BEB41421319200BE7671 /* M3URLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3URLConnectionOperation.m; sourceTree = "<group>"; };
+		991C4DE01573F5CC00CC43F3 /* M3FoundationTests_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = M3FoundationTests_Prefix.pch; path = M3FoundationTests/M3FoundationTests_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		996007E210F8C9640070D588 /* NSArray+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+M3Extensions.h"; sourceTree = "<group>"; };
 		996007E310F8C9640070D588 /* NSArray+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+M3Extensions.m"; sourceTree = "<group>"; };
 		996007E410F8C9640070D588 /* NSFileManager+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+M3Extensions.h"; sourceTree = "<group>"; };
@@ -137,8 +123,8 @@
 		9994863E1358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+M3Extensions.m"; sourceTree = "<group>"; };
 		99A7D91311D397270011B922 /* NSXMLNode+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSXMLNode+M3Extensions.h"; sourceTree = "<group>"; };
 		99A7D91411D397270011B922 /* NSXMLNode+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSXMLNode+M3Extensions.m"; sourceTree = "<group>"; };
-		99DF329714A39BFD0082C524 /* M3Foundation_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = M3Foundation_Prefix.pch; path = Framework/M3Foundation_Prefix.pch; sourceTree = "<group>"; };
-		99DF329914A39C030082C524 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Framework/Info.plist; sourceTree = "<group>"; };
+		99DF329714A39BFD0082C524 /* M3Foundation_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3Foundation_Prefix.pch; sourceTree = "<group>"; };
+		99DF329914A39C030082C524 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -174,10 +160,8 @@
 		0867D691FE84028FC02AAC07 /* M3Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				99DF329B14A39C070082C524 /* Framework */,
-				99600D2010F8D02E0070D588 /* Tests */,
-				32C88DFF0371C24200C91783 /* Other Sources */,
-				089C1665FE841158C02AAC07 /* Resources */,
+				991C4DDC1573F55100CC43F3 /* M3Foundation */,
+				99600D2010F8D02E0070D588 /* M3FoundationTests */,
 				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
 				034768DFFF38A50411DB9C8B /* Products */,
 			);
@@ -196,10 +180,9 @@
 		089C1665FE841158C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				99DF329914A39C030082C524 /* Info.plist */,
 				089C1666FE841158C02AAC07 /* InfoPlist.strings */,
 			);
-			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
@@ -233,12 +216,13 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		32C88DFF0371C24200C91783 /* Other Sources */ = {
+		32C88DFF0371C24200C91783 /* Other Files */ = {
 			isa = PBXGroup;
 			children = (
+				99DF329914A39C030082C524 /* Info.plist */,
 				99DF329714A39BFD0082C524 /* M3Foundation_Prefix.pch */,
 			);
-			name = "Other Sources";
+			name = "Other Files";
 			sourceTree = "<group>";
 		};
 		991C4DD81573F15D00CC43F3 /* Predicates */ = {
@@ -299,6 +283,50 @@
 			name = Misc;
 			sourceTree = "<group>";
 		};
+		991C4DDC1573F55100CC43F3 /* M3Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				99DF329B14A39C070082C524 /* Source */,
+				089C1665FE841158C02AAC07 /* Resources */,
+				32C88DFF0371C24200C91783 /* Other Files */,
+			);
+			path = M3Foundation;
+			sourceTree = "<group>";
+		};
+		991C4DDD1573F56A00CC43F3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				996EF5991347507200345D64 /* NSPredicateXMLTestData.txt */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		991C4DDE1573F57300CC43F3 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				99600D2110F8D0500070D588 /* NSArray+M3ExtensionsTests.h */,
+				99600D2210F8D0500070D588 /* NSArray+M3ExtensionsTests.m */,
+				99600DAF10F8D5490070D588 /* M3CSVValueTransformerTests.h */,
+				99600DB010F8D5490070D588 /* M3CSVValueTransformerTests.m */,
+				99600DB410F8D5540070D588 /* M3FileSizeValueTransformerTests.h */,
+				99600DB510F8D5540070D588 /* M3FileSizeValueTransformerTests.m */,
+				99600D9D10F8D5150070D588 /* NSString+M3ExtensionsTest.h */,
+				99600D9E10F8D5150070D588 /* NSString+M3ExtensionsTest.m */,
+				9961D6B91344BCFC00103BE6 /* NSPredicate+M3ExtensionsTests.h */,
+				9961D6BA1344BCFC00103BE6 /* NSPredicate+M3ExtensionsTests.m */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		991C4DDF1573F59000CC43F3 /* Other Files */ = {
+			isa = PBXGroup;
+			children = (
+				99600CE410F8CEF60070D588 /* M3FoundationTests-Info.plist */,
+				991C4DE01573F5CC00CC43F3 /* M3FoundationTests_Prefix.pch */,
+			);
+			name = "Other Files";
+			sourceTree = "<group>";
+		};
 		99225A4A11386E58008970B7 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,33 +338,24 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
-		99600D2010F8D02E0070D588 /* Tests */ = {
+		99600D2010F8D02E0070D588 /* M3FoundationTests */ = {
 			isa = PBXGroup;
 			children = (
-				99600CE410F8CEF60070D588 /* M3FoundationTests-Info.plist */,
-				99600D2110F8D0500070D588 /* NSArray+M3ExtensionsTests.h */,
-				99600D2210F8D0500070D588 /* NSArray+M3ExtensionsTests.m */,
-				99600DAF10F8D5490070D588 /* M3CSVValueTransformerTests.h */,
-				99600DB010F8D5490070D588 /* M3CSVValueTransformerTests.m */,
-				99600DB410F8D5540070D588 /* M3FileSizeValueTransformerTests.h */,
-				99600DB510F8D5540070D588 /* M3FileSizeValueTransformerTests.m */,
-				99600D9D10F8D5150070D588 /* NSString+M3ExtensionsTest.h */,
-				99600D9E10F8D5150070D588 /* NSString+M3ExtensionsTest.m */,
-				9961D6B91344BCFC00103BE6 /* NSPredicate+M3ExtensionsTests.h */,
-				9961D6BA1344BCFC00103BE6 /* NSPredicate+M3ExtensionsTests.m */,
-				996EF5991347507200345D64 /* NSPredicateXMLTestData.txt */,
+				991C4DDE1573F57300CC43F3 /* Source */,
+				991C4DDD1573F56A00CC43F3 /* Resources */,
+				991C4DDF1573F59000CC43F3 /* Other Files */,
 			);
-			path = Tests;
+			path = M3FoundationTests;
 			sourceTree = "<group>";
 		};
-		99DF329B14A39C070082C524 /* Framework */ = {
+		99DF329B14A39C070082C524 /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				99600CBE10F8CD630070D588 /* M3Foundation.h */,
 				99225A4A11386E58008970B7 /* Categories */,
 				08FB77AEFE84172EC02AAC07 /* Classes */,
 			);
-			path = Framework;
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,7 +414,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 99600CE710F8CEF60070D588 /* Build configuration list for PBXNativeTarget "M3FoundationTests" */;
 			buildPhases = (
-				99600D4810F8D1490070D588 /* Copy Frameworks */,
 				99600CDE10F8CEF60070D588 /* Resources */,
 				99600CDF10F8CEF60070D588 /* Sources */,
 				99600CE010F8CEF60070D588 /* Frameworks */,
@@ -417,7 +435,7 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0440;
 			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "M3Foundation" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -530,7 +548,6 @@
 				089C1667FE841158C02AAC07 /* English */,
 			);
 			name = InfoPlist.strings;
-			path = Framework;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -541,18 +558,15 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_OBJC_GC = supported;
-				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Framework/M3Foundation_Prefix.pch;
-				INFOPLIST_FILE = Framework/Info.plist;
+				GCC_PREFIX_HEADER = "$(TARGET_NAME)/$(TARGET_NAME)_Prefix.pch";
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
 				INSTALL_PATH = "@rpath";
 				PRODUCT_NAME = M3Foundation;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -562,17 +576,14 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
-				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Framework/M3Foundation_Prefix.pch;
-				GCC_PREPROCESSOR_DEFINITIONS = NS_BUILD_32_LIKE_64;
-				INFOPLIST_FILE = Framework/Info.plist;
+				GCC_PREFIX_HEADER = "$(TARGET_NAME)/$(TARGET_NAME)_Prefix.pch";
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
 				INSTALL_PATH = "@rpath";
 				LD_DYLIB_INSTALL_NAME = "$(DYLIB_INSTALL_NAME_BASE:standardizepath)/$(EXECUTABLE_PATH)";
 				PRODUCT_NAME = M3Foundation;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
@@ -581,17 +592,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_GC = supported;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = NS_BUILD_32_LIKE_64;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "-DDEBUG";
 				SDKROOT = macosx;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};
@@ -599,19 +612,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_GC = supported;
-				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_CFLAGS = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
 				STRIP_INSTALLED_PRODUCT = NO;
 				STRIP_STYLE = all;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -621,16 +636,18 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "";
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"\"$(SRCROOT)/Dependencies\"",
+					"\"$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"/**",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_ENABLE_OBJC_GC = unsupported;
-				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				GCC_PREFIX_HEADER = "$(TARGET_NAME)/$(TARGET_NAME)_Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "Tests/M3FoundationTests-Info.plist";
+				INFOPLIST_FILE = "$(TARGET_NAME)/M3FoundationTests-Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -639,6 +656,7 @@
 					SenTestingKit,
 				);
 				PRODUCT_NAME = M3FoundationTests;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -647,16 +665,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(CONFIGURATION_BUILD_DIR)/M3Foundation.framework/M3Foundation";
+				BUNDLE_LOADER = "$(CONFIGURATION_BUILD_DIR)../M3Foundation/M3Foundation.framework/M3Foundation";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"\"$(SRCROOT)/Dependencies\"",
+					"\"$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"/**",
+				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				GCC_PREFIX_HEADER = "$(TARGET_NAME)/$(TARGET_NAME)_Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "Tests/M3FoundationTests-Info.plist";
+				INFOPLIST_FILE = "$(TARGET_NAME)/M3FoundationTests-Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -665,8 +686,8 @@
 					SenTestingKit,
 				);
 				PRODUCT_NAME = M3FoundationTests;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = octest;
-				ZERO_LINK = NO;
 			};
 			name = Release;
 		};

@@ -59,7 +59,7 @@
 		objc_registerClassPair(newSubclass);
 		object_setClass(self, newSubclass);
 	}
-	IMP newIMP = imp_implementationWithBlock(aBlock);
+	IMP newIMP = imp_implementationWithBlock((__bridge id)(aBlock));
 	Method methodToReplace = class_getInstanceMethod([self class], aSelector);
 	return class_addMethod([self class], aSelector, newIMP, method_getTypeEncoding(methodToReplace));
 }

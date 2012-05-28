@@ -25,18 +25,12 @@
 //*****//
 - (id)initWithURLRequest:(NSURLRequest *)aRequest {
 	if ((self = [super init])) {
-		request = [aRequest retain];
+		request = aRequest;
 		shouldAutomaticallyRetryAfterTimeOut = YES;
 	}
 	return self;
 }
 
-//*****//
-- (void)dealloc {
-	[request release];
-	[downloadCompletionBlock release];
-	[super dealloc];
-}
 
 //*****//
 - (void)main {

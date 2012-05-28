@@ -19,7 +19,6 @@
 	STAssertEqualObjects(@"53.55 MB", [transform transformedValue:[NSNumber numberWithLong:53545329]], @"");
 	STAssertEqualObjects(@"28.96 GB", [transform transformedValue:[NSNumber numberWithLong:28958816993]], @"");
 	STAssertEqualObjects(@"14.29 TB", [transform transformedValue:[NSNumber numberWithLong:14293651161088]], @"");
-	[transform release];
 }
 
 @end
