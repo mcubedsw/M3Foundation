@@ -11,7 +11,7 @@
 @implementation NSDictionary (M3Extensions)
 
 //*****//
-- (NSDictionary *)m3_dictionaryBySettingObject:(id)aObject forKey:(id)aKey {
+- (NSDictionary *)m3_dictionaryBySettingObject:(id)aObject forKey:(id<NSCopying>)aKey {
 	NSMutableDictionary *newDictionary = [self mutableCopy];
 	newDictionary[aKey] = aObject;
 	return [newDictionary copy];

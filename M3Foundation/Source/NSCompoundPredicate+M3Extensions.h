@@ -8,10 +8,10 @@
 *****************************************************************/
 
 
-/***************************
+/**
  Additions to NSCompoundPredicate for converting to and from XML representations
  @since M3Foundation 1.0 or later
- **************************/
+*/
 @interface NSCompoundPredicate (M3Extensions)
 
 @end
