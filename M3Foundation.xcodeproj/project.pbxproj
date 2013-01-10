@@ -26,7 +26,11 @@
 		990F989D13437290000E336B /* NSObject+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 990F989B13437290000E336B /* NSObject+M3Extensions.m */; };
 		9911BEB51421319200BE7671 /* M3URLConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9911BEB31421319200BE7671 /* M3URLConnectionOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9911BEB61421319200BE7671 /* M3URLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9911BEB41421319200BE7671 /* M3URLConnectionOperation.m */; };
+		991B87C7169C636E00DD8299 /* OCHamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991B87C6169C636E00DD8299 /* OCHamcrest.framework */; };
+		991B87C8169C637200DD8299 /* OCHamcrest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 991B87C6169C636E00DD8299 /* OCHamcrest.framework */; };
 		991C4DED15740CCE00CC43F3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
+		9949492A1697309C006EC706 /* NSKeyValueObserving+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 994949281697309C006EC706 /* NSKeyValueObserving+M3Extensions.h */; };
+		9949492B1697309C006EC706 /* NSKeyValueObserving+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 994949291697309C006EC706 /* NSKeyValueObserving+M3Extensions.m */; };
 		996007EA10F8C9640070D588 /* NSArray+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 996007E210F8C9640070D588 /* NSArray+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		996007EB10F8C9640070D588 /* NSArray+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 996007E310F8C9640070D588 /* NSArray+M3Extensions.m */; };
 		996007EE10F8C9640070D588 /* NSString+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 996007E610F8C9640070D588 /* NSString+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -52,7 +56,7 @@
 		9961D6BD1344BE0000103BE6 /* NSPredicate+M3ExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9961D6BA1344BCFC00103BE6 /* NSPredicate+M3ExtensionsTests.m */; };
 		9961D6C01344E64400103BE6 /* NSPredicate+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9961D6BE1344E64400103BE6 /* NSPredicate+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9961D6C11344E64400103BE6 /* NSPredicate+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9961D6BF1344E64400103BE6 /* NSPredicate+M3Extensions.m */; };
-		996B7F1614E69A8000A2C1A3 /* NSCountedSet+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 996B7F1414E69A8000A2C1A3 /* NSCountedSet+M3Extensions.h */; };
+		996B7F1614E69A8000A2C1A3 /* NSCountedSet+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 996B7F1414E69A8000A2C1A3 /* NSCountedSet+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		996B7F1714E69A8000A2C1A3 /* NSCountedSet+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 996B7F1514E69A8000A2C1A3 /* NSCountedSet+M3Extensions.m */; };
 		996EF59B1347507600345D64 /* NSPredicateXMLTestData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 996EF5991347507200345D64 /* NSPredicateXMLTestData.txt */; };
 		99700F9C14C5BC7C00F9C873 /* NSDictionary+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 99700F9A14C5BC7C00F9C873 /* NSDictionary+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -65,7 +69,8 @@
 		999486401358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9994863E1358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.m */; };
 		99A7D91511D397270011B922 /* NSXMLNode+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 99A7D91311D397270011B922 /* NSXMLNode+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99A7D91611D397270011B922 /* NSXMLNode+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A7D91411D397270011B922 /* NSXMLNode+M3Extensions.m */; };
-		99DF329814A39BFD0082C524 /* M3Foundation_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 99DF329714A39BFD0082C524 /* M3Foundation_Prefix.pch */; };
+		99EAF2D8169DD556004FE146 /* NSDictionary+M3ExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EAF2D7169DD556004FE146 /* NSDictionary+M3ExtensionsTests.m */; };
+		99EAF2DC169EFE71004FE146 /* NSMutableArray+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EAF2DB169EFE71004FE146 /* NSMutableArray+M3Extensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +90,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		991B87C4169C635500DD8299 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				991B87C8169C637200DD8299 /* OCHamcrest.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		0867D6A5FE840307C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
@@ -95,8 +113,11 @@
 		990F989B13437290000E336B /* NSObject+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+M3Extensions.m"; sourceTree = "<group>"; };
 		9911BEB31421319200BE7671 /* M3URLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3URLConnectionOperation.h; sourceTree = "<group>"; };
 		9911BEB41421319200BE7671 /* M3URLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3URLConnectionOperation.m; sourceTree = "<group>"; };
+		991B87C6169C636E00DD8299 /* OCHamcrest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCHamcrest.framework; path = M3FoundationTests/Dependencies/OCHamcrest.framework; sourceTree = "<group>"; };
 		991C4DE01573F5CC00CC43F3 /* M3FoundationTests_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = M3FoundationTests_Prefix.pch; path = M3FoundationTests/M3FoundationTests_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		991C4DE41574084300CC43F3 /* Info.plist.prefix */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Info.plist.prefix; sourceTree = "<group>"; };
+		994949281697309C006EC706 /* NSKeyValueObserving+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSKeyValueObserving+M3Extensions.h"; sourceTree = "<group>"; };
+		994949291697309C006EC706 /* NSKeyValueObserving+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSKeyValueObserving+M3Extensions.m"; sourceTree = "<group>"; };
 		996007E210F8C9640070D588 /* NSArray+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+M3Extensions.h"; sourceTree = "<group>"; };
 		996007E310F8C9640070D588 /* NSArray+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+M3Extensions.m"; sourceTree = "<group>"; };
 		996007E610F8C9640070D588 /* NSString+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+M3Extensions.h"; sourceTree = "<group>"; };
@@ -143,6 +164,10 @@
 		99A7D91411D397270011B922 /* NSXMLNode+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSXMLNode+M3Extensions.m"; sourceTree = "<group>"; };
 		99DF329714A39BFD0082C524 /* M3Foundation_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3Foundation_Prefix.pch; sourceTree = "<group>"; };
 		99DF329914A39C030082C524 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99EAF2D6169DD556004FE146 /* NSDictionary+M3ExtensionsTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+M3ExtensionsTests.h"; sourceTree = "<group>"; };
+		99EAF2D7169DD556004FE146 /* NSDictionary+M3ExtensionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+M3ExtensionsTests.m"; sourceTree = "<group>"; };
+		99EAF2DA169EFE71004FE146 /* NSMutableArray+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+M3Extensions.h"; sourceTree = "<group>"; };
+		99EAF2DB169EFE71004FE146 /* NSMutableArray+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+M3Extensions.m"; sourceTree = "<group>"; };
 		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -160,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99600D1C10F8D00B0070D588 /* M3Foundation.framework in Frameworks */,
+				991B87C7169C636E00DD8299 /* OCHamcrest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +245,7 @@
 		1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				991B87C6169C636E00DD8299 /* OCHamcrest.framework */,
 				1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
@@ -294,6 +321,8 @@
 			children = (
 				990F989A13437290000E336B /* NSObject+M3Extensions.h */,
 				990F989B13437290000E336B /* NSObject+M3Extensions.m */,
+				994949281697309C006EC706 /* NSKeyValueObserving+M3Extensions.h */,
+				994949291697309C006EC706 /* NSKeyValueObserving+M3Extensions.m */,
 				996007E610F8C9640070D588 /* NSString+M3Extensions.h */,
 				996007E710F8C9640070D588 /* NSString+M3Extensions.m */,
 			);
@@ -321,8 +350,7 @@
 		991C4DDE1573F57300CC43F3 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				99600D2110F8D0500070D588 /* NSArray+M3ExtensionsTests.h */,
-				99600D2210F8D0500070D588 /* NSArray+M3ExtensionsTests.m */,
+				99EAF2D9169DD55B004FE146 /* Collections */,
 				99600DAF10F8D5490070D588 /* M3CSVValueTransformerTests.h */,
 				99600DB010F8D5490070D588 /* M3CSVValueTransformerTests.m */,
 				99600DB410F8D5540070D588 /* M3FileSizeValueTransformerTests.h */,
@@ -375,6 +403,19 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
+		99EAF2D9169DD55B004FE146 /* Collections */ = {
+			isa = PBXGroup;
+			children = (
+				99600D2110F8D0500070D588 /* NSArray+M3ExtensionsTests.h */,
+				99600D2210F8D0500070D588 /* NSArray+M3ExtensionsTests.m */,
+				99EAF2D6169DD556004FE146 /* NSDictionary+M3ExtensionsTests.h */,
+				99EAF2D7169DD556004FE146 /* NSDictionary+M3ExtensionsTests.m */,
+				99EAF2DA169EFE71004FE146 /* NSMutableArray+M3Extensions.h */,
+				99EAF2DB169EFE71004FE146 /* NSMutableArray+M3Extensions.m */,
+			);
+			name = Collections;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -398,9 +439,9 @@
 				9911BEB51421319200BE7671 /* M3URLConnectionOperation.h in Headers */,
 				9960245C13460D800029725D /* NSComparisonPredicate+M3Extensions.h in Headers */,
 				9994863F1358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.h in Headers */,
-				99DF329814A39BFD0082C524 /* M3Foundation_Prefix.pch in Headers */,
-				99700F9C14C5BC7C00F9C873 /* NSDictionary+M3Extensions.h in Headers */,
 				996B7F1614E69A8000A2C1A3 /* NSCountedSet+M3Extensions.h in Headers */,
+				99700F9C14C5BC7C00F9C873 /* NSDictionary+M3Extensions.h in Headers */,
+				9949492A1697309C006EC706 /* NSKeyValueObserving+M3Extensions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +475,7 @@
 				99600CDE10F8CEF60070D588 /* Resources */,
 				99600CDF10F8CEF60070D588 /* Sources */,
 				99600CE010F8CEF60070D588 /* Frameworks */,
+				991B87C4169C635500DD8299 /* CopyFiles */,
 				99600CE110F8CEF60070D588 /* ShellScript */,
 			);
 			buildRules = (
@@ -452,7 +494,9 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				CLASSPREFIX = M3;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "M Cubed Software";
 			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "M3Foundation" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -548,6 +592,7 @@
 				9911BEB61421319200BE7671 /* M3URLConnectionOperation.m in Sources */,
 				99700F9D14C5BC7C00F9C873 /* NSDictionary+M3Extensions.m in Sources */,
 				996B7F1714E69A8000A2C1A3 /* NSCountedSet+M3Extensions.m in Sources */,
+				9949492B1697309C006EC706 /* NSKeyValueObserving+M3Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,6 +605,8 @@
 				99600DB110F8D5490070D588 /* M3CSVValueTransformerTests.m in Sources */,
 				9961D6BD1344BE0000103BE6 /* NSPredicate+M3ExtensionsTests.m in Sources */,
 				99600DB610F8D5540070D588 /* M3FileSizeValueTransformerTests.m in Sources */,
+				99EAF2D8169DD556004FE146 /* NSDictionary+M3ExtensionsTests.m in Sources */,
+				99EAF2DC169EFE71004FE146 /* NSMutableArray+M3Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,6 +641,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_VERSION = A;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -613,6 +661,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -632,7 +681,6 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				COMBINE_HIDPI_IMAGES = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -652,7 +700,6 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -671,6 +718,7 @@
 		991C4DE81574088800CC43F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -678,6 +726,7 @@
 		991C4DE91574088800CC43F3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -687,11 +736,13 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 					"\"$(SRCROOT)/Dependencies\"",
 					"\"$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"/**",
+					"\"$(SRCROOT)/M3FoundationTests/Dependencies\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -717,12 +768,14 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(CONFIGURATION_BUILD_DIR)../M3Foundation/M3Foundation.framework/M3Foundation";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 					"\"$(SRCROOT)/Dependencies\"",
 					"\"$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"/**",
+					"\"$(SRCROOT)/M3FoundationTests/Dependencies\"",
 				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -769,6 +822,7 @@
 				991C4DE91574088800CC43F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		99600CE710F8CEF60070D588 /* Build configuration list for PBXNativeTarget "M3FoundationTests" */ = {
 			isa = XCConfigurationList;

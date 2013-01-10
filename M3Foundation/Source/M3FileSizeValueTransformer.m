@@ -12,17 +12,17 @@
 
 @implementation M3FileSizeValueTransformer
 
-//*****//
+
 + (Class)transformedValueClass {
     return [NSString class];
 }
 
-//*****//
+
 + (BOOL)allowsReverseTransformation {
     return NO;
 }
 
-//*****//
+
 - (id)transformedValue:(id)aValue {
 	if (![aValue isKindOfClass:[NSNumber class]]) {
 		return nil;

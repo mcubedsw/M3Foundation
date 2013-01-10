@@ -11,7 +11,7 @@
 
 @implementation NSCountedSet (M3Extensions)
 
-//*****//
+
 - (NSSet *)m3_objectsWithCount:(NSUInteger)aCount {
 	NSMutableSet *returnSet = [NSMutableSet set];
 	for (id object in self) {
@@ -22,7 +22,7 @@
 	return [returnSet copy];
 }
 
-//*****//
+
 - (NSUInteger)m3_countedObjectTotal {
 	NSUInteger totalCount = 0;
 	for (id object in self) {

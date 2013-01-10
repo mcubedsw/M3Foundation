@@ -43,6 +43,6 @@
  @return The first object matching the test
  @since M3Foundation 1.0 or later
 */
-- (id)m3_objectPassingTest:(BOOL (^)(id aObject))aTest;
+- (id)m3_firstObjectPassingTest:(BOOL (^)(id aObject))aTest;
 
 @end

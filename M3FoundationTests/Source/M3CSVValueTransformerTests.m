@@ -14,14 +14,14 @@
 
 - (void)testForwardTransform {
 	M3CSVValueTransformer *transform = [[M3CSVValueTransformer alloc] init];
-	NSArray *array = [NSArray arrayWithObjects:@"42", @"possums", @"went", @"on", @"holiday", nil];
-	STAssertEqualObjects(array, [transform transformedValue:@"42,possums,went,on,holiday"], @"");
+	NSArray *expectedArray = [NSArray arrayWithObjects:@"42", @"possums", @"went", @"on", @"holiday", nil];
+	assertThat([transform transformedValue:@"42,possums,went,on,holiday"], is(equalTo(expectedArray)));
 }
 
 - (void)testReverseTransform {
 	M3CSVValueTransformer *transform = [[M3CSVValueTransformer alloc] init];
-	NSArray *array = [NSArray arrayWithObjects:@"42", @"possums", @"went", @"on", @"holiday", nil];
-	STAssertEqualObjects(@"42,possums,went,on,holiday", [transform reverseTransformedValue:array], @"");
+	NSArray *componentsArray = [NSArray arrayWithObjects:@"42", @"possums", @"went", @"on", @"holiday", nil];
+	assertThat([transform reverseTransformedValue:componentsArray], is(equalTo(@"42,possums,went,on,holiday")));
 }
 
 @end

@@ -11,7 +11,7 @@
 
 @implementation NSArray (M3Extensions)
 
-//*****//
+
 + (NSArray *)m3_alphaNumericArray {
 	return @[
 		@"0", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"a", @"b",
@@ -20,7 +20,7 @@
 	];
 }
 
-//*****//
+
 + (NSArray *)m3_arrayWithNumbersFrom:(NSInteger)aMinValue to:(NSInteger)aMaxValue {
 	if (aMaxValue == aMinValue) {
 		return nil;
@@ -41,7 +41,7 @@
 	return [returnArray copy];
 }
 
-//*****//
+
 - (id)m3_safeObjectAtIndex:(NSUInteger)aIndex {
 	if (aIndex < self.count) {
 		return self[aIndex];
@@ -49,8 +49,8 @@
 	return nil;
 }
 
-//*****//
-- (id)m3_objectPassingTest:(BOOL (^)(id aObject))aTest {
+
+- (id)m3_firstObjectPassingTest:(BOOL (^)(id aObject))aTest {
 	NSArray *objects = [self filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id aEvaluatedObject, NSDictionary *aBindings) {
 		return aTest(aEvaluatedObject);
 	}]];

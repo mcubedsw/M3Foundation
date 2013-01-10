@@ -10,12 +10,8 @@
 #import "M3URLConnectionOperation.h"
 
 
-@implementation M3URLConnectionOperation {
-	NSURLRequest *request;
-	void(^downloadCompletionBlock)(NSInteger aResponse, NSData *aData, NSError *aError);
-}
+@implementation M3URLConnectionOperation 
 
-//*****//
 - (id)initWithURLRequest:(NSURLRequest *)aRequest {
 	if ((self = [super init])) {
 		_request = aRequest;
@@ -25,22 +21,22 @@
 }
 
 
-//*****//
+
 - (void)main {
 	NSHTTPURLResponse *response = nil;
 	NSError *error = nil;
-	NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+	NSData *data = [NSURLConnection sendSynchronousRequest:self.request returningResponse:&response error:&error];
 	
 	if (!data && (error.code == NSURLErrorTimedOut) && self.shouldAutomaticallyRetryAfterTimeOut) {
-		data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+		data = [NSURLConnection sendSynchronousRequest:self.request returningResponse:&response error:&error];
 	}
 	
 	[self performSelectorOnMainThread:@selector(performBlock:) withObject:^{
-		downloadCompletionBlock(response.statusCode, data, error);
+		self.downloadCompletionBlock(response.statusCode, data, error);
 	} waitUntilDone:YES];
 }
 
-//*****//
+
 - (void)performBlock:(void (^)(void))aBlock {
 	aBlock();
 }

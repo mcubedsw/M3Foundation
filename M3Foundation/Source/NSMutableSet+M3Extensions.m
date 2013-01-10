@@ -12,7 +12,7 @@
 
 @implementation NSMutableSet (M3Extensions)
 
-//*****//
+
 - (void)m3_differenceSet:(NSSet *)aSet {
 	NSMutableSet *setB = [self mutableCopy];
 	[self unionSet:aSet];

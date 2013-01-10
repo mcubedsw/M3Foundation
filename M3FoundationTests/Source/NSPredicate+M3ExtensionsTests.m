@@ -29,7 +29,7 @@ static NSDictionary *testData;
 	NSString *dataString = [testData objectForKey:[NSStringFromSelector(aMethod) substringFromIndex:10]];
 	NSXMLDocument *document = [NSXMLDocument documentWithRootElement:[aPred m3_xmlRepresentation]];
 	NSString *xmlString = [[document XMLStringWithOptions:NSXMLNodePrettyPrint|NSXMLNodeCompactEmptyElement] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-	STAssertEqualObjects(xmlString, dataString, @"Predicate XML did not match.");
+	assertThat(xmlString, is(equalTo(dataString)));
 }
 
 #pragma mark -
@@ -174,231 +174,229 @@ static NSDictionary *testData;
 - (id)_predicateForMethod:(SEL)aMethod {
 	NSString *dataKey = [NSStringFromSelector(aMethod) substringFromIndex:9];
 	NSXMLDocument *document = [[NSXMLDocument alloc] initWithXMLString:[testData objectForKey:dataKey] options:0 error:NULL];
-	return [NSPredicate m3_predicateFromXMLElement:[document rootElement]];
+	return [NSPredicate m3_predicateWithXMLElement:[document rootElement]];
 }
 
 - (void)testInputTruePredicate {
-	STAssertTrue([[self _predicateForMethod:_cmd] isKindOfClass:NSClassFromString(@"NSTruePredicate")], @"Parsed predicate isn't a true predicate");
+	assertThatBool([[self _predicateForMethod:_cmd] isKindOfClass:NSClassFromString(@"NSTruePredicate")], is(equalToBool(YES)));
 }
 
 - (void)testInputFalsePredicate {
-	STAssertTrue([[self _predicateForMethod:_cmd] isKindOfClass:NSClassFromString(@"NSFalsePredicate")], @"Parsed predicate isn't a false predicate");
+	assertThatBool([[self _predicateForMethod:_cmd] isKindOfClass:NSClassFromString(@"NSFalsePredicate")], is(equalToBool(YES)));
 }
 
 - (void)testInputEqualTo {
 	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
-	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
-	STAssertTrue([predicate predicateOperatorType] == NSEqualToPredicateOperatorType, @"Parsed predicate isn't an equal to predicate");
+	assertThatBool([predicate isKindOfClass:[NSComparisonPredicate class]], is(equalToBool(YES)));
+	assertThatInteger(predicate.predicateOperatorType, is(equalToInteger(NSEqualToPredicateOperatorType)));
 }
 
 - (void)testInputLessThan {
 	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
-	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
-	STAssertTrue([predicate predicateOperatorType] == NSLessThanPredicateOperatorType, @"Parsed predicate isn't a less than predicate");
+	assertThatBool([predicate isKindOfClass:[NSComparisonPredicate class]], is(equalToBool(YES)));
+	assertThatInteger(predicate.predicateOperatorType, is(equalToInteger(NSLessThanPredicateOperatorType)));
 }
 
 - (void)testInputLessThanOrEqualTo {
 	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
-	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
-	STAssertTrue([predicate predicateOperatorType] == NSLessThanOrEqualToPredicateOperatorType, @"Parsed predicate isn't a less than or equal to predicate");
+	assertThatBool([predicate isKindOfClass:[NSComparisonPredicate class]], is(equalToBool(YES)));
+	assertThatInteger(predicate.predicateOperatorType, is(equalToInteger(NSLessThanOrEqualToPredicateOperatorType)));
 }
 
 - (void)testInputGreaterThan {
 	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
-	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
-	STAssertTrue([predicate predicateOperatorType] == NSGreaterThanPredicateOperatorType, @"Parsed predicate isn't a greater than predicate");
+	assertThatBool([predicate isKindOfClass:[NSComparisonPredicate class]], is(equalToBool(YES)));
+	assertThatInteger(predicate.predicateOperatorType, is(equalToInteger(NSGreaterThanPredicateOperatorType)));
 }
 
 - (void)testInputGreaterThanOrEqualTo {
 	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
-	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
-	STAssertTrue([predicate predicateOperatorType] == NSGreaterThanOrEqualToPredicateOperatorType, @"Parsed predicate isn't a greater than or equal to predicate");
+	assertThatBool([predicate isKindOfClass:[NSComparisonPredicate class]], is(equalToBool(YES)));
+	assertThatInteger(predicate.predicateOperatorType, is(equalToInteger(NSGreaterThanOrEqualToPredicateOperatorType)));
 }
 
 - (void)testInputBetween {
 	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
-	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
-	STAssertTrue([predicate predicateOperatorType] == NSBetweenPredicateOperatorType, @"Parsed predicate isn't a between predicate");
+	assertThatBool([predicate isKindOfClass:[NSComparisonPredicate class]], is(equalToBool(YES)));
+	assertThatInteger(predicate.predicateOperatorType, is(equalToInteger(NSBetweenPredicateOperatorType)));
 }
 
 - (void)testInputMatches {
 	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
-	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
-	STAssertTrue([predicate predicateOperatorType] == NSMatchesPredicateOperatorType, @"Parsed predicate isn't a matches predicate");
+	assertThatBool([predicate isKindOfClass:[NSComparisonPredicate class]], is(equalToBool(YES)));
+	assertThatInteger(predicate.predicateOperatorType, is(equalToInteger(NSMatchesPredicateOperatorType)));
 }
 
 - (void)testInputLike {
 	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
-	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
-	STAssertTrue([predicate predicateOperatorType] == NSLikePredicateOperatorType, @"Parsed predicate isn't a like predicate");
+	assertThatBool([predicate isKindOfClass:[NSComparisonPredicate class]], is(equalToBool(YES)));
+	assertThatInteger(predicate.predicateOperatorType, is(equalToInteger(NSLikePredicateOperatorType)));
 }
 
 - (void)testInputBeginsWith {
 	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
-	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
-	STAssertTrue([predicate predicateOperatorType] == NSBeginsWithPredicateOperatorType, @"Parsed predicate isn't a beginsWith predicate");
+	assertThatBool([predicate isKindOfClass:[NSComparisonPredicate class]], is(equalToBool(YES)));
+	assertThatInteger(predicate.predicateOperatorType, is(equalToInteger(NSBeginsWithPredicateOperatorType)));
 }
 
 - (void)testInputEndsWith {
 	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
-	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
-	STAssertTrue([predicate predicateOperatorType] == NSEndsWithPredicateOperatorType, @"Parsed predicate isn't an ends with predicate");
+	assertThatBool([predicate isKindOfClass:[NSComparisonPredicate class]], is(equalToBool(YES)));
+	assertThatInteger(predicate.predicateOperatorType, is(equalToInteger(NSEndsWithPredicateOperatorType)));
 }
 
 - (void)testInputContains {
 	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
-	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
-	STAssertTrue([predicate predicateOperatorType] == NSContainsPredicateOperatorType, @"Parsed predicate isn't a contains predicate");
+	assertThatBool([predicate isKindOfClass:[NSComparisonPredicate class]], is(equalToBool(YES)));
+	assertThatInteger(predicate.predicateOperatorType, is(equalToInteger(NSContainsPredicateOperatorType)));
 }
 
 - (void)testInputIn {
 	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
-	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
-	STAssertTrue([predicate predicateOperatorType] == NSInPredicateOperatorType, @"Parsed predicate isn't a matches predicate");
+	assertThatBool([predicate isKindOfClass:[NSComparisonPredicate class]], is(equalToBool(YES)));
+	assertThatInteger(predicate.predicateOperatorType, is(equalToInteger(NSInPredicateOperatorType)));
 }
 
 - (void)testInputNoOptions {
 	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
-	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
-	STAssertTrue([predicate options] == 0, @"Parsed predicate doesn't have no options");
+	assertThatBool([predicate isKindOfClass:[NSComparisonPredicate class]], is(equalToBool(YES)));
+	assertThatBool([predicate options] == 0, is(equalToBool(YES)));
 }
 
 - (void)testInputCaseInsensitive {
 	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
-	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
-	STAssertTrue([predicate options] & NSCaseInsensitivePredicateOption, @"Parsed predicate doesn't have a case insensitive option");
+	assertThatBool([predicate isKindOfClass:[NSComparisonPredicate class]], is(equalToBool(YES)));
+	assertThatBool([predicate options] & NSCaseInsensitivePredicateOption, is(equalToBool(YES)));
 }
 
 - (void)testInputDiacriticInsensitive {
 	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
-	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
-	STAssertTrue([predicate options] & NSDiacriticInsensitivePredicateOption, @"Parsed predicate doesn't have a diacritic insensitive option");
+	assertThatBool([predicate isKindOfClass:[NSComparisonPredicate class]], is(equalToBool(YES)));
+	assertThatBool([predicate options] & NSDiacriticInsensitivePredicateOption, is(equalToBool(YES)));
 }
 
 - (void)testInputCaseAndDiacriticInsensitive {
 	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
-	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
-	STAssertTrue([predicate options] & NSDiacriticInsensitivePredicateOption && [predicate options] & NSCaseInsensitivePredicateOption, @"Parsed predicate doesn't have case and diacritic insensitive options");
+	assertThatBool([predicate isKindOfClass:[NSComparisonPredicate class]], is(equalToBool(YES)));
+	assertThatBool([predicate options] & NSDiacriticInsensitivePredicateOption && [predicate options] & NSCaseInsensitivePredicateOption, is(equalToBool(YES)));
 }
 
 - (void)testInputNoModifier {
 	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
-	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
-	STAssertTrue([predicate comparisonPredicateModifier] == NSDirectPredicateModifier, @"Parsed predicate doesn't have a direct modifier");
+	assertThatBool([predicate isKindOfClass:[NSComparisonPredicate class]], is(equalToBool(YES)));
+	assertThatInteger(predicate.comparisonPredicateModifier, is(equalToInteger(NSDirectPredicateModifier)));
 }
 
 - (void)testInputAnyModifier {
 	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
-	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
-	STAssertTrue([predicate comparisonPredicateModifier] == NSAnyPredicateModifier, @"Parsed predicate doesn't have an any modifier");
+	assertThatBool([predicate isKindOfClass:[NSComparisonPredicate class]], is(equalToBool(YES)));
+	assertThatInteger(predicate.comparisonPredicateModifier, is(equalToInteger(NSAnyPredicateModifier)));
 }
 
 - (void)testInputAllModifier {
 	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
-	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
-	STAssertTrue([predicate comparisonPredicateModifier] == NSAllPredicateModifier, @"Parsed predicate doesn't have an all modifier");
+	assertThatBool([predicate isKindOfClass:[NSComparisonPredicate class]], is(equalToBool(YES)));
+	assertThatInteger(predicate.comparisonPredicateModifier, is(equalToInteger(NSAllPredicateModifier)));
 }
 
 - (void)testInputNoneModifier {
 	NSCompoundPredicate *predicate = [self _predicateForMethod:_cmd];
-	STAssertTrue([predicate isKindOfClass:[NSCompoundPredicate class]], @"Parsed predicate isn't a compound predicate");
-	STAssertTrue([[predicate subpredicates] count] == 1, @"Parsed predicate doesn't have 1 sub predicate");
-	STAssertTrue([predicate compoundPredicateType] == NSNotPredicateType, @"Parsed predicate isn't a not predicate");
+	assertThatBool([predicate isKindOfClass:[NSCompoundPredicate class]], is(equalToBool(YES)));
+	assertThatBool([[predicate subpredicates] count] == 1, is(equalToBool(YES)));
+	assertThatBool([predicate compoundPredicateType] == NSNotPredicateType, is(equalToBool(YES)));
 	
-	STAssertTrue([[[predicate subpredicates] objectAtIndex:0] comparisonPredicateModifier] == NSAnyPredicateModifier, @"Parsed predicate doesn't have an any modifier");
+	assertThatInteger([predicate.subpredicates[0] comparisonPredicateModifier], is(equalToInteger(NSAnyPredicateModifier)));
 }
 
 - (void)testInputStringConstant {
 	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
-	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
-	STAssertTrue([[predicate rightExpression] expressionType] == NSConstantValueExpressionType, @"Parsed predicate doesn't have a constant string expression");
-	STAssertEqualObjects([[predicate rightExpression] constantValue], @"Bob", @"Parsed predicate doesn't have a constant string expression");
+	assertThatBool([predicate isKindOfClass:[NSComparisonPredicate class]], is(equalToBool(YES)));
+	assertThatBool([[predicate rightExpression] expressionType] == NSConstantValueExpressionType, is(equalToBool(YES)));
+	assertThat(predicate.rightExpression.constantValue, is(equalTo(@"Bob")));
 }
 
 - (void)testInputIntegerConstant {
 	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
-	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
-	STAssertTrue([[predicate rightExpression] expressionType] == NSConstantValueExpressionType, @"Parsed predicate doesn't have a constant string expression");
-	STAssertEqualObjects([[predicate rightExpression] constantValue], [NSNumber numberWithInteger:42], @"Parsed predicate doesn't have a constant integer expression");
+	assertThatBool([predicate isKindOfClass:[NSComparisonPredicate class]], is(equalToBool(YES)));
+	assertThatBool([[predicate rightExpression] expressionType] == NSConstantValueExpressionType, is(equalToBool(YES)));
+	assertThat(predicate.rightExpression.constantValue, is(equalTo(@42)));
 }
 
 - (void)testInputDoubleConstant {
 	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
-	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
-	STAssertTrue([[predicate rightExpression] expressionType] == NSConstantValueExpressionType, @"Parsed predicate doesn't have a constant string expression");
-	STAssertEqualObjects([[predicate rightExpression] constantValue], [NSNumber numberWithDouble:3.14], @"Parsed predicate doesn't have a constant double expression");
+	assertThatBool([predicate isKindOfClass:[NSComparisonPredicate class]], is(equalToBool(YES)));
+	assertThatBool([[predicate rightExpression] expressionType] == NSConstantValueExpressionType, is(equalToBool(YES)));
+	assertThat(predicate.rightExpression.constantValue, is(equalTo(@3.14)));
 }
 
 - (void)testInputVariable {
 	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
-	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
-	STAssertTrue([[predicate rightExpression] expressionType] == NSVariableExpressionType, @"Parsed predicate doesn't have a constant string expression");
-	STAssertEqualObjects([[predicate rightExpression] variable], @"VARIABLE", @"Parsed predicate doesn't have a variable expression");
+	assertThatBool([predicate isKindOfClass:[NSComparisonPredicate class]], is(equalToBool(YES)));
+	assertThatBool([[predicate rightExpression] expressionType] == NSVariableExpressionType, is(equalToBool(YES)));
+	assertThat(predicate.rightExpression.variable, is(equalTo(@"VARIABLE")));
 }
 
 - (void)testInputKeyPath {
 	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
-	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
-	STAssertTrue([[predicate rightExpression] expressionType] == NSKeyPathExpressionType, @"Parsed predicate doesn't have a constant string expression");
-	STAssertEqualObjects([[predicate rightExpression] keyPath], @"children.parent.name", @"Parsed predicate doesn't have a keyPath expression");
+	assertThatBool([predicate isKindOfClass:[NSComparisonPredicate class]], is(equalToBool(YES)));
+	assertThatBool([[predicate rightExpression] expressionType] == NSKeyPathExpressionType, is(equalToBool(YES)));
+	assertThat(predicate.rightExpression.keyPath, is(equalTo(@"children.parent.name")));
 }
 
 - (void)testInputAggregate {
 	NSComparisonPredicate *predicate = [self _predicateForMethod:_cmd];
-	STAssertTrue([predicate isKindOfClass:[NSComparisonPredicate class]], @"Parsed predicate isn't a comparison predicate");
-	STAssertTrue([[predicate rightExpression] expressionType] == NSAggregateExpressionType, @"Parsed predicate doesn't have a constant string expression");
+	assertThatBool([predicate isKindOfClass:[NSComparisonPredicate class]], is(equalToBool(YES)));
+	assertThatBool([[predicate rightExpression] expressionType] == NSAggregateExpressionType, is(equalToBool(YES)));
 	NSArray *collection = [[predicate rightExpression] collection];
-	STAssertTrue([collection count] == 3, @"Expression collection doesn't have 3 items");
+	assertThatBool([collection count] == 3, is(equalToBool(YES)));
 	
-	STAssertEqualObjects([[collection objectAtIndex:0] constantValue], @"X", @"1st Expression collection object isn't X");
-	STAssertEqualObjects([[collection objectAtIndex:1] constantValue], @"Y", @"2nd Expression collection object isn't Y");
-	STAssertEqualObjects([[collection objectAtIndex:2] constantValue], @"Z", @"3rd Expression collection object isn't Z");
+	assertThat([collection valueForKey:@"constantValue"], contains(@"X", @"Y", @"Z", nil));
 }
 
 - (void)testInputAndCompoundType {
 	NSCompoundPredicate *predicate = [self _predicateForMethod:_cmd];
-	STAssertTrue([predicate isKindOfClass:[NSCompoundPredicate class]], @"Parsed predicate isn't a compound predicate");
-	STAssertTrue([[predicate subpredicates] count] == 2, @"Parsed predicate doesn't have 2 sub predicates");
-	STAssertTrue([predicate compoundPredicateType] == NSAndPredicateType, @"Parsed predicate isn't an and predicate");
+	assertThatBool([predicate isKindOfClass:[NSCompoundPredicate class]], is(equalToBool(YES)));
+	assertThatBool([[predicate subpredicates] count] == 2, is(equalToBool(YES)));
+	assertThatBool([predicate compoundPredicateType] == NSAndPredicateType, is(equalToBool(YES)));
 }
 
 - (void)testInputOrCompoundType {
 	NSCompoundPredicate *predicate = [self _predicateForMethod:_cmd];
-	STAssertTrue([predicate isKindOfClass:[NSCompoundPredicate class]], @"Parsed predicate isn't a compound predicate");
-	STAssertTrue([[predicate subpredicates] count] == 2, @"Parsed predicate doesn't have 2 sub predicates");
-	STAssertTrue([predicate compoundPredicateType] == NSOrPredicateType, @"Parsed predicate isn't an or predicate");
+	assertThatBool([predicate isKindOfClass:[NSCompoundPredicate class]], is(equalToBool(YES)));
+	assertThatBool([[predicate subpredicates] count] == 2, is(equalToBool(YES)));
+	assertThatBool([predicate compoundPredicateType] == NSOrPredicateType, is(equalToBool(YES)));
 }
 
 - (void)testInputNotCompoundType {
 	NSCompoundPredicate *predicate = [self _predicateForMethod:_cmd];
-	STAssertTrue([predicate isKindOfClass:[NSCompoundPredicate class]], @"Parsed predicate isn't a compound predicate");
-	STAssertTrue([[predicate subpredicates] count] == 1, @"Parsed predicate doesn't have 1 sub predicate");
-	STAssertTrue([predicate compoundPredicateType] == NSNotPredicateType, @"Parsed predicate isn't a not predicate");
+	assertThatBool([predicate isKindOfClass:[NSCompoundPredicate class]], is(equalToBool(YES)));
+	assertThatBool([[predicate subpredicates] count] == 1, is(equalToBool(YES)));
+	assertThatBool([predicate compoundPredicateType] == NSNotPredicateType, is(equalToBool(YES)));
 }
 
 - (void)testInputOrAndNestedCompoundType {
 	NSCompoundPredicate *predicate = [self _predicateForMethod:_cmd];
-	STAssertTrue([predicate isKindOfClass:[NSCompoundPredicate class]], @"Parsed predicate isn't a compound predicate");
-	STAssertTrue([[predicate subpredicates] count] == 2, @"Parsed predicate doesn't have 2 sub predicates");
-	STAssertTrue([predicate compoundPredicateType] == NSOrPredicateType, @"Parsed predicate isn't an or predicate");
+	assertThatBool([predicate isKindOfClass:[NSCompoundPredicate class]], is(equalToBool(YES)));
+	assertThatBool([[predicate subpredicates] count] == 2, is(equalToBool(YES)));
+	assertThatBool([predicate compoundPredicateType] == NSOrPredicateType, is(equalToBool(YES)));
 	
 	for (NSCompoundPredicate *subpredicate in [predicate subpredicates]) {
-		STAssertTrue([subpredicate isKindOfClass:[NSCompoundPredicate class]], @"Parsed predicate isn't a compound predicate");
-		STAssertTrue([[subpredicate subpredicates] count] == 2, @"Parsed predicate doesn't have 2 sub predicates");
-		STAssertTrue([subpredicate compoundPredicateType] == NSAndPredicateType, @"Parsed predicate isn't an and predicate");
+		assertThatBool([subpredicate isKindOfClass:[NSCompoundPredicate class]], is(equalToBool(YES)));
+		assertThatBool([[subpredicate subpredicates] count] == 2, is(equalToBool(YES)));
+		assertThatBool([subpredicate compoundPredicateType] == NSAndPredicateType, is(equalToBool(YES)));
 	}
 }
 
 - (void)testInputNotAndNestedCompoundType {
 	NSCompoundPredicate *predicate = [self _predicateForMethod:_cmd];
-	STAssertTrue([predicate isKindOfClass:[NSCompoundPredicate class]], @"Parsed predicate isn't a compound predicate");
-	STAssertTrue([[predicate subpredicates] count] == 1, @"Parsed predicate doesn't have 1 sub predicate");
-	STAssertTrue([predicate compoundPredicateType] == NSNotPredicateType, @"Parsed predicate isn't a not predicate");
+	assertThatBool([predicate isKindOfClass:[NSCompoundPredicate class]], is(equalToBool(YES)));
+	assertThatBool([[predicate subpredicates] count] == 1, is(equalToBool(YES)));
+	assertThatBool([predicate compoundPredicateType] == NSNotPredicateType, is(equalToBool(YES)));
 	
 	for (NSCompoundPredicate *subpredicate in [predicate subpredicates]) {
-		STAssertTrue([subpredicate isKindOfClass:[NSCompoundPredicate class]], @"Parsed predicate isn't a compound predicate");
-		STAssertTrue([[subpredicate subpredicates] count] == 2, @"Parsed predicate doesn't have 2 sub predicates");
-		STAssertTrue([subpredicate compoundPredicateType] == NSAndPredicateType, @"Parsed predicate isn't an and predicate");
+		assertThatBool([subpredicate isKindOfClass:[NSCompoundPredicate class]], is(equalToBool(YES)));
+		assertThatBool([[subpredicate subpredicates] count] == 2, is(equalToBool(YES)));
+		assertThatBool([subpredicate compoundPredicateType] == NSAndPredicateType, is(equalToBool(YES)));
 	}
 }
 

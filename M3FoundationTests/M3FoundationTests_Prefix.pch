@@ -10,5 +10,7 @@
 #define M3Foundation_M3FoundationTests_Prefix_pch
 
 
+#define HC_SHORTHAND
+#import <OCHamcrest/OCHamcrest.h>
 
 #endif

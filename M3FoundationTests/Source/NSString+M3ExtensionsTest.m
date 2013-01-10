@@ -12,9 +12,12 @@
 
 @implementation NSString_M3ExtensionsTest
 
-- (void)testStringByRemovingCharactersFromEnd {
-	STAssertEquals((NSUInteger)14, [[@"12345678901234567890" m3_stringByRemovingCharactersFromEnd:6] length], @"");
-	STAssertNil([@"12345678901234567890" m3_stringByRemovingCharactersFromEnd:-6], @"");
+- (void)test_removesCharactersFromEndOfString {
+	assertThat([@"hello world" m3_stringByRemovingCharactersFromEnd:6], is(equalTo(@"hello")));
+}
+
+- (void)test_usingNegativeNumberOfCharactersToRemoveReturnsNil {
+	assertThat([@"hello world" m3_stringByRemovingCharactersFromEnd:-6], is(nilValue()));
 }
 
 @end

@@ -12,12 +12,12 @@
 
 @implementation NSMutableArray (M3Extensions)
 
-//*****//
-- (void)m3_moveObject:(id)aObject toIndex:(NSUInteger)aIndex {
-	id movingObject = aObject;
-	[self removeObject:aObject];
-	if (aIndex < self.count) {
-		[self insertObject:movingObject atIndex:aIndex];
+
+- (void)m3_moveObjectAtIndex:(NSUInteger)aIndex toIndex:(NSUInteger)aNewIndex {
+	id movingObject = [self objectAtIndex:aIndex];
+	[self removeObjectAtIndex:aIndex];
+	if (aNewIndex < self.count) {
+		[self insertObject:movingObject atIndex:aNewIndex];
 	} else {
 		[self addObject:movingObject];
 	}

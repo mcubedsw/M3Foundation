@@ -6,15 +6,13 @@ As the version number suggests this is effectively 1.0, so the interfaces should
 
 M3Foundation includes the following:
 
-- Simplified access for arrays and dictionaries
-- performBlock:withSelector: methods
+- Safer access for arrays and dictionaries
+- performBlock:withDelay: methods
 - Replace the implementation of a method on a single object
 - Bulk KVO operations
 - Simplified XML access
-- Conversion of predicates and expressions to and from XML
-- An Objective-C interface to the accessibility API
+- Conversion of predicates and expressions to and from XML representation
 - Value transformers for file sizes and CSV strings
-- A deterministic finite automata class
 - A NSOperation subclass for URL connections
 
 And more

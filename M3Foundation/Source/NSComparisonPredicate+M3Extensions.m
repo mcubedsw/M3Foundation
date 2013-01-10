@@ -15,17 +15,17 @@
 
 @implementation NSComparisonPredicate (M3Extensions)
 
-//*****//
-+ (NSPredicate *)m3_predicateFromXMLElement:(NSXMLElement *)aElement {
+
++ (NSPredicate *)m3_predicateWithXMLElement:(NSXMLElement *)aElement {
 	//Get our expressions
-	NSExpression *leftExpression = [NSExpression m3_expressionFromXMLElement:[aElement m3_elementForName:@"leftExpression"]];
-	NSExpression *rightExpression = [NSExpression m3_expressionFromXMLElement:[aElement m3_elementForName:@"rightExpression"]];
+	NSExpression *leftExpression = [NSExpression m3_expressionWithXMLElement:[aElement m3_elementForName:@"leftExpression"]];
+	NSExpression *rightExpression = [NSExpression m3_expressionWithXMLElement:[aElement m3_elementForName:@"rightExpression"]];
 	
 	//Find our modifier value
 	NSComparisonPredicateModifier modifier = NSDirectPredicateModifier;
 	if ([aElement attributeForName:@"modifier"]) {
 		NSString *attributeKey = [aElement attributeForName:@"modifier"].stringValue;
-		NSNumber *value = [[[self p_modifierMap] allKeysForObject:attributeKey] m3_safeObjectAtIndex:0];
+		NSNumber *value = [self modifierMap][attributeKey];
 		modifier = value.integerValue;
 	}
 	
@@ -33,7 +33,7 @@
 	NSPredicateOperatorType operator = NSEqualToPredicateOperatorType;
 	if ([aElement attributeForName:@"operatorType"]) {
 		NSString *attributeKey = [aElement attributeForName:@"operatorType"].stringValue;
-		NSNumber *value = [[[self p_operatorTypeMap] allKeysForObject:attributeKey] m3_safeObjectAtIndex:0];
+		NSNumber *value = [self operatorTypeMap][attributeKey];
 		operator = value.integerValue;
 	}
 	
@@ -54,8 +54,8 @@
 													  options:options];
 }
 
-//*****//
-+ (NSDictionary *)p_modifierMap {
+
++ (NSDictionary *)modifierMap {
 	return @{
 		@"direct":[NSNumber numberWithInt:NSDirectPredicateModifier],
 		@"any":[NSNumber numberWithInt:NSAnyPredicateModifier],
@@ -63,8 +63,8 @@
 	};
 }
 
-//*****//
-+ (NSDictionary *)p_operatorTypeMap {
+
++ (NSDictionary *)operatorTypeMap {
 	return @{
 		@"lessThan":[NSNumber numberWithInt:NSLessThanPredicateOperatorType],
 		@"lessThanOrEqualTo":[NSNumber numberWithInt:NSLessThanOrEqualToPredicateOperatorType],
@@ -82,17 +82,17 @@
 	};
 }
 
-//*****//
+
 - (NSString *)p_modifierString {
-	return [[self.class p_modifierMap] objectForKey:[NSNumber numberWithInt:self.comparisonPredicateModifier]];
+	return [[[self.class modifierMap] allKeysForObject:@(self.comparisonPredicateModifier)] m3_safeObjectAtIndex:0];;
 }
 
-//*****//
+
 - (NSString *)p_operatorTypeString {
-	return [[self.class p_operatorTypeMap] objectForKey:[NSNumber numberWithInt:self.predicateOperatorType]];
+	return [[[self.class operatorTypeMap] allKeysForObject:@(self.predicateOperatorType)] m3_safeObjectAtIndex:0];
 }
 
-//*****//
+
 - (NSXMLElement *)m3_xmlRepresentation {
 	//Build a predicate element
 	NSXMLElement *comparisonElement = [NSXMLElement elementWithName:@"predicate"];

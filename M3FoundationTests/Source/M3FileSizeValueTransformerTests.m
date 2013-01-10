@@ -12,13 +12,13 @@
 
 @implementation M3FileSizeValueTransformerTests
 
-- (void)testTransform {
+- (void)test_transformFileSizesCorrectly {
 	M3FileSizeValueTransformer *transform = [[M3FileSizeValueTransformer alloc] init];
-	STAssertEqualObjects(@"602 bytes", [transform transformedValue:[NSNumber numberWithInteger:602]], @"");
-	STAssertEqualObjects(@"14.39 KB", [transform transformedValue:[NSNumber numberWithLong:14394]], @"");
-	STAssertEqualObjects(@"53.55 MB", [transform transformedValue:[NSNumber numberWithLong:53545329]], @"");
-	STAssertEqualObjects(@"28.96 GB", [transform transformedValue:[NSNumber numberWithLong:28958816993]], @"");
-	STAssertEqualObjects(@"14.29 TB", [transform transformedValue:[NSNumber numberWithLong:14293651161088]], @"");
+	assertThat([transform transformedValue:@(602)], is(equalTo(@"602 bytes")));
+	assertThat([transform transformedValue:@(14394)], is(equalTo(@"14.39 KB")));
+	assertThat([transform transformedValue:@(53545329)], is(equalTo(@"53.55 MB")));
+	assertThat([transform transformedValue:@(28958816993)], is(equalTo(@"28.96 GB")));
+	assertThat([transform transformedValue:@(14293651161088)], is(equalTo(@"14.29 TB")));
 }
 
 @end

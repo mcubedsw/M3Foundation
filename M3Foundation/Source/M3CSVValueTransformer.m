@@ -12,17 +12,17 @@
 
 @implementation M3CSVValueTransformer
 
-//*****//
+
 + (Class)transformedValueClass {
     return [NSString class];
 }
 
-//*****//
+
 + (BOOL)allowsReverseTransformation {
     return YES;
 }
 
-//*****//
+
 - (id)transformedValue:(id)aValue {
 	if (![aValue isKindOfClass:[NSString class]]) {
 		return nil;
@@ -33,7 +33,7 @@
 	return [aValue componentsSeparatedByString:@","];
 }
 
-//*****//
+
 - (id)reverseTransformedValue:(id)aValue {
 	if (![aValue isKindOfClass:[NSArray class]]) {
 		return nil;

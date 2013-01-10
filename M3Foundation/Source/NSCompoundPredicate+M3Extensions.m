@@ -13,15 +13,15 @@
 
 @implementation NSCompoundPredicate (M3Extensions)
 
-//*****//
-+ (NSPredicate *)m3_predicateFromXMLElement:(NSXMLElement *)aElement {
+
++ (NSPredicate *)m3_predicateWithXMLElement:(NSXMLElement *)aElement {
 	//Generate the sub predicates
 	NSMutableArray *subpredicates = [NSMutableArray array];
 	for (NSXMLElement *subpred in [aElement elementsForName:@"predicate"]) {
-		[subpredicates addObject:[NSPredicate m3_predicateFromXMLElement:subpred]];
+		[subpredicates addObject:[NSPredicate m3_predicateWithXMLElement:subpred]];
 	}
 	for (NSXMLElement *subpred in [aElement elementsForName:@"predicates"]) {
-		[subpredicates addObject:[NSPredicate m3_predicateFromXMLElement:subpred]];
+		[subpredicates addObject:[NSPredicate m3_predicateWithXMLElement:subpred]];
 	}
 	
 	//Combine them into the correct type
@@ -36,7 +36,7 @@
 	return nil;
 }
 
-//*****//
+
 - (NSString *)p_compoundPredicateTypeString {
 	switch (self.compoundPredicateType) {
 		case NSAndPredicateType:
@@ -49,7 +49,7 @@
 	return @"";
 }
 
-//*****//
+
 - (NSXMLElement *)m3_xmlRepresentation {
 	NSXMLElement *compoundElement = [NSXMLElement elementWithName:@"predicates"];
 	[compoundElement addAttribute:[NSXMLNode attributeWithName:@"type" stringValue:self.p_compoundPredicateTypeString]];

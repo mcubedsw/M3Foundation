@@ -7,6 +7,9 @@
  Please read the LICENCE.txt for licensing information
 *****************************************************************/
 
+//Add subscripting to Map table et al
+//Array extension to return map table of elements by a keypath
+
 #import "M3CSVValueTransformer.h"
 #import "M3FileSizeValueTransformer.h"
 #import "M3URLConnectionOperation.h"

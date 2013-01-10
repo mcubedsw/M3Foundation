@@ -12,8 +12,8 @@
 
 @implementation NSExpression (M3Extensions)
 
-//*****//
-+ (NSExpression *)m3_expressionFromXMLElement:(NSXMLElement *)aElement {
+
++ (NSExpression *)m3_expressionWithXMLElement:(NSXMLElement *)aElement {
 	//Get the element type
 	NSString *type = [aElement attributeForName:@"type"].stringValue;
 	//If a constant, find the value
@@ -41,7 +41,7 @@
 	if ([type isEqualToString:@"aggregate"]) {
 		NSMutableArray *aggregate = [NSMutableArray array];
 		for (NSXMLElement *element in aElement.children) {
-			[aggregate addObject:[NSExpression m3_expressionFromXMLElement:element]];
+			[aggregate addObject:[NSExpression m3_expressionWithXMLElement:element]];
 		}
 		return [NSExpression expressionForAggregate:aggregate];
 	}
@@ -52,7 +52,7 @@
 	return nil;
 }
 
-//*****//
+
 - (void)p_addContentToElement:(NSXMLElement *)aElement {
 	NSExpressionType type = self.expressionType;
 	//Set the constant value and value type
@@ -104,7 +104,7 @@
 	}
 }
 
-//*****//
+
 - (NSXMLElement *)m3_xmlRepresentation {
 	NSXMLElement *expressionElement = [NSXMLElement elementWithName:@"expression"];
 	[self p_addContentToElement:expressionElement];

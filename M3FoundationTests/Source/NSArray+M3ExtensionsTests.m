@@ -12,32 +12,95 @@
 
 @implementation NSArray_M3ExtensionsTests
 
-- (void)testAlphaNumericArray {
-	STAssertEquals((NSUInteger)36, [[NSArray m3_alphaNumericArray] count], @"");
+#pragma mark -
+#pragma mark +m3_alphaNumericArray
+
+- (void)test_returnsAlphaNumericArray {
+	assertThat([NSArray m3_alphaNumericArray], hasCountOf(36));
 }
 
-- (void)testAlphaNumericArrayContents {
-	STAssertEqualObjects(@"0", [[NSArray m3_alphaNumericArray] objectAtIndex:0], @"");
-	STAssertEqualObjects(@"3", [[NSArray m3_alphaNumericArray] objectAtIndex:3], @"");
-	STAssertEqualObjects(@"8", [[NSArray m3_alphaNumericArray] objectAtIndex:8], @"");
-	STAssertEqualObjects(@"e", [[NSArray m3_alphaNumericArray] objectAtIndex:14], @"");
-	STAssertEqualObjects(@"a", [[NSArray m3_alphaNumericArray] objectAtIndex:10], @"");
-	STAssertEqualObjects(@"m", [[NSArray m3_alphaNumericArray] objectAtIndex:22], @"");
-	STAssertEqualObjects(@"d", [[NSArray m3_alphaNumericArray] objectAtIndex:13], @"");
-	STAssertEqualObjects(@"v", [[NSArray m3_alphaNumericArray] objectAtIndex:31], @"");
-	STAssertEqualObjects(@"o", [[NSArray m3_alphaNumericArray] objectAtIndex:24], @"");
-	STAssertEqualObjects(@"l", [[NSArray m3_alphaNumericArray] objectAtIndex:21], @"");
+- (void)test_alphaNumericArrayContents {
+	assertThat([NSArray m3_alphaNumericArray][0], is(equalTo(@"0")));
+	assertThat([NSArray m3_alphaNumericArray][3], is(equalTo(@"3")));
+	assertThat([NSArray m3_alphaNumericArray][8], is(equalTo(@"8")));
+	assertThat([NSArray m3_alphaNumericArray][14], is(equalTo(@"e")));
+	assertThat([NSArray m3_alphaNumericArray][10], is(equalTo(@"a")));
+	assertThat([NSArray m3_alphaNumericArray][22], is(equalTo(@"m")));
+	assertThat([NSArray m3_alphaNumericArray][13], is(equalTo(@"d")));
+	assertThat([NSArray m3_alphaNumericArray][31], is(equalTo(@"v")));
+	assertThat([NSArray m3_alphaNumericArray][24], is(equalTo(@"o")));
+	assertThat([NSArray m3_alphaNumericArray][21], is(equalTo(@"l")));
 }
 
 
-- (void)testArrayWithNumberToFrom {
-	STAssertEquals((NSUInteger)10, [[NSArray m3_arrayWithNumbersFrom:1 to:10] count], @"");
-	STAssertEquals((NSUInteger)5, [[NSArray m3_arrayWithNumbersFrom:-4 to:-8] count], @"");
-	STAssertEquals((NSUInteger)42, [[NSArray m3_arrayWithNumbersFrom:20 to:-21] count], @"");
+
+
+
+#pragma mark -
+#pragma mark +m3_arrayWithNumbersFrom:to:
+
+- (void)test_arrayFromAndToNumbersReturnsCorrectNumberOfElements {
+	assertThat([NSArray m3_arrayWithNumbersFrom:1 to:10], hasCountOf(10));
+	assertThat([NSArray m3_arrayWithNumbersFrom:-4 to:-8], hasCountOf(5));
+	assertThat([NSArray m3_arrayWithNumbersFrom:20 to:-21], hasCountOf(42));
 }
 
-- (void)testArrayWithNumberToFrom2 {
-	STAssertNil([NSArray m3_arrayWithNumbersFrom:42 to:42], @"");
+- (void)test_arrayFromAndToTheSameNumberReturnsNil {
+	assertThat([NSArray m3_arrayWithNumbersFrom:42 to:42], is(nilValue()));
+}
+
+
+
+
+
+#pragma mark -
+#pragma mark -m3_safeObjectAtIndex:
+
+- (void)test_returnsObjectAtSuppliedIndexIfOneExists {
+	NSArray *array = @[@"1", @"2", @"3"];
+	assertThat([array m3_safeObjectAtIndex:0], is(equalTo(@"1")));
+	assertThat([array m3_safeObjectAtIndex:1], is(equalTo(@"2")));
+	assertThat([array m3_safeObjectAtIndex:2], is(equalTo(@"3")));
+}
+
+- (void)test_returnsNilIfNoObjectExistsAtSuppliedIndex {
+	assertThat([@[] m3_safeObjectAtIndex:0], is(nilValue()));
+	assertThat([@[@"1"] m3_safeObjectAtIndex:1], is(nilValue()));
+}
+
+
+
+
+
+#pragma mark -
+#pragma mark -m3_firstObjectPassingTest:
+
+- (void)test_returnsNilIfTestIsNil {
+	assertThat([@[] m3_firstObjectPassingTest:nil], is(nilValue()));
+}
+
+- (void)test_returnsNilIfNoObjectPassesTest {
+	NSArray *array = @[@1, @2, @3, @4, @5];
+	id object = [array m3_firstObjectPassingTest:^BOOL(NSNumber *aObject) {
+		return aObject.integerValue > 5;
+	}];
+	assertThat(object, is(nilValue()));
+}
+
+- (void)test_returnsObjectIfSingleObjectPasses {
+	NSArray *array = @[@1, @2, @3, @4, @5];
+	id object = [array m3_firstObjectPassingTest:^BOOL(NSNumber *aObject) {
+		return aObject.integerValue > 4;
+	}];
+	assertThat(object, is(equalTo(@5)));
+}
+
+- (void)test_returnsFirstObjectIfMultipleObjectsPassTest {
+	NSArray *array = @[@1, @2, @3, @4, @5];
+	id object = [array m3_firstObjectPassingTest:^BOOL(NSNumber *aObject) {
+		return aObject.integerValue > 3;
+	}];
+	assertThat(object, is(equalTo(@4)));
 }
 
 @end

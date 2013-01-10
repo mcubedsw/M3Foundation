@@ -12,17 +12,17 @@
 
 @implementation NSXMLNode (M3Extensions)
 
-//*****//
+
 - (NSInteger)m3_integerValue {
 	return self.stringValue.integerValue;
 }
 
-//*****//
+
 - (CGFloat)m3_floatValue {
 	return self.stringValue.floatValue;
 }
 
-//*****//
+
 - (NSXMLNode *)m3_nodeForXPath:(NSString *)aXPath error:(NSError **)aError {
 	NSArray *nodes = [self nodesForXPath:aXPath error:aError];
 	if (nodes.count) {

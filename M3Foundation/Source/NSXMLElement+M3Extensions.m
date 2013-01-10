@@ -12,7 +12,7 @@
 
 @implementation NSXMLElement (M3Extensions)
 
-//*****//
+
 - (NSXMLElement *)m3_elementForName:(NSString *)aName {
 	NSArray *elements = [self elementsForName:aName];
 	if (elements.count) {
