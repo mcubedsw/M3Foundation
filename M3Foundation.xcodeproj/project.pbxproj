@@ -76,6 +76,9 @@
 		99EAF31816A58F98004FE146 /* NSXMLElement+M3ExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EAF31716A58F98004FE146 /* NSXMLElement+M3ExtensionsTests.m */; };
 		99EAF31B16A58FA9004FE146 /* NSXMLNode+M3ExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EAF31A16A58FA9004FE146 /* NSXMLNode+M3ExtensionsTests.m */; };
 		99EAF31E16A58FE0004FE146 /* M3URLConnectionOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EAF31D16A58FE0004FE146 /* M3URLConnectionOperationTests.m */; };
+		99EAF32116A5A098004FE146 /* NSMapTable+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 99EAF31F16A5A097004FE146 /* NSMapTable+M3Extensions.h */; };
+		99EAF32216A5A098004FE146 /* NSMapTable+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EAF32016A5A097004FE146 /* NSMapTable+M3Extensions.m */; };
+		99EAF32916A5A166004FE146 /* NSMapTable+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EAF32816A5A166004FE146 /* NSMapTable+M3Extensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,6 +188,10 @@
 		99EAF31A16A58FA9004FE146 /* NSXMLNode+M3ExtensionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSXMLNode+M3ExtensionsTests.m"; sourceTree = "<group>"; };
 		99EAF31C16A58FE0004FE146 /* M3URLConnectionOperationTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3URLConnectionOperationTests.h; sourceTree = "<group>"; };
 		99EAF31D16A58FE0004FE146 /* M3URLConnectionOperationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3URLConnectionOperationTests.m; sourceTree = "<group>"; };
+		99EAF31F16A5A097004FE146 /* NSMapTable+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMapTable+M3Extensions.h"; sourceTree = "<group>"; };
+		99EAF32016A5A097004FE146 /* NSMapTable+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMapTable+M3Extensions.m"; sourceTree = "<group>"; };
+		99EAF32716A5A166004FE146 /* NSMapTable+M3Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMapTable+M3Extensions.h"; sourceTree = "<group>"; };
+		99EAF32816A5A166004FE146 /* NSMapTable+M3Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMapTable+M3Extensions.m"; sourceTree = "<group>"; };
 		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -327,6 +334,8 @@
 				9994863E1358A0E8001E2CF4 /* NSMutableDictionary+M3Extensions.m */,
 				996B7F1414E69A8000A2C1A3 /* NSCountedSet+M3Extensions.h */,
 				996B7F1514E69A8000A2C1A3 /* NSCountedSet+M3Extensions.m */,
+				99EAF31F16A5A097004FE146 /* NSMapTable+M3Extensions.h */,
+				99EAF32016A5A097004FE146 /* NSMapTable+M3Extensions.m */,
 			);
 			name = Collections;
 			sourceTree = "<group>";
@@ -425,6 +434,8 @@
 				99EAF2E3169F03BB004FE146 /* NSMutableDictionary+M3ExtensionTests.m */,
 				99EAF30716A45CAB004FE146 /* NSCountedSet+M3Extensions.h */,
 				99EAF30816A45CAB004FE146 /* NSCountedSet+M3Extensions.m */,
+				99EAF32716A5A166004FE146 /* NSMapTable+M3Extensions.h */,
+				99EAF32816A5A166004FE146 /* NSMapTable+M3Extensions.m */,
 			);
 			name = Collections;
 			sourceTree = "<group>";
@@ -518,6 +529,7 @@
 				996B7F1614E69A8000A2C1A3 /* NSCountedSet+M3Extensions.h in Headers */,
 				99700F9C14C5BC7C00F9C873 /* NSDictionary+M3Extensions.h in Headers */,
 				9949492A1697309C006EC706 /* NSKeyValueObserving+M3Extensions.h in Headers */,
+				99EAF32116A5A098004FE146 /* NSMapTable+M3Extensions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,6 +680,7 @@
 				99700F9D14C5BC7C00F9C873 /* NSDictionary+M3Extensions.m in Sources */,
 				996B7F1714E69A8000A2C1A3 /* NSCountedSet+M3Extensions.m in Sources */,
 				9949492B1697309C006EC706 /* NSKeyValueObserving+M3Extensions.m in Sources */,
+				99EAF32216A5A098004FE146 /* NSMapTable+M3Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -689,6 +702,7 @@
 				99EAF31816A58F98004FE146 /* NSXMLElement+M3ExtensionsTests.m in Sources */,
 				99EAF31B16A58FA9004FE146 /* NSXMLNode+M3ExtensionsTests.m in Sources */,
 				99EAF31E16A58FE0004FE146 /* M3URLConnectionOperationTests.m in Sources */,
+				99EAF32916A5A166004FE146 /* NSMapTable+M3Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

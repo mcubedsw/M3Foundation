@@ -15,7 +15,11 @@ M3Foundation includes the following:
 
 And more
 
-M3Foundation requires Lion and Xcode 4.4+
+M3Foundation is currently Mac-only. An iOS version is in the works for M3Foundation 1.1.
+
+**M3Foundation requires Lion and Xcode 4.4+**
+
+<br/>
 
 ## Change Log
 
@@ -23,6 +27,7 @@ M3Foundation requires Lion and Xcode 4.4+
 * Removed M3Accessibility classes
 * Removed the M3DFA class
 * Removed the NSFileManager category
+* Removed the NSMutableSet category
 * No longer supports Garbage Collection, instead uses ARC
 * Improved tests
 * Updated to modern Obj-C syntax
@@ -30,6 +35,7 @@ M3Foundation requires Lion and Xcode 4.4+
 * Modified some methods to make more logical and practical sense
 * Added category for working with NSCountedSet
 * Added NSDictionary category to add equivalent to -[NSArray arrayByAddingObject:]
+* Added subscripting to NSMapTable
 
 #### API changes
 _M3AccessibilityController_ **(removed)**
@@ -40,11 +46,11 @@ _M3AccessibleUIElement_ **(removed)**
 
 <hr/>
 
-_M3DFA_ **(removed)**
+_NSArray+M3Extensions_
 
-<hr/>
-
-_NSFileManager+M3Extensions_ **(removed)**
+**Changed**<br/>
+Old: `- (id)m3_objectPassingTest:(BOOL (^)(id))`<br/>
+New: `- (id)m3_firstObjectPassingTest:(BOOL (^)(id))`
 
 <hr/>
 
@@ -56,6 +62,10 @@ _NSCountedSet+M3Extensions_ **(added)**
 
 <hr/>
 
+_M3DFA_ **(removed)**
+
+<hr/>
+
 _NSDictionary+M3Extensions_ **(added)**
 
 **Added**<br/>
@@ -63,19 +73,15 @@ _NSDictionary+M3Extensions_ **(added)**
 
 <hr/>
 
-_NSPredicate+M3Extensions_
+_NSExpression+M3Extensions_
 
 **Changed**<br/>
-Old: `+ (NSPredicate *)m3_predicateFromXMLElement:(NSXMLElement *)`<br/>
-New: `+ (NSPredicate *)m3_predicateWithXMLElement:(NSXMLElement *)`
+Old: `+ (NSExpression *)m3_expressionFromXMLElement:(NSXMLElement *)`<br/>
+New: `+ (NSExpression *)m3_expressionWithXMLElement:(NSXMLElement *)`
 
 <hr/>
 
-_NSMutableArray+M3Extensions_
-
-**Changed**<br/>
-Old: `- (void)m3_moveObject:(id) toIndex:(NSUInteger)`<br/>
-New: `- (void)m3_moveObjectAtIndex:(NSUInteger) toIndex:(NSUInteger)`
+_NSFileManager+M3Extensions_ **(removed)**
 
 <hr/>
 
@@ -88,30 +94,23 @@ _NSKeyValueObserving+M3Extensions_ **(added)**
 
 <hr/>
 
-_NSExpression+M3Extensions_
+_NSMapTable+M3Extensions_ **(added)**
 
-**Changed**<br/>
-Old: `+ (NSExpression *)m3_expressionFromXMLElement:(NSXMLElement *)`<br/>
-New: `+ (NSExpression *)m3_expressionWithXMLElement:(NSXMLElement *)`
+**Added**<br/>
+`- (id)objectForKeyedSubscript:(id)`
+`- (void)setObject:(id) forKeyedSubscript:(id)`
 
 <hr/>
 
-_NSArray+M3Extensions_
+_NSMutableArray+M3Extensions_
 
 **Changed**<br/>
-Old: `- (id)m3_objectPassingTest:(BOOL (^)(id))`<br/>
-New: `- (id)m3_firstObjectPassingTest:(BOOL (^)(id))`
+Old: `- (void)m3_moveObject:(id) toIndex:(NSUInteger)`<br/>
+New: `- (void)m3_moveObjectAtIndex:(NSUInteger) toIndex:(NSUInteger)`
 
 <hr/>
 
 _NSMutableSet+M3Extensions_ **(removed)**
-
-<hr/>
-
-_NSXMLNode+M3Extensions_
-
-**Removed**<br/>
-`- (NSXMLNode *)m3_nodeForXPath:(NSString *) error:(NSError **)`
 
 <hr/>
 
@@ -126,3 +125,18 @@ New: `- (id)m3_replaceImplementationOfMethodWithSelector:(SEL) withBlock:(id)`
 `- (void)m3_removeObserver:(NSObject *) forKeyPathsInArray:(NSArray *)`
 `- (void)m3_willChangeValueForKeys:(NSArray *)`
 `- (void)m3_didChangeValueForKeys:(NSArray *)`
+
+<hr/>
+
+_NSPredicate+M3Extensions_
+
+**Changed**<br/>
+Old: `+ (NSPredicate *)m3_predicateFromXMLElement:(NSXMLElement *)`<br/>
+New: `+ (NSPredicate *)m3_predicateWithXMLElement:(NSXMLElement *)`
+
+<hr/>
+
+_NSXMLNode+M3Extensions_
+
+**Removed**<br/>
+`- (NSXMLNode *)m3_nodeForXPath:(NSString *) error:(NSError **)`
