@@ -22,13 +22,4 @@
 	return self.stringValue.floatValue;
 }
 
-
-- (NSXMLNode *)m3_nodeForXPath:(NSString *)aXPath error:(NSError **)aError {
-	NSArray *nodes = [self nodesForXPath:aXPath error:aError];
-	if (nodes.count) {
-		return nodes[0];
-	}
-	return nil;
-}
-
 @end

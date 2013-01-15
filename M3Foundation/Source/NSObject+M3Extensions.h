@@ -48,7 +48,7 @@
  @param aBlock A block representing the implementation. The first argument must be of type id, followed by the list of method arguments
  @since M3Foundation 1.0 or later
 */
-- (BOOL)m3_replaceImplementationOfMethodWithSelector:(SEL)aSelector with:(id)aBlock;
+- (BOOL)m3_replaceImplementationOfMethodWithSelector:(SEL)aSelector withBlock:(id)aBlock;
 
 
 @end

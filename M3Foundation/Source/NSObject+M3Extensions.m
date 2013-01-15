@@ -39,7 +39,7 @@
 #pragma mark Manipulating objects
 
 
-- (BOOL)m3_replaceImplementationOfMethodWithSelector:(SEL)aSelector with:(id)aBlock {
+- (BOOL)m3_replaceImplementationOfMethodWithSelector:(SEL)aSelector withBlock:(id)aBlock {
 	NSString *className = NSStringFromClass(self.class);
 	NSArray *nameComponents = [className componentsSeparatedByString:@"_"];
 	//Check if we're already a singleton

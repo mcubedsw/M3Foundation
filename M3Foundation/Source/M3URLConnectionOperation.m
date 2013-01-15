@@ -10,7 +10,11 @@
 #import "M3URLConnectionOperation.h"
 
 
-@implementation M3URLConnectionOperation 
+@implementation M3URLConnectionOperation
+
+- (id)init {
+	return [self initWithURLRequest:nil];
+}
 
 - (id)initWithURLRequest:(NSURLRequest *)aRequest {
 	if ((self = [super init])) {
