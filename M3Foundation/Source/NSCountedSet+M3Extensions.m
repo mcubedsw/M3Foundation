@@ -5,7 +5,7 @@
  Created by Martin Pilkington on 11/02/2012.
  
  Please read the LICENCE.txt for licensing information
- *****************************************************************/
+*****************************************************************/
 
 #import "NSCountedSet+M3Extensions.h"
 

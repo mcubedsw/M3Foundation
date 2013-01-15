@@ -1,10 +1,11 @@
-//
-//  M3TestObject.h
-//  M3Foundation
-//
-//  Created by Martin Pilkington on 15/01/2013.
-//  Copyright (c) 2013 M Cubed Software. All rights reserved.
-//
+/*****************************************************************
+ M3TestObject.h
+ M3Foundation
+ 
+ Created by Martin Pilkington on 15/01/2013.
+ 
+ Please read the LICENCE.txt for licensing information
+*****************************************************************/
 
 #import <Foundation/Foundation.h>
 

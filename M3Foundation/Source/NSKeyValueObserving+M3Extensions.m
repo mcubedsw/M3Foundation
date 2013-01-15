@@ -1,10 +1,11 @@
-//
-//  NSKeyValueObserving+M3Extensions.m
-//  M3Foundation
-//
-//  Created by Martin Pilkington on 04/01/2013.
-//
-//
+/*****************************************************************
+ NSKeyValueObserving+M3Extensions.m
+ M3Foundation
+ 
+ Created by Martin Pilkington on 04/01/2013.
+ 
+ Please read the LICENCE.txt for licensing information
+*****************************************************************/
 
 #import "NSKeyValueObserving+M3Extensions.h"
 

@@ -5,7 +5,7 @@
  Created by Martin Pilkington on 11/02/2012.
  
  Please read the LICENCE.txt for licensing information
- *****************************************************************/
+*****************************************************************/
 
 /**
  A category to add additional operations for working with object counts

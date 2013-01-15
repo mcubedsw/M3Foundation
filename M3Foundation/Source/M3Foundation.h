@@ -8,7 +8,6 @@
 *****************************************************************/
 
 //Add subscripting to Map table et al
-//Array extension to return map table of elements by a keypath
 
 #import "M3CSVValueTransformer.h"
 #import "M3FileSizeValueTransformer.h"
@@ -16,6 +15,7 @@
 
 //Categories
 #import "NSObject+M3Extensions.h"
+#import "NSKeyValueObserving+M3Extensions.h"
 #import "NSString+M3Extensions.h"
 
 #import "NSArray+M3Extensions.h"

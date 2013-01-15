@@ -1,10 +1,11 @@
-//
-//  NSMutableArray+M3Extensions.m
-//  M3Foundation
-//
-//  Created by Martin Pilkington on 10/01/2013.
-//  Copyright (c) 2013 M Cubed Software. All rights reserved.
-//
+/*****************************************************************
+ NSMutableArray+M3Extensions.m
+ M3Foundation
+ 
+ Created by Martin Pilkington on 10/01/2013.
+ 
+ Please read the LICENCE.txt for licensing information
+*****************************************************************/
 
 #import "NSMutableArray+M3Extensions.h"
 #import <M3Foundation/M3Foundation.h>
