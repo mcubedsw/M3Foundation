@@ -29,7 +29,7 @@
 		991B87C7169C636E00DD8299 /* OCHamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991B87C6169C636E00DD8299 /* OCHamcrest.framework */; };
 		991B87C8169C637200DD8299 /* OCHamcrest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 991B87C6169C636E00DD8299 /* OCHamcrest.framework */; };
 		991C4DED15740CCE00CC43F3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
-		9949492A1697309C006EC706 /* NSKeyValueObserving+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 994949281697309C006EC706 /* NSKeyValueObserving+M3Extensions.h */; };
+		9949492A1697309C006EC706 /* NSKeyValueObserving+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 994949281697309C006EC706 /* NSKeyValueObserving+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9949492B1697309C006EC706 /* NSKeyValueObserving+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 994949291697309C006EC706 /* NSKeyValueObserving+M3Extensions.m */; };
 		996007EA10F8C9640070D588 /* NSArray+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 996007E210F8C9640070D588 /* NSArray+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		996007EB10F8C9640070D588 /* NSArray+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 996007E310F8C9640070D588 /* NSArray+M3Extensions.m */; };
@@ -76,7 +76,7 @@
 		99EAF31816A58F98004FE146 /* NSXMLElement+M3ExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EAF31716A58F98004FE146 /* NSXMLElement+M3ExtensionsTests.m */; };
 		99EAF31B16A58FA9004FE146 /* NSXMLNode+M3ExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EAF31A16A58FA9004FE146 /* NSXMLNode+M3ExtensionsTests.m */; };
 		99EAF31E16A58FE0004FE146 /* M3URLConnectionOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EAF31D16A58FE0004FE146 /* M3URLConnectionOperationTests.m */; };
-		99EAF32116A5A098004FE146 /* NSMapTable+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 99EAF31F16A5A097004FE146 /* NSMapTable+M3Extensions.h */; };
+		99EAF32116A5A098004FE146 /* NSMapTable+M3Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 99EAF31F16A5A097004FE146 /* NSMapTable+M3Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99EAF32216A5A098004FE146 /* NSMapTable+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EAF32016A5A097004FE146 /* NSMapTable+M3Extensions.m */; };
 		99EAF32916A5A166004FE146 /* NSMapTable+M3Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EAF32816A5A166004FE146 /* NSMapTable+M3Extensions.m */; };
 /* End PBXBuildFile section */

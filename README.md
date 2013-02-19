@@ -1,4 +1,4 @@
-M3Foundation 1.0
+M3Foundation 1.0.1
 ============
 M3Foundation is a collection of categories and classes that extend and enhance the Foundation framework. This functionality is taken from various M Cubed applications.
 
@@ -22,6 +22,9 @@ M3Foundation is currently Mac-only. An iOS version is in the works for M3Foundat
 <br/>
 
 ## Change Log
+
+### 1.0.1
+* Moved some headers from Protected to Public
 
 ### 1.0
 * Removed M3Accessibility classes
