@@ -24,7 +24,6 @@
 #import "NSMutableDictionary+M3Extensions.h"
 #import "NSCountedSet+M3Extensions.h"
 #import "NSMapTable+M3Extensions.h"
-#import "NSPointerArray+M3Extensions.h"
 
 #import "NSXMLElement+M3Extensions.h"
 #import "NSXMLNode+M3Extensions.h"
